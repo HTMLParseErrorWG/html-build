@@ -177,7 +177,7 @@
   <script data-file-issue-url=https://github.com/whatwg/html/issues/new src=https://resources.whatwg.org/file-issue.js async=""></script>
   <header id=head class="head with-buttons">
    <p><a href=https://whatwg.org/ class=logo><img alt=WHATWG src=https://resources.whatwg.org/logo.svg width=100 height=100></a></p>
-   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>11 May 2017</span></h2></hgroup>
+   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>21 May 2017</span></h2></hgroup>
    
    
   </header>
@@ -637,9 +637,9 @@ any-char      = %x0000-0009 / %x000B-000C / %x000E-10FFFF
    <code id=event-stream-interpretation:messageevent><a href=#messageevent>MessageEvent</a></code>, in the <a href=webappapis.html#concept-relevant-realm id=event-stream-interpretation:concept-relevant-realm>relevant Realm</a> of
    the <code id=event-stream-interpretation:eventsource><a href=#eventsource>EventSource</a></code> object.<li><p>Initialize <var>event</var>'s <code id=event-stream-interpretation:dom-event-type><a data-x-internal=dom-event-type href=https://dom.spec.whatwg.org/#dom-event-type>type</a></code> attribute to <code id=event-stream-interpretation:event-message><a href=indices.html#event-message>message</a></code>, its <code id=event-stream-interpretation:dom-messageevent-data><a href=#dom-messageevent-data>data</a></code>
    attribute to <var>data</var>, its <code id=event-stream-interpretation:dom-messageevent-origin><a href=#dom-messageevent-origin>origin</a></code> attribute
-   to the <a href=browsers.html#unicode-serialisation-of-an-origin id=event-stream-interpretation:unicode-serialisation-of-an-origin>Unicode serialization</a>
-   of the <a id=event-stream-interpretation:concept-origin href=browsers.html#concept-origin>origin</a> of the event stream's final URL (i.e. the URL after redirects), and
-   its <code id=event-stream-interpretation:dom-messageevent-lasteventid><a href=#dom-messageevent-lasteventid>lastEventId</a></code> attribute to the <a href=#concept-event-stream-last-event-id id=event-stream-interpretation:concept-event-stream-last-event-id-3>last event ID string</a> of the event
+   to the <a href=browsers.html#ascii-serialisation-of-an-origin id=event-stream-interpretation:ascii-serialisation-of-an-origin>serialization</a> of the <a href=https://url.spec.whatwg.org/#concept-url-origin id=event-stream-interpretation:concept-url-origin data-x-internal=concept-url-origin>origin</a> of the event stream's final URL (i.e., the URL after
+   redirects), and its <code id=event-stream-interpretation:dom-messageevent-lasteventid><a href=#dom-messageevent-lasteventid>lastEventId</a></code> attribute to
+   the <a href=#concept-event-stream-last-event-id id=event-stream-interpretation:concept-event-stream-last-event-id-3>last event ID string</a> of the event
    source.<li><p>If the <var>event type</var> buffer has a value other than the empty string, change the
    <a href=https://dom.spec.whatwg.org/#dom-event-type id=event-stream-interpretation:concept-event-type data-x-internal=concept-event-type>type</a> of the newly created event to equal the value of
    the <var>event type</var> buffer.<li><p>Set the <var>data</var> buffer and the <var>event type</var> buffer to
@@ -1188,9 +1188,8 @@ socket.onopen = function () {
      whose contents are <var>data</var></dl>
    <li><p><a href=https://dom.spec.whatwg.org/#concept-event-fire id=feedback-from-the-protocol:concept-event-fire-2 data-x-internal=concept-event-fire>Fire an event</a> named <code id=feedback-from-the-protocol:event-message><a href=indices.html#event-message>message</a></code> at the <code id=feedback-from-the-protocol:websocket-4><a href=#websocket>WebSocket</a></code> object, using
    <code id=feedback-from-the-protocol:messageevent><a href=#messageevent>MessageEvent</a></code>, with the <code id=feedback-from-the-protocol:dom-messageevent-origin><a href=#dom-messageevent-origin>origin</a></code>
-   attribute initialized to the <a href=browsers.html#unicode-serialisation-of-an-origin id=feedback-from-the-protocol:unicode-serialisation-of-an-origin>Unicode
-   serialization</a> of the <code id=feedback-from-the-protocol:websocket-5><a href=#websocket>WebSocket</a></code> object's <a href=#concept-websocket-url id=feedback-from-the-protocol:concept-websocket-url>url</a>'s <a href=https://url.spec.whatwg.org/#concept-url-origin id=feedback-from-the-protocol:concept-url-origin data-x-internal=concept-url-origin>origin</a>, and
-   the <code id=feedback-from-the-protocol:dom-messageevent-data><a href=#dom-messageevent-data>data</a></code> attribute initialized to
+   attribute initialized to the <a href=browsers.html#ascii-serialisation-of-an-origin id=feedback-from-the-protocol:ascii-serialisation-of-an-origin>serialization</a> of
+   the <code id=feedback-from-the-protocol:websocket-5><a href=#websocket>WebSocket</a></code> object's <a href=#concept-websocket-url id=feedback-from-the-protocol:concept-websocket-url>url</a>'s <a href=https://url.spec.whatwg.org/#concept-url-origin id=feedback-from-the-protocol:concept-url-origin data-x-internal=concept-url-origin>origin</a>, and the <code id=feedback-from-the-protocol:dom-messageevent-data><a href=#dom-messageevent-data>data</a></code> attribute initialized to
    <var>dataForEvent</var>.</ol>
 
   <p class=note>User agents are encouraged to check if they can perform the above steps
@@ -1549,8 +1548,7 @@ function receiver(e) {
     <ol><li><p>If the <var>targetOrigin</var> argument is not a single literal U+002A ASTERISK character
      (*) and <var>targetWindow</var>'s <a href=browsers.html#concept-document-window id=posting-messages:concept-document-window>associated
      <code>Document</code></a>'s <a id=posting-messages:concept-origin href=browsers.html#concept-origin>origin</a> is not <a id=posting-messages:same-origin href=browsers.html#same-origin>same origin</a> with
-     <var>targetOrigin</var>, then abort these steps.<li><p>Let <var>origin</var> be the <a href=browsers.html#unicode-serialisation-of-an-origin id=posting-messages:unicode-serialisation-of-an-origin>Unicode
-     serialization</a> of <var>incumbentSettings</var>'s <a href=webappapis.html#concept-settings-object-origin id=posting-messages:concept-settings-object-origin-2>origin</a>.<li><p>Let <var>source</var> be the <code id=posting-messages:windowproxy><a href=browsers.html#windowproxy>WindowProxy</a></code> object's corresponding to
+     <var>targetOrigin</var>, then abort these steps.<li><p>Let <var>origin</var> be the <a href=browsers.html#ascii-serialisation-of-an-origin id=posting-messages:ascii-serialisation-of-an-origin>serialization</a> of <var>incumbentSettings</var>'s <a href=webappapis.html#concept-settings-object-origin id=posting-messages:concept-settings-object-origin-2>origin</a>.<li><p>Let <var>source</var> be the <code id=posting-messages:windowproxy><a href=browsers.html#windowproxy>WindowProxy</a></code> object's corresponding to
      <var>incumbentSettings</var>'s <a href=webappapis.html#concept-settings-object-global id=posting-messages:concept-settings-object-global>global
      object</a> (a <code id=posting-messages:window-5><a href=browsers.html#window>Window</a></code> object).<li>
       <p>Let <var>deserializeRecord</var> be
@@ -2144,13 +2142,14 @@ interface <dfn id=broadcastchannel>BroadcastChannel</dfn> : <a id=broadcasting-t
       <p>If this throws an exception, then <a href=https://dom.spec.whatwg.org/#concept-event-fire id=broadcasting-to-other-browsing-contexts:concept-event-fire data-x-internal=concept-event-fire>fire an event</a>
       named <code id=broadcasting-to-other-browsing-contexts:event-messageerror><a href=indices.html#event-messageerror>messageerror</a></code> at <var>destination</var>, using
       <code id=broadcasting-to-other-browsing-contexts:messageevent><a href=#messageevent>MessageEvent</a></code>, with the <code id=broadcasting-to-other-browsing-contexts:dom-messageevent-origin><a href=#dom-messageevent-origin>origin</a></code>
-      attribute initialized to the <a href=browsers.html#unicode-serialisation-of-an-origin id=broadcasting-to-other-browsing-contexts:unicode-serialisation-of-an-origin>Unicode
-      serialization</a> of <var>sourceSettings</var>'s <a href=webappapis.html#concept-settings-object-origin id=broadcasting-to-other-browsing-contexts:concept-settings-object-origin-3>origin</a>, and then abort these steps.</p>
+      attribute initialized to the <a href=browsers.html#ascii-serialisation-of-an-origin id=broadcasting-to-other-browsing-contexts:ascii-serialisation-of-an-origin>serialization</a> of
+      <var>sourceSettings</var>'s <a href=webappapis.html#concept-settings-object-origin id=broadcasting-to-other-browsing-contexts:concept-settings-object-origin-3>origin</a>, and
+      then abort these steps.</p>
      <li><p><a href=https://dom.spec.whatwg.org/#concept-event-fire id=broadcasting-to-other-browsing-contexts:concept-event-fire-2 data-x-internal=concept-event-fire>Fire an event</a> named <code id=broadcasting-to-other-browsing-contexts:event-message><a href=indices.html#event-message>message</a></code> at <var>destination</var>, using
      <code id=broadcasting-to-other-browsing-contexts:messageevent-2><a href=#messageevent>MessageEvent</a></code>, with the <code id=broadcasting-to-other-browsing-contexts:dom-messageevent-data><a href=#dom-messageevent-data>data</a></code> attribute
      initialized to <var>data</var> and the <code id=broadcasting-to-other-browsing-contexts:dom-messageevent-origin-2><a href=#dom-messageevent-origin>origin</a></code>
-     attribute initialized to the <a href=browsers.html#unicode-serialisation-of-an-origin id=broadcasting-to-other-browsing-contexts:unicode-serialisation-of-an-origin-2>Unicode
-     serialization</a> of <var>sourceSettings</var>'s <a href=webappapis.html#concept-settings-object-origin id=broadcasting-to-other-browsing-contexts:concept-settings-object-origin-4>origin</a>.</ol>
+     attribute initialized to the <a href=browsers.html#ascii-serialisation-of-an-origin id=broadcasting-to-other-browsing-contexts:ascii-serialisation-of-an-origin-2>serialization</a> of
+     <var>sourceSettings</var>'s <a href=webappapis.html#concept-settings-object-origin id=broadcasting-to-other-browsing-contexts:concept-settings-object-origin-4>origin</a>.</ol>
 
     <p>The <a href=webappapis.html#concept-task id=broadcasting-to-other-browsing-contexts:concept-task>tasks</a> must use the <a id=broadcasting-to-other-browsing-contexts:dom-manipulation-task-source href=webappapis.html#dom-manipulation-task-source>DOM manipulation task
     source</a>, and, for those where the <a id=broadcasting-to-other-browsing-contexts:event-loop href=webappapis.html#event-loop>event loop</a> specified by the target

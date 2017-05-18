@@ -177,7 +177,7 @@
   <script data-file-issue-url=https://github.com/whatwg/html/issues/new src=https://resources.whatwg.org/file-issue.js async=""></script>
   <header id=head class="head with-buttons">
    <p><a href=https://whatwg.org/ class=logo><img alt=WHATWG src=https://resources.whatwg.org/logo.svg width=100 height=100></a></p>
-   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>11 May 2017</span></h2></hgroup>
+   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>21 May 2017</span></h2></hgroup>
    
    
   </header>
@@ -7906,11 +7906,8 @@ interface <dfn id=htmlhyperlinkelementutils>HTMLHyperlinkElementUtils</dfn> {
   these steps:</p>
 
   <ol><li><p><a href=#reinitialise-url id=api-for-a-and-area-elements:reinitialise-url-2>Reinitialize url</a>.<li><p>If this element's <a href=#concept-hyperlink-url id=api-for-a-and-area-elements:concept-hyperlink-url-7>url</a> is null, return the
-   empty string.<li><p>Return the <a href=browsers.html#unicode-serialisation-of-an-origin id=api-for-a-and-area-elements:unicode-serialisation-of-an-origin>Unicode serialization</a>
-   of this element's <a href=#concept-hyperlink-url id=api-for-a-and-area-elements:concept-hyperlink-url-8>url</a>'s <a href=https://url.spec.whatwg.org/#concept-url-origin id=api-for-a-and-area-elements:concept-url-origin data-x-internal=concept-url-origin>origin</a>.</ol>
-
-  <p class="note no-backref">It returns the Unicode rather than the ASCII serialization for
-  compatibility with <code id=api-for-a-and-area-elements:messageevent><a href=comms.html#messageevent>MessageEvent</a></code>.</p>
+   empty string.<li><p>Return the <a href=browsers.html#ascii-serialisation-of-an-origin id=api-for-a-and-area-elements:ascii-serialisation-of-an-origin>serialization</a> of this
+   element's <a href=#concept-hyperlink-url id=api-for-a-and-area-elements:concept-hyperlink-url-8>url</a>'s <a href=https://url.spec.whatwg.org/#concept-url-origin id=api-for-a-and-area-elements:concept-url-origin data-x-internal=concept-url-origin>origin</a>.</ol>
 
   <p>The <dfn id=dom-hyperlink-protocol><code>protocol</code></dfn> attribute's getter must
   run these steps:</p>

@@ -177,7 +177,7 @@
   <script data-file-issue-url=https://github.com/whatwg/html/issues/new src=https://resources.whatwg.org/file-issue.js async=""></script>
   <header id=head class="head with-buttons">
    <p><a href=https://whatwg.org/ class=logo><img alt=WHATWG src=https://resources.whatwg.org/logo.svg width=100 height=100></a></p>
-   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>11 May 2017</span></h2></hgroup>
+   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>21 May 2017</span></h2></hgroup>
    
    
   </header>
@@ -1133,149 +1133,325 @@
   checking for parse errors, conformance checkers will also verify that the document obeys all the
   other conformance requirements described in this specification.</p>
 
-  <p>Some parse errors have dedicated error codes that should be used by conformance checkers to
-  provide insight into error cause:</p>
+  <p>Some parse errors have dedicated codes outlined in the table below that should be used by
+  conformance checkers in reports.</p>
+
+  <p><i>Error descriptions in the table below are non-normative.</i></p>
 
   <table><thead><tr><th>Code
       <th>Description
     <tbody><tr><td>
       <dfn id=parse-error-non-unicode-character-in-input-stream>non-unicode-character-in-input-stream</dfn>
-      <td>TODO
-      <p class=note>Isolated surrogates can only find their way into the input stream via script APIs
-      such as <code id=parse-errors:dom-document-write><a href=webappapis.html#dom-document-write>document.write()</a></code>.</p>
+      <td><p>This error occurs if the <a href=#input-stream id=parse-errors:input-stream>input stream</a> contains a character that is not a
+      Unicode character, i.e. isolated <a href=https://infra.spec.whatwg.org/#surrogate id=parse-errors:surrogate data-x-internal=surrogate>surrogate</a>. Such characters
+      are parsed as is and usually, where grammar doesn't apply any additional character
+      restrictions, make their way into the DOM.</p>
+
+      <p class=note>Isolated surrogates can only find their way into the input stream via script
+      APIs such as <code id=parse-errors:dom-document-write><a href=webappapis.html#dom-document-write>document.write()</a></code>.</p>
     <tr><td>
       <dfn id=parse-error-undefined-character-in-input-stream>undefined-character-in-input-stream</dfn>
-      <td>TODO
+      <td><p>This error occurs if the <a href=#input-stream id=parse-errors:input-stream-2>input stream</a> contains a character that is a
+      permanently undefined Unicode character. Such characters are parsed as is and usually, where
+      grammar doesn't apply any additional character restrictions, make their way into the DOM.</p>
     <tr><td>
       <dfn id=parse-error-control-character-in-input-stream>control-character-in-input-stream</dfn>
-      <td>TODO
+      <td><p>This error occurs if the <a href=#input-stream id=parse-errors:input-stream-3>input stream</a> contains a Unicode <a href=https://infra.spec.whatwg.org/#control id=parse-errors:control data-x-internal=control>control</a> character that is not an <a id=parse-errors:space-characters href=https://infra.spec.whatwg.org/#ascii-whitespace data-x-internal=space-characters>ASCII whitespace</a>
+      character. Such characters are parsed as is and usually, where grammar doesn't apply any
+      additional character restrictions, make their way into the DOM.</p>
     <tr><td>
       <dfn id=parse-error-self-closing-non-void-html-element>self-closing-non-void-html-element</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a self-closing <a href=#syntax-start-tag id=parse-errors:syntax-start-tag>start tag</a> for an element that is not in the list of
+      <a href=#void-elements id=parse-errors:void-elements>void elements</a> or is not a part of foreign content, i.e. not an SVG or MathML
+      element. Such a start tag is treated as non-self-closing.</p>
+
+      <div class=example>
+
+        <p>For example, consider the following markup:</p>
+
+        <pre>&lt;div/>&lt;span>&lt;/span>&lt;span>&lt;/span></pre>
+
+        <p>This will be parsed into:</p>
+
+        <ul class=domTree><li class=t1><code id=parse-errors:the-html-element><a href=semantics.html#the-html-element>html</a></code><ul><li class=t1><code id=parse-errors:the-head-element><a href=semantics.html#the-head-element>head</a></code><li class=t1><code id=parse-errors:the-body-element><a href=semantics.html#the-body-element>body</a></code><ul><li class=t1><code id=parse-errors:the-div-element><a href=semantics.html#the-div-element>div</a></code><ul><li class=t1><code id=parse-errors:the-span-element><a href=semantics.html#the-span-element>span</a></code><li class=t1><code id=parse-errors:the-span-element-2><a href=semantics.html#the-span-element>span</a></code></ul></ul></ul></ul>
+
+      </div>
+
+      <p class=note>The HTML grammar reflects the <a href=dom.html#concept-element-content-model id=parse-errors:concept-element-content-model>content model</a>
+      of elements so only some elements are allowed to have a self-closing start tag. This is unlike XML grammar.</p>
     <tr><td>
       <dfn id=parse-error-end-tag-with-attributes>end-tag-with-attributes</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters an <a href=#syntax-end-tag id=parse-errors:syntax-end-tag>end
+      tag</a> with <a href=#syntax-attributes id=parse-errors:syntax-attributes>attributes</a>. Attributes in end tags are
+      completely ignored and do not make their way into the DOM.</p>
     <tr><td>
       <dfn id=parse-error-self-closing-end-tag>self-closing-end-tag</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a self-closing <a href=#syntax-end-tag id=parse-errors:syntax-end-tag-2>end tag</a> (e.g. <code>&lt;/div/></code>). Such a tag is treated as a regular end
+      tag.</p>
     <tr><td>
       <dfn id=parse-error-unexpected-null-character>unexpected-null-character</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a U+0000 NULL character in the <a href=#input-stream id=parse-errors:input-stream-4>input
+      stream</a> in certain positions. In general, such characters are either completely ignored
+      or, for security reasons, replaced with a U+FFFD REPLACEMENT CHARACTER character.</p>
     <tr><td>
       <dfn id=parse-error-start-of-processing-instruction-or-xml-declaration>start-of-processing-instruction-or-xml-declaration</dfn>
-      <td>TODO
+      <td><p>This error occurs if there is a <a href=#syntax-start-tag id=parse-errors:syntax-start-tag-2>start tag</a> whose
+      tag name first character is a U+003F QUESTION MARK (?). The U+003F QUESTION MARK (?) character
+      and all content that follows up to a U+003E GREATER-THAN SIGN (>) character (if present) or to the end of the
+      <a href=#input-stream id=parse-errors:input-stream-5>input stream</a> is treated as a comment.</p>
+
+      <div class=example>
+
+        <p>For example, consider the following markup:</p>
+
+        <pre>&lt;?xml-stylesheet type="text/css" href="style.css"?>This is a text</pre>
+
+        <p>This will be parsed into:</p>
+
+        <ul class=domTree><li class=t1><code id=parse-errors:the-html-element-2><a href=semantics.html#the-html-element>html</a></code><ul><li class=t1><code id=parse-errors:the-head-element-2><a href=semantics.html#the-head-element>head</a></code><li class=t1><code id=parse-errors:the-body-element-2><a href=semantics.html#the-body-element>body</a></code><ul><li class=t8><code id=parse-errors:comment-2><a data-x-internal=comment-2 href=https://dom.spec.whatwg.org/#interface-comment>#comment</a></code>: <span>?xml-stylesheet type="text/css" href="style.css"?</span><li class=t3><code id=parse-errors:text><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>This is a text</span></ul></ul></ul>
+
+      </div>
+
+      <p class=note>Processing instructions (e.g. <code>&lt;?xml-stylesheet
+      type="text/css" href="style.css"?></code>) and XML declarations (e.g.<code>&lt;?xml
+      version="1.0" encoding="UTF-8" ?></code>) are part of XML and not supported in HTML.</p>
     <tr><td>
       <dfn id=parse-error-eof-before-tag-name>eof-before-tag-name</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters the end of the <a href=#input-stream id=parse-errors:input-stream-6>input stream</a>
+      where a tag name is expected. In this case the parser treats the beginning of a <a href=#syntax-start-tag id=parse-errors:syntax-start-tag-3>start tag</a> (i.e. <code>&lt;</code>) or an <a href=#syntax-end-tag id=parse-errors:syntax-end-tag-3>end tag</a> (i.e. <code>&lt;/</code>) as text content.
+      </p>
     <tr><td>
       <dfn id=parse-error-invalid-first-character-of-tag-name>invalid-first-character-of-tag-name</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a <a href=#syntax-start-tag id=parse-errors:syntax-start-tag-4>start
+      tag</a> or an <a href=#syntax-end-tag id=parse-errors:syntax-end-tag-4>end tag</a> whose tag name first character
+      is not an <a id=parse-errors:ascii-letters href=https://infra.spec.whatwg.org/#ascii-alpha data-x-internal=ascii-letters>ASCII alpha</a> character. The parser treats such start tags as text content
+      and end tags as comments.</p>
+
+      <div class=example>
+
+        <p>For example, consider the following markup:</p>
+
+        <pre>&lt;42>&lt;/42></pre>
+
+        <p>This will be parsed into:</p>
+
+        <ul class=domTree><li class=t1><code id=parse-errors:the-html-element-3><a href=semantics.html#the-html-element>html</a></code><ul><li class=t1><code id=parse-errors:the-head-element-3><a href=semantics.html#the-head-element>head</a></code><li class=t1><code id=parse-errors:the-body-element-3><a href=semantics.html#the-body-element>body</a></code><ul><li class=t3><code id=parse-errors:text-2><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>&lt;42></span><li class=t8><code id=parse-errors:comment-2-2><a data-x-internal=comment-2 href=https://dom.spec.whatwg.org/#interface-comment>#comment</a></code>: <span>42</span></ul></ul></ul>
+
+      </div>
+
+      <p class=note>While the first character of a tag name is limited to an <a href=https://infra.spec.whatwg.org/#ascii-alpha id=parse-errors:ascii-letters-2 data-x-internal=ascii-letters>ASCII alpha</a>
+      character, a wide range of characters (including <a id=parse-errors:ascii-digits href=https://infra.spec.whatwg.org/#ascii-digit data-x-internal=ascii-digits>ASCII digits</a>) is allowed in subsequent positions.</p>
     <tr><td>
       <dfn id=parse-error-missing-end-tag-name>missing-end-tag-name</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters an <a href=#syntax-end-tag id=parse-errors:syntax-end-tag-5>end
+      tag</a> without a tag name, i.e. <code>&lt;/></code>. Such a tag is completely
+      ignored.</p>
     <tr><td>
       <dfn id=parse-error-eof-in-tag>eof-in-tag</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters the end of the <a href=#input-stream id=parse-errors:input-stream-7>input stream</a> in
+      a <a href=#syntax-start-tag id=parse-errors:syntax-start-tag-5>start tag</a> or an <a href=#syntax-end-tag id=parse-errors:syntax-end-tag-6>end
+      tag</a>, e.g. <code>&lt;div id=</code>. Such a tag is completely ignored.</p>
     <tr><td>
       <dfn id=parse-error-eof-in-script-html-comment>eof-in-script-html-comment</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters the end of the <a href=#input-stream id=parse-errors:input-stream-8>input stream</a> in
+      an <a href=#syntax-comments id=parse-errors:syntax-comments>HTML-like comment</a> inside <code id=parse-errors:the-script-element><a href=scripting.html#the-script-element>script</a></code> element
+      content.</p>
+
+      <p class=note>Unlike regular HTML comments, comments in <code id=parse-errors:the-script-element-2><a href=scripting.html#the-script-element>script</a></code> elements are
+      parsed as text content. They are stripped later by the scripting engine (related parsing
+      rules can be found in Annex B section of the <a href=references.html#refsJAVASCRIPT>[JAVASCRIPT]</a> specification). Scripting
+      engines often have stricter rules for HTML-like comments than HTML grammar. Unclosed comments
+      are likely to be parsed as executable code.</p>
     <tr><td>
       <dfn id=parse-error-unexpected-equals-sign-before-attribute-name>unexpected-equals-sign-before-attribute-name</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a U+003D EQUALS SIGN (=) character (that is
+      usually used as a separator between <a href=#syntax-attributes id=parse-errors:syntax-attributes-2>attribute</a> name and
+      value) before an attribute name. In this case the parser treats U+003D EQUALS SIGN (=) as the first
+      character of the attribute name.</p>
     <tr><td>
       <dfn id=parse-error-unexpected-character-in-attribute-name>unexpected-character-in-attribute-name</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters, in an <a href=#syntax-attribute-name id=parse-errors:syntax-attribute-name>attribute name</a>,
+      a character that is usually a part of another syntactic construct. The parser includes such characters in
+      the attribute name.</p>
+
+      <div class=example>
+        <p>For example, consider the following markup:</p>
+
+        <pre>&lt;div foo&lt;div></pre>
+
+        <p>Due to a forgotten U+003E GREATER-THAN SIGN (>) character after <code>foo</code> the parser treats this markup as a single <code id=parse-errors:the-div-element-2><a href=semantics.html#the-div-element>div</a></code> element with a
+        "<code>foo&lt;div</code>" attribute.</p>
+
+        <p>As another example of this error, consider the following markup:</p>
+
+        <pre>&lt;div id'bar'></pre>
+
+        <p>Due to a forgotten U+003D EQUALS SIGN (=) character between an attribute name and value
+        the parser treats this markup as a <code id=parse-errors:the-div-element-3><a href=semantics.html#the-div-element>div</a></code> element with the attribute
+        "<code>id'bar'</code>" that has an empty value.</p>
+      </div>
     <tr><td>
       <dfn id=parse-error-missing-attribute-value>missing-attribute-value</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters an <a href=#syntax-attributes id=parse-errors:syntax-attributes-3>attribute</a> that doesn't have a value where it is implied,
+      i.e. after a U+003D EQUALS SIGN (=) character that follows an attribute name. The parser treats
+      the attribute as having an empty value.</p>
     <tr><td>
       <dfn id=parse-error-unexpected-character-in-unquoted-attribute-value>unexpected-character-in-unquoted-attribute-value</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters, in an unquoted
+      <a href=#syntax-attribute-value id=parse-errors:syntax-attribute-value>attribute value</a>, a character that is usually a part
+      of another syntactic construct. The parser includes such characters in the attribute value.</p>
+
+      <div class=example>
+        <p>For example, consider the following markup:</p>
+
+        <pre>&lt;div foo=b'ar'></pre>
+
+        <p>Due to misplaced a U+0027 APOSTROPHE (') character the parser sets the value of the
+        "<code>foo</code>" attribute to "<code>b'ar'</code>".</p>
+
+      </div>
+
+      <p class=note>
+        U+0060 GRAVE ACCENT (`) character is in the list of characters that trigger this error
+        because certain legacy user agents treat it as a quote character.
+      </p>
     <tr><td>
       <dfn id=parse-error-missing-whitespace-between-attributes>missing-whitespace-between-attributes</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters <a href=#syntax-attributes id=parse-errors:syntax-attributes-4>attributes</a> that are not separated by an <a id=parse-errors:space-characters-2 href=https://infra.spec.whatwg.org/#ascii-whitespace data-x-internal=space-characters>ASCII whitespace</a> character (e.g.
+      <code>&lt;div id="foo"class="bar"></code>). In this case the parser behaves as if a
+      whitespace character is present.</p>
     <tr><td>
-      <dfn id=parse-error-abruption-of-tag-self-closure>abruption-of-tag-self-closure</dfn>
-      <td>TODO
+      <dfn id=parse-error-unexpected-solidus-in-tag>unexpected-solidus-in-tag</dfn>
+      <td><p>This error occurs if the parser encounters a U+002F SOLIDUS (/) character in a tag in any
+      position other than before a closing U+003E GREATER-THAN SIGN (>) character. In that case
+      the parser ignores the U+002F SOLIDUS (/) character.</p>
     <tr><td>
       <dfn id=parser-error-cdata-in-html-content>cdata-in-html-content</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a <a href=#syntax-cdata id=parse-errors:syntax-cdata>CDATA
+      section</a> outside of foreign content (SVG or MathML). The parser treats such CDATA sections
+      (including leading <code>[CDATA[</code> and trailing <code>]]</code>
+      strings) as comments.</p>
     <tr><td>
-      <dfn id=parse-error-malformed-comment>malformed-comment</dfn>
-      <td>TODO
+      <dfn id=parse-error-unsupported-markup-declaration>unsupported-markup-declaration</dfn>
+      <td><p>This error occurs if the parser encounters any markup declaration other than <a href=#syntax-doctype id=parse-errors:syntax-doctype>DOCTYPE</a> (e.g. <code>&lt;!ELEMENT br EMPTY></code>).
+      The parser treats such markup declarations as comments.</p>
     <tr><td>
       <dfn id=parse-error-abrupt-closing-of-comment>abrupt-closing-of-comment</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a <a href=#syntax-comments id=parse-errors:syntax-comments-2>comment</a>
+      that is abruptly closed (e.g. <code>&lt;!-- This is a comment ></code>). The parser
+      behaves as if the comment is closed correctly.</p>
     <tr><td>
       <dfn id=parse-error-eof-in-comment>eof-in-comment</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters the end of the <a href=#input-stream id=parse-errors:input-stream-9>input stream</a> in a
+      <a href=#syntax-comments id=parse-errors:syntax-comments-3>comment</a>. The parser treats such comments as if they are
+      closed immediately before the end of the input stream.</p>
     <tr><td>
       <dfn id=parse-error-nested-comment>nested-comment</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a nested <a href=#syntax-comments id=parse-errors:syntax-comments-4>comment</a> (e.g. <code>&lt;!-- &lt;!-- nested -->
+      --></code>). Such a comment will be closed by the first occuring "<code>--></code>" character sequence and everything that follows will be treated as
+      markup.</p>
     <tr><td>
       <dfn id=parse-error-incorrectly-closed-comment>incorrectly-closed-comment</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a <a href=#syntax-comments id=parse-errors:syntax-comments-5>comment</a> that is closed by the "<code>--!></code>" character sequence. The parser
+      treats such comments as if they are correctly closed by the "<code>--></code>"
+      character sequence.</p>
     <tr><td>
       <dfn id=parse-error-eof-in-doctype>eof-in-doctype</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters the end of the input stream in a <a href=#syntax-doctype id=parse-errors:syntax-doctype-2>DOCTYPE</a>. The parser sets the <code id=parse-errors:document><a href=dom.html#document>Document</a></code> to <a id=parse-errors:quirks-mode href=https://dom.spec.whatwg.org/#concept-document-quirks data-x-internal=quirks-mode>quirks
+      mode</a> in this case.</p>
     <tr><td>
       <dfn id=parse-error-missing-whitespace-before-doctype-name>missing-whitespace-before-doctype-name</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a <a href=#syntax-doctype id=parse-errors:syntax-doctype-3>DOCTYPE</a> whose "<code>DOCTYPE</code>" keyword and a name are not separated by
+      an <a id=parse-errors:space-characters-3 href=https://infra.spec.whatwg.org/#ascii-whitespace data-x-internal=space-characters>ASCII whitespace</a> character. In this case the parser behaves as if a whitespace
+      character is present.</p>
     <tr><td>
       <dfn id=parse-error-missing-doctype-name>missing-doctype-name</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a <a href=#syntax-doctype id=parse-errors:syntax-doctype-4>DOCTYPE</a> that is missing a name (e.g. <code>&lt;!DOCTYPE></code>). The parser
+      sets the <code id=parse-errors:document-2><a href=dom.html#document>Document</a></code> to <a id=parse-errors:quirks-mode-2 href=https://dom.spec.whatwg.org/#concept-document-quirks data-x-internal=quirks-mode>quirks mode</a> in this case.</p>
     <tr><td>
       <dfn id=parse-error-invalid-character-sequence-after-doctype-name>invalid-character-sequence-after-doctype-name</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters any character sequence other than
+      "<code>PUBLIC</code>" and "<code>SYSTEM</code>" keywords after a <a href=#syntax-doctype id=parse-errors:syntax-doctype-5>DOCTYPE</a> name. In this case the parser ignores any following public
+      or system identifiers and sets the <code id=parse-errors:document-3><a href=dom.html#document>Document</a></code> to <a id=parse-errors:quirks-mode-3 href=https://dom.spec.whatwg.org/#concept-document-quirks data-x-internal=quirks-mode>quirks mode</a>.</p>
     <tr><td>
-      <dfn id=parse-error-missing-whitespace-after-doctype-public-keyword>
-      missing-whitespace-after-doctype-public-keyword</dfn>
-      <td>TODO
+      <dfn id=parse-error-missing-whitespace-after-doctype-public-keyword>missing-whitespace-after-doctype-public-keyword</dfn>
+      <td><p>This error occurs if the parser encounters a <a href=#syntax-doctype id=parse-errors:syntax-doctype-6>DOCTYPE</a> whose "<code>PUBLIC</code>" keyword and the public identifier are
+      not separated by an <a id=parse-errors:space-characters-4 href=https://infra.spec.whatwg.org/#ascii-whitespace data-x-internal=space-characters>ASCII whitespace</a> character. In this case the parser behaves as if
+      a whitespace character is present.</p>
     <tr><td>
       <dfn id=parse-error-abrupt-closing-of-doctype>abrupt-closing-of-doctype</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a <a href=#syntax-doctype id=parse-errors:syntax-doctype-7>DOCTYPE</a> that is abruptly closed (e.g. <code>&lt;!DOCTYPE PUBLIC></code>.
+      The parser sets the <code id=parse-errors:document-4><a href=dom.html#document>Document</a></code> to <a id=parse-errors:quirks-mode-4 href=https://dom.spec.whatwg.org/#concept-document-quirks data-x-internal=quirks-mode>quirks mode</a> in this case.</p>
     <tr><td>
       <dfn id=parse-error-missing-quote-before-doctype-public-identifier>missing-quote-before-doctype-public-identifier</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters the <a href=#syntax-doctype id=parse-errors:syntax-doctype-8>DOCTYPE</a> public identifier that is not preceded by a quote (e.g. <code>&lt;!DOCTYPE html PUBLIC -/W3C/DTD HTML 4.0 Transitional/EN"></code>). In this case the parser
+      ignores any public identifier and system identifier and sets the <code id=parse-errors:document-5><a href=dom.html#document>Document</a></code> to
+      <a id=parse-errors:quirks-mode-5 href=https://dom.spec.whatwg.org/#concept-document-quirks data-x-internal=quirks-mode>quirks mode</a>.</p>
     <tr><td>
       <dfn id=parse-error-missing-whitespace-between-doctype-public-and-system-identifiers>missing-whitespace-between-doctype-public-and-system-identifiers</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a <a href=#syntax-doctype id=parse-errors:syntax-doctype-9>DOCTYPE</a> whose public and system identifiers are not separated by an <a id=parse-errors:space-characters-5 href=https://infra.spec.whatwg.org/#ascii-whitespace data-x-internal=space-characters>ASCII
+      whitespace</a> character. In this case the parser behaves as if a whitespace character is
+      present.</p>
     <tr><td>
       <dfn id=parse-error-missing-quote-before-doctype-system-identifier>missing-quote-before-doctype-system-identifier</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters the <a href=#syntax-doctype id=parse-errors:syntax-doctype-10>DOCTYPE</a> system identifier that is not preceded by a quote (e.g. <code>&lt;!DOCTYPE html SYSTEM http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"></code>).
+      In this case the parser ignores the system identifier and sets the <code id=parse-errors:document-6><a href=dom.html#document>Document</a></code> to
+      <a id=parse-errors:quirks-mode-6 href=https://dom.spec.whatwg.org/#concept-document-quirks data-x-internal=quirks-mode>quirks mode</a>.</p>
     <tr><td>
       <dfn id=parse-error-missing-whitespace-after-doctype-system-keyword>missing-whitespace-after-doctype-system-keyword</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a <a href=#syntax-doctype id=parse-errors:syntax-doctype-11>DOCTYPE</a> whose "<code>SYSTEM</code>" keyword and the system identifier are
+      not separated by an <a id=parse-errors:space-characters-6 href=https://infra.spec.whatwg.org/#ascii-whitespace data-x-internal=space-characters>ASCII whitespace</a> character. In this case the parser behaves as if
+      a whitespace character is present.</p>
     <tr><td>
       <dfn id=parse-error-unexpected-character-after-doctype-system-identifier>unexpected-character-after-doctype-system-identifier</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters any characters other than <a id=parse-errors:space-characters-7 href=https://infra.spec.whatwg.org/#ascii-whitespace data-x-internal=space-characters>ASCII
+      whitespace</a> characters after the <a href=#syntax-doctype id=parse-errors:syntax-doctype-12>DOCTYPE</a> system
+      identifier. The parser ignores these characters.</p>
     <tr><td>
       <dfn id=parse-error-eof-in-cdata>eof-in-cdata</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters the end of the <a href=#input-stream id=parse-errors:input-stream-10>input stream</a> in
+      a <a href=#syntax-cdata id=parse-errors:syntax-cdata-2>CDATA section</a>. The parser treats such CDATA sections as if they
+      are closed immediately before the end of the input stream.</p>
     <tr><td>
       <dfn id=parse-error-missing-semicolon-after-character-reference>missing-semicolon-after-character-reference</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a <a href=#syntax-charref id=parse-errors:syntax-charref>character
+      reference</a> that is not terminated by a U+003B SEMICOLON (;) character. Usually the parser
+      behaves as if character reference is terminated by the U+003B SEMICOLON (;) character; however,
+      there are some ambiguous cases in which the parser includes subsequent characters in the character
+      reference.</p>
+
+      <p class=example>For example, <code>&amp;not;in</code> will be parsed as
+      "<code>¬in</code>" whereas <code>&amp;notin</code> will be parsed as
+      "<code>∉</code>".</p>
     <tr><td>
       <dfn id=parse-error-unknown-named-character-reference>unknown-named-character-reference</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters an <a href=#syntax-ambiguous-ampersand id=parse-errors:syntax-ambiguous-ampersand>ambiguous ampersand</a>. In this case the parser doesn't
+      resolve the <a href=#syntax-charref id=parse-errors:syntax-charref-2>character reference</a>.</p>
     <tr><td>
       <dfn id=parse-error-absence-of-digits-in-numeric-character-reference>absence-of-digits-in-numeric-character-reference</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a numeric <a href=#syntax-charref id=parse-errors:syntax-charref-3>character reference</a> that doesn't contain any digits (e.g. <code>&amp;#qux;</code>). In this case the parser doesn't resolve the
+      <a href=#syntax-charref id=parse-errors:syntax-charref-4>character reference</a>.</p>
     <tr><td>
       <dfn id=parse-error-null-character-reference>null-character-reference</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a numeric <a href=#syntax-charref id=parse-errors:syntax-charref-5>character reference</a> that references a U+0000 NULL character.
+      The parser resolves such character references to a U+FFFD REPLACEMENT CHARACTER character.</p>
     <tr><td>
       <dfn id=parse-error-non-unicode-character-reference>non-unicode-character-reference</dfn>
-      <td>TODO
-    <tr><td>
+      <td><p>This error occurs if the parser encounters a numeric <a href=#syntax-charref id=parse-errors:syntax-charref-6>character reference</a> that references a character that is not a
+      Unicode character, i.e. isolated <a id=parse-errors:surrogate-2 href=https://infra.spec.whatwg.org/#surrogate data-x-internal=surrogate>surrogate</a> or code point that is greater than
+      valid Unicode range. The parser resolves such character references to a U+FFFD REPLACEMENT
+      CHARACTER character.</p>
+     <tr><td>
       <dfn id=parse-error-undefined-character-reference>undefined-character-reference</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a numeric <a href=#syntax-charref id=parse-errors:syntax-charref-7>character reference</a> that references a character that is a
+      permanently undefined Unicode character. The parser resolves such character references as is.</p>
     <tr><td>
       <dfn id=parse-error-control-character-reference>control-character-reference</dfn>
-      <td>TODO
+      <td><p>This error occurs if the parser encounters a numeric <a href=#syntax-charref id=parse-errors:syntax-charref-8>character reference</a> that references a Unicode <a href=https://infra.spec.whatwg.org/#control id=parse-errors:control-2 data-x-internal=control>control</a> character that is not an <a id=parse-errors:space-characters-8 href=https://infra.spec.whatwg.org/#ascii-whitespace data-x-internal=space-characters>ASCII whitespace</a>
+      character or U+000D CARRIAGE RETURN (CR) character. The parser resolves such
+      characters as is except C1 controls that are replaced according to the
+      <a href=#numeric-character-reference-end-state id=parse-errors:numeric-character-reference-end-state>numeric character reference end state</a>.</p>
   </table>
-
-  <p><i>Error descriptions in the table above are non-normative.</i></p>
 
   
 
@@ -2014,10 +2190,14 @@
   stream</a> is decoded or from the various APIs that directly manipulate the input stream.</p>
 
   <p>Any occurrences of <a href=https://infra.spec.whatwg.org/#surrogate id=preprocessing-the-input-stream:surrogate data-x-internal=surrogate>surrogates</a> are <a href=#parse-error-non-unicode-character-in-input-stream id=preprocessing-the-input-stream:parse-error-non-unicode-character-in-input-stream>non-unicode-character-in-input-stream</a>
-  <a href=#parse-errors id=preprocessing-the-input-stream:parse-errors>parse errors</a>. Any occurrences of <a href=https://infra.spec.whatwg.org/#noncharacter id=preprocessing-the-input-stream:noncharacter data-x-internal=noncharacter>noncharacters</a>
-  are <a href=#parse-error-undefined-character-in-input-stream id=preprocessing-the-input-stream:parse-error-undefined-character-in-input-stream>undefined-character-in-input-stream</a>
-  <a href=#parse-errors id=preprocessing-the-input-stream:parse-errors-2>parse errors</a> and any occurrences of <a href=https://infra.spec.whatwg.org/#control id=preprocessing-the-input-stream:control data-x-internal=control>controls</a>
-  other than <a id=preprocessing-the-input-stream:space-characters href=https://infra.spec.whatwg.org/#ascii-whitespace data-x-internal=space-characters>ASCII whitespace</a> are <a href=#parse-error-control-character-in-input-stream id=preprocessing-the-input-stream:parse-error-control-character-in-input-stream>control-character-in-input-stream</a> <a href=#parse-errors id=preprocessing-the-input-stream:parse-errors-3>parse errors</a>.</p>
+  <a href=#parse-errors id=preprocessing-the-input-stream:parse-errors>parse errors</a>. Any occurrences of <a href=https://infra.spec.whatwg.org/#noncharacter id=preprocessing-the-input-stream:noncharacter data-x-internal=noncharacter>noncharacters</a> are <a href=#parse-error-undefined-character-in-input-stream id=preprocessing-the-input-stream:parse-error-undefined-character-in-input-stream>undefined-character-in-input-stream</a> <a href=#parse-errors id=preprocessing-the-input-stream:parse-errors-2>parse errors</a> and any
+  occurrences of <a href=https://infra.spec.whatwg.org/#control id=preprocessing-the-input-stream:control data-x-internal=control>controls</a> other than <a id=preprocessing-the-input-stream:space-characters href=https://infra.spec.whatwg.org/#ascii-whitespace data-x-internal=space-characters>ASCII whitespace</a> and
+  U+0000 NULL characters are <a href=#parse-error-control-character-in-input-stream id=preprocessing-the-input-stream:parse-error-control-character-in-input-stream>control-character-in-input-stream</a> <a href=#parse-errors id=preprocessing-the-input-stream:parse-errors-3>parse errors</a>.</p>
+
+  <p class=note>The handling of U+0000 NULL characters varies based on where the characters are
+  found and happens at the later stages of the parsing. In general, they are ignored except where
+  doing so could plausibly introduce an attack vector. This handling is, by necessity, spread across
+  both the tokenization stage and the tree construction stage.</p>
 
   <p>U+000D CARRIAGE RETURN (CR) characters and U+000A LINE FEED (LF) characters are treated
   specially. Any LF character that immediately follows a CR character must be ignored, and all CR
@@ -2042,11 +2222,6 @@
   the <code id=preprocessing-the-input-stream:dom-document-close><a href=webappapis.html#dom-document-close>document.close()</a></code> method) is consumed. Otherwise, the
   "EOF" character is not a real character in the stream, but rather the lack of any further
   characters.</p>
-
-  <p class=note>The handling of U+0000 NULL characters varies based on where the characters are
-  found. In general, they are ignored except where doing so could plausibly introduce an attack
-  vector. This handling is, by necessity, spread across both the tokenization stage and the tree
-  construction stage.</p>
 
   
 
@@ -2848,8 +3023,9 @@
   <p>Consume the <a href=#next-input-character id=attribute-value-(double-quoted)-state:next-input-character>next input character</a>:</p>
 
   <dl class=switch><dt>U+0022 QUOTATION MARK (")<dd>Switch to the <a href=#after-attribute-value-(quoted)-state id=attribute-value-(double-quoted)-state:after-attribute-value-(quoted)-state>after attribute value (quoted) state</a>.<dt>U+0026 AMPERSAND (&amp;)<dd>Set the <var id=attribute-value-(double-quoted)-state:return-state><a href=#return-state>return state</a></var> to the <a href=#attribute-value-(double-quoted)-state id=attribute-value-(double-quoted)-state:attribute-value-(double-quoted)-state>attribute value
-   (double-quoted) state</a>. Switch to the <a href=#character-reference-state id=attribute-value-(double-quoted)-state:character-reference-state>character reference state</a>.<dt>U+0000 NULL<dd><a href=#parse-error-unexpected-null-character id=attribute-value-(double-quoted)-state:parse-error-unexpected-null-character>unexpected-null-character</a><a href=#parse-errors id=attribute-value-(double-quoted)-state:parse-errors>parse
-   error</a>. Append a U+FFFD REPLACEMENT CHARACTER character to the current attribute's value.<dt>EOF<dd>This is an <a href=#parse-error-eof-in-tag id=attribute-value-(double-quoted)-state:parse-error-eof-in-tag>eof-in-tag</a>
+   (double-quoted) state</a>. Switch to the <a href=#character-reference-state id=attribute-value-(double-quoted)-state:character-reference-state>character reference state</a>.<dt>U+0000 NULL<dd>This is an <a href=#parse-error-unexpected-null-character id=attribute-value-(double-quoted)-state:parse-error-unexpected-null-character>unexpected-null-character</a>
+   <a href=#parse-errors id=attribute-value-(double-quoted)-state:parse-errors>parse error</a>. Append a U+FFFD REPLACEMENT CHARACTER character to the current attribute's
+   value.<dt>EOF<dd>This is an <a href=#parse-error-eof-in-tag id=attribute-value-(double-quoted)-state:parse-error-eof-in-tag>eof-in-tag</a>
    <a href=#parse-errors id=attribute-value-(double-quoted)-state:parse-errors-2>parse error</a>. Emit an end-of-file token.<dt>Anything else<dd>Append the <a href=#current-input-character id=attribute-value-(double-quoted)-state:current-input-character>current input character</a> to the current attribute's value.</dl>
 
 
@@ -2858,9 +3034,9 @@
   <p>Consume the <a href=#next-input-character id=attribute-value-(single-quoted)-state:next-input-character>next input character</a>:</p>
 
   <dl class=switch><dt>U+0027 APOSTROPHE (')<dd>Switch to the <a href=#after-attribute-value-(quoted)-state id=attribute-value-(single-quoted)-state:after-attribute-value-(quoted)-state>after attribute value (quoted) state</a>.<dt>U+0026 AMPERSAND (&amp;)<dd>Set the <var id=attribute-value-(single-quoted)-state:return-state><a href=#return-state>return state</a></var> to the <a href=#attribute-value-(single-quoted)-state id=attribute-value-(single-quoted)-state:attribute-value-(single-quoted)-state>attribute value
-   (single-quoted) state</a>. Switch to the <a href=#character-reference-state id=attribute-value-(single-quoted)-state:character-reference-state>character reference state</a>.<dt>U+0000 NULL<dd><a href=#parse-error-unexpected-null-character id=attribute-value-(single-quoted)-state:parse-error-unexpected-null-character>unexpected-null-character</a><a href=#parse-errors id=attribute-value-(single-quoted)-state:parse-errors>parse
-   error</a>. Append a U+FFFD REPLACEMENT CHARACTER character to the current
-   attribute's value.<dt>EOF<dd>This is an <a href=#parse-error-eof-in-tag id=attribute-value-(single-quoted)-state:parse-error-eof-in-tag>eof-in-tag</a>
+   (single-quoted) state</a>. Switch to the <a href=#character-reference-state id=attribute-value-(single-quoted)-state:character-reference-state>character reference state</a>.<dt>U+0000 NULL<dd>This is an <a href=#parse-error-unexpected-null-character id=attribute-value-(single-quoted)-state:parse-error-unexpected-null-character>unexpected-null-character</a>
+   <a href=#parse-errors id=attribute-value-(single-quoted)-state:parse-errors>parse error</a>. Append a U+FFFD REPLACEMENT CHARACTER character to the current attribute's
+   value.<dt>EOF<dd>This is an <a href=#parse-error-eof-in-tag id=attribute-value-(single-quoted)-state:parse-error-eof-in-tag>eof-in-tag</a>
    <a href=#parse-errors id=attribute-value-(single-quoted)-state:parse-errors-2>parse error</a>. Emit an end-of-file token.<dt>Anything else<dd>Append the <a href=#current-input-character id=attribute-value-(single-quoted)-state:current-input-character>current input character</a> to the current attribute's value.</dl>
 
 
@@ -2869,9 +3045,9 @@
   <p>Consume the <a href=#next-input-character id=attribute-value-(unquoted)-state:next-input-character>next input character</a>:</p>
 
   <dl class=switch><dt>U+0009 CHARACTER TABULATION (tab)<dt>U+000A LINE FEED (LF)<dt>U+000C FORM FEED (FF)<dt>U+0020 SPACE<dd>Switch to the <a href=#before-attribute-name-state id=attribute-value-(unquoted)-state:before-attribute-name-state>before attribute name state</a>.<dt>U+0026 AMPERSAND (&amp;)<dd>Set the <var id=attribute-value-(unquoted)-state:return-state><a href=#return-state>return state</a></var> to the <a href=#attribute-value-(unquoted)-state id=attribute-value-(unquoted)-state:attribute-value-(unquoted)-state>attribute value
-   (unquoted) state</a>. Switch to the <a href=#character-reference-state id=attribute-value-(unquoted)-state:character-reference-state>character reference state</a>.<dt>U+003E GREATER-THAN SIGN (>)<dd>Switch to the <a href=#data-state id=attribute-value-(unquoted)-state:data-state>data state</a>. Emit the current tag token.<dt>U+0000 NULL<dd><a href=#parse-error-unexpected-null-character id=attribute-value-(unquoted)-state:parse-error-unexpected-null-character>unexpected-null-character</a><a href=#parse-errors id=attribute-value-(unquoted)-state:parse-errors>parse
-   error</a>. Append a U+FFFD REPLACEMENT CHARACTER character to the current
-   attribute's value.<dt>U+0022 QUOTATION MARK (")<dt>U+0027 APOSTROPHE (')<dt>U+003C LESS-THAN SIGN (&lt;)<dt>U+003D EQUALS SIGN (=)<dt>U+0060 GRAVE ACCENT (`)<dd>This is an <a href=#parse-error-unexpected-character-in-unquoted-attribute-value id=attribute-value-(unquoted)-state:parse-error-unexpected-character-in-unquoted-attribute-value>unexpected-character-in-unquoted-attribute-value</a> <a href=#parse-errors id=attribute-value-(unquoted)-state:parse-errors-2>parse error</a>. Treat it as per the
+   (unquoted) state</a>. Switch to the <a href=#character-reference-state id=attribute-value-(unquoted)-state:character-reference-state>character reference state</a>.<dt>U+003E GREATER-THAN SIGN (>)<dd>Switch to the <a href=#data-state id=attribute-value-(unquoted)-state:data-state>data state</a>. Emit the current tag token.<dt>U+0000 NULL<dd>This is an <a href=#parse-error-unexpected-null-character id=attribute-value-(unquoted)-state:parse-error-unexpected-null-character>unexpected-null-character</a>
+   <a href=#parse-errors id=attribute-value-(unquoted)-state:parse-errors>parse error</a>. Append a U+FFFD REPLACEMENT CHARACTER character to the current attribute's
+   value.<dt>U+0022 QUOTATION MARK (")<dt>U+0027 APOSTROPHE (')<dt>U+003C LESS-THAN SIGN (&lt;)<dt>U+003D EQUALS SIGN (=)<dt>U+0060 GRAVE ACCENT (`)<dd>This is an <a href=#parse-error-unexpected-character-in-unquoted-attribute-value id=attribute-value-(unquoted)-state:parse-error-unexpected-character-in-unquoted-attribute-value>unexpected-character-in-unquoted-attribute-value</a> <a href=#parse-errors id=attribute-value-(unquoted)-state:parse-errors-2>parse error</a>. Treat it as per the
    "anything else" entry below.<dt>EOF<dd>This is an <a href=#parse-error-eof-in-tag id=attribute-value-(unquoted)-state:parse-error-eof-in-tag>eof-in-tag</a>
    <a href=#parse-errors id=attribute-value-(unquoted)-state:parse-errors-3>parse error</a>. Emit an end-of-file token.<dt>Anything else<dd>Append the <a href=#current-input-character id=attribute-value-(unquoted)-state:current-input-character>current input character</a> to the current attribute's value.</dl>
 
@@ -2891,9 +3067,8 @@
 
   <dl class=switch><dt>U+003E GREATER-THAN SIGN (>)<dd>Set the <i id=self-closing-start-tag-state:self-closing-flag><a href=#self-closing-flag>self-closing flag</a></i> of the current tag token. Switch to the <a href=#data-state id=self-closing-start-tag-state:data-state>data
    state</a>. Emit the current tag token.<dt>EOF<dd>This is an <a href=#parse-error-eof-in-tag id=self-closing-start-tag-state:parse-error-eof-in-tag>eof-in-tag</a>
-   <a href=#parse-errors id=self-closing-start-tag-state:parse-errors>parse error</a>. Emit an end-of-file token.<dt>Anything else<dd>This is an <a href=#parse-error-abruption-of-tag-self-closure id=self-closing-start-tag-state:parse-error-abruption-of-tag-self-closure>abruption-of-tag-self-closure</a>
-   <a href=#parse-errors id=self-closing-start-tag-state:parse-errors-2>parse error</a>. <a href=#reconsume id=self-closing-start-tag-state:reconsume>Reconsume</a> in the <a href=#before-attribute-name-state id=self-closing-start-tag-state:before-attribute-name-state>before attribute name
-   state</a>.</dl>
+   <a href=#parse-errors id=self-closing-start-tag-state:parse-errors>parse error</a>. Emit an end-of-file token.<dt>Anything else<dd>This is an <a href=#parse-error-unexpected-solidus-in-tag id=self-closing-start-tag-state:parse-error-unexpected-solidus-in-tag>unexpected-solidus-in-tag</a> <a href=#parse-errors id=self-closing-start-tag-state:parse-errors-2>parse error</a>. <a href=#reconsume id=self-closing-start-tag-state:reconsume>Reconsume</a> in the
+   <a href=#before-attribute-name-state id=self-closing-start-tag-state:before-attribute-name-state>before attribute name state</a>.</dl>
 
 
   <h5 id=bogus-comment-state>12.2.5.41 <dfn>Bogus comment state</dfn><a href=#bogus-comment-state class=self-link></a></h5>
@@ -2912,9 +3087,9 @@
    "CDATA" with a U+005B LEFT SQUARE BRACKET character before and after)<dd>Consume those characters. If there is an <a href=#adjusted-current-node id=markup-declaration-open-state:adjusted-current-node>adjusted current node</a> and it is not
    an element in the <a id=markup-declaration-open-state:html-namespace-2 href=https://infra.spec.whatwg.org/#html-namespace data-x-internal=html-namespace-2>HTML namespace</a>, then switch to the <a href=#cdata-section-state id=markup-declaration-open-state:cdata-section-state>CDATA section
    state</a>. Otherwise, this is a <a href=#parser-error-cdata-in-html-content id=markup-declaration-open-state:parser-error-cdata-in-html-content>cdata-in-html-content</a> <a href=#parse-errors id=markup-declaration-open-state:parse-errors>parse error</a>. Create a comment token whose data is the
-   "[CDATA[" string. Switch to the <a href=#bogus-comment-state id=markup-declaration-open-state:bogus-comment-state>bogus comment state</a>.<dt>Anything else<dd>This is a <a href=#parse-error-malformed-comment id=markup-declaration-open-state:parse-error-malformed-comment>malformed-comment</a> <a href=#parse-errors id=markup-declaration-open-state:parse-errors-2>parse error</a>.
-   Create a comment token whose data is the empty string. Switch to the <a href=#bogus-comment-state id=markup-declaration-open-state:bogus-comment-state-2>bogus comment state</a> (don't consume
-   anything in the current state).</dl>
+   "[CDATA[" string. Switch to the <a href=#bogus-comment-state id=markup-declaration-open-state:bogus-comment-state>bogus comment state</a>.<dt>Anything else<dd>This is an <a href=#parse-error-unsupported-markup-declaration id=markup-declaration-open-state:parse-error-unsupported-markup-declaration>unsupported-markup-declaration</a> <a href=#parse-errors id=markup-declaration-open-state:parse-errors-2>parse error</a>. Create a comment token whose
+   data is the empty string. Switch to the <a href=#bogus-comment-state id=markup-declaration-open-state:bogus-comment-state-2>bogus comment state</a> (don't consume anything
+   in the current state).</dl>
 
 
   <h5 id=comment-start-state>12.2.5.43 <dfn>Comment start state</dfn><a href=#comment-start-state class=self-link></a></h5>
