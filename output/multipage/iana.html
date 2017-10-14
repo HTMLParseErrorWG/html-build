@@ -1,17 +1,8 @@
-<!DOCTYPE html><html class=split lang=en-US-x-hixie><script src=/link-fixup.js defer=""></script><meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><title>HTML Standard</title><meta content=#3c790a name=theme-color><link rel=stylesheet href=https://resources.whatwg.org/standard.css><script defer="" src=https://resources.whatwg.org/dfn.js></script><script>
+<!DOCTYPE html><html class=split lang=en-US-x-hixie><script src=/link-fixup.js defer=""></script><meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><title>HTML Standard</title><meta content=#3c790a name=theme-color><link rel=stylesheet href=https://resources.whatwg.org/standard.css><link rel=icon href=https://resources.whatwg.org/logo.svg><script>
    function toggleStatus(div) {
      div.parentNode.classList.toggle('wrapped');
    }
-  </script><link rel=icon href=https://resources.whatwg.org/logo.svg><style>
-   [hidden] { display: none; }
-
-   .bad, .bad *:not(.X\58X) { color: gray; border-color: gray; background: transparent; }
-
-   .fingerprint { position: absolute; right: 0; z-index: 5; }
-   @media (max-width: 767px) {
-     .fingerprint { max-width: 35px; }
-   }
-
+  </script><style>
    .status { min-height: 0.6em; font: 1em sans-serif; width: 9em; padding: 0.3em; position: absolute; z-index: 8; right: 0.3em; background: #EEE; color: black; box-shadow: 0 0 3px #999; overflow: hidden; margin: -2em 0 0 0; border-collapse: initial; border-spacing: initial; }
    .status:hover { z-index: 9; }
    .status:focus-within { z-index: 9; }
@@ -46,11 +37,20 @@
    .status > .support > .opera::before { background-image: url(https://resources.whatwg.org/browser-logos/opera.png); }
    .status > .support > .safari::before { background-image: url(https://resources.whatwg.org/browser-logos/safari.png); }
    .status > .support > .samsung::before { background-image: url(https://resources.whatwg.org/browser-logos/samsung.png); }
-   .status > .caniuse { text-align: right; font-style: italic; }
+   .status > .caniuse { text-align: right; font-style: italic; width: 100%; }
    .status > .caniuse + p { margin-top: 0.5em; border-top: 1px solid silver; }
 
    @media (max-width: 767px) {
      .status { right: -9em; }
+   }
+  </style><style>
+   [hidden] { display: none; }
+
+   .bad, .bad *:not(.X\58X) { color: gray; border-color: gray; background: transparent; }
+
+   .fingerprint { position: absolute; right: 0; z-index: 5; }
+   @media (max-width: 767px) {
+     .fingerprint { max-width: 35px; }
    }
 
    .applies .yes, .yesno .yes { background: yellow; }
@@ -109,24 +109,6 @@
 
    .parse-error-table td > p:first-child { margin-top: 0; }
 
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
    #named-character-references-table {
      white-space: nowrap;
      font-size: 0.6em;
@@ -175,20 +157,22 @@
    #abstractimg .top { word-spacing: 50px; text-anchor: middle; }
    #abstractimg .left, #abstractimg .bottom { word-spacing: 12px; }
    #abstractimg .right { font-size: 25px; }
-  </style>
+  </style><body>
+  
+  <script async="" src=/html-dfn.js></script>
   <script data-file-issue-url=https://github.com/whatwg/html/issues/new src=https://resources.whatwg.org/file-issue.js async=""></script>
   <header id=head class="head with-buttons">
-   <p><a href=https://whatwg.org/ class=logo><img alt=WHATWG src=https://resources.whatwg.org/logo.svg width=100 height=100></a></p>
-   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>31 May 2017</span></h2></hgroup>
+   <a href=https://whatwg.org/ class=logo><img alt=WHATWG src=https://resources.whatwg.org/logo.svg width=100 height=100></a>
+   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>14 October 2017</span></h2></hgroup>
    
+   
+
    
   </header>
 
   
 
   
-
-  
   
 
   
@@ -196,12 +180,12 @@
 
   
 
-  <nav><a href=obsolete.html>← 15 Obsolete features</a> — <a href=index.html>Table of Contents</a> — <a href=indices.html>Index →</a></nav><ol class=toc><li id=toc-iana><a href=iana.html#iana>16 IANA considerations</a><ol><li><a href=iana.html#text/html>16.1 <code>text/html</code></a><li><a href=iana.html#multipart/x-mixed-replace>16.2 <code>multipart/x-mixed-replace</code></a><li><a href=iana.html#application/xhtml+xml>16.3 <code>application/xhtml+xml</code></a><li><a href=iana.html#text/cache-manifest>16.4 <code>text/cache-manifest</code></a><li><a href=iana.html#text/ping>16.5 <code>text/ping</code></a><li><a href=iana.html#application/microdata+json>16.6 <code>application/microdata+json</code></a><li><a href=iana.html#text/event-stream>16.7 <code>text/event-stream</code></a><li><a href=iana.html#ping-from>16.8 `<code>Ping-From</code>`</a><li><a href=iana.html#ping-to>16.9 `<code>Ping-To</code>`</a><li><a href=iana.html#last-event-id>16.10 `<code>Last-Event-ID</code>`</a><li><a href=iana.html#web+-scheme-prefix>16.11 <code>web+</code> scheme prefix</a></ol></ol><h2 id=iana>16 IANA considerations<a href=#iana class=self-link></a></h2>
+  <nav><a href=obsolete.html>← 15 Obsolete features</a> — <a href=index.html>Table of Contents</a> — <a href=indices.html>Index →</a></nav><ol class=toc><li id=toc-iana><a href=iana.html#iana><span class=secno>16</span> IANA considerations</a><ol><li><a href=iana.html#text/html><span class=secno>16.1</span> <code>text/html</code></a><li><a href=iana.html#multipart/x-mixed-replace><span class=secno>16.2</span> <code>multipart/x-mixed-replace</code></a><li><a href=iana.html#application/xhtml+xml><span class=secno>16.3</span> <code>application/xhtml+xml</code></a><li><a href=iana.html#text/cache-manifest><span class=secno>16.4</span> <code>text/cache-manifest</code></a><li><a href=iana.html#text/ping><span class=secno>16.5</span> <code>text/ping</code></a><li><a href=iana.html#application/microdata+json><span class=secno>16.6</span> <code>application/microdata+json</code></a><li><a href=iana.html#text/event-stream><span class=secno>16.7</span> <code>text/event-stream</code></a><li><a href=iana.html#ping-from><span class=secno>16.8</span> `<code>Ping-From</code>`</a><li><a href=iana.html#ping-to><span class=secno>16.9</span> `<code>Ping-To</code>`</a><li><a href=iana.html#refresh><span class=secno>16.10</span> `<code>Refresh</code>`</a><li><a href=iana.html#last-event-id><span class=secno>16.11</span> `<code>Last-Event-ID</code>`</a><li><a href=iana.html#web+-scheme-prefix><span class=secno>16.12</span> <code>web+</code> scheme prefix</a></ol></ol><h2 id=iana><span class=secno>16</span> IANA considerations<a href=#iana class=self-link></a></h2>
 
   
 
 
-  <h3 id=text/html>16.1 <dfn><code>text/html</code></dfn><a href=#text/html class=self-link></a></h3>
+  <h3 id=text/html><span class=secno>16.1</span> <dfn><code>text/html</code></dfn><a href=#text/html class=self-link></a></h3>
 
   <p>This registration is for community review and will be submitted to the IESG for review,
   approval, and registration with IANA.</p>
@@ -244,11 +228,11 @@
     determine.</p>
 
     <p>HTML relies on a compartmentalization scheme sometimes known as the <i>same-origin
-    policy</i>. An <a id=text/html:concept-origin href=browsers.html#concept-origin>origin</a> in most cases consists of all the pages served from the same
+    policy</i>. An <a id=text/html:concept-origin href=origin.html#concept-origin>origin</a> in most cases consists of all the pages served from the same
     host, on the same port, using the same protocol.</p>
 
     <p>It is critical, therefore, to ensure that any untrusted content that forms part of a site be
-    hosted on a different <a id=text/html:concept-origin-2 href=browsers.html#concept-origin>origin</a> than any sensitive content on that site. Untrusted
+    hosted on a different <a id=text/html:concept-origin-2 href=origin.html#concept-origin>origin</a> than any sensitive content on that site. Untrusted
     content can easily spoof any other page on the same origin, read data from that origin, cause
     scripts in that origin to execute, submit forms to and from that origin even if they are
     protected from cross-site request forgery attacks by unique tokens, and make use of any
@@ -274,13 +258,13 @@
    <dt>Person &amp; email address to contact for further information:<dd>Ian Hickson &lt;ian@hixie.ch><dt>Intended usage:<dd>Common<dt>Restrictions on usage:<dd>No restrictions apply.<dt>Author:<dd>Ian Hickson &lt;ian@hixie.ch><dt>Change controller:<dd>W3C</dl>
 
   <p><a href=https://url.spec.whatwg.org/#concept-url-fragment id=text/html:concept-url-fragment data-x-internal=concept-url-fragment>Fragments</a> used with <code id=text/html:text/html-2><a href=#text/html>text/html</a></code> resources
-  either refer to <a id=text/html:the-indicated-part-of-the-document href=browsers.html#the-indicated-part-of-the-document>the indicated part of the document</a> or provide state information for
+  either refer to <a id=text/html:the-indicated-part-of-the-document href=browsing-the-web.html#the-indicated-part-of-the-document>the indicated part of the document</a> or provide state information for
   in-page scripts.</p>
 
 
 
 
-  <h3 id=multipart/x-mixed-replace>16.2 <dfn><code>multipart/x-mixed-replace</code></dfn><a href=#multipart/x-mixed-replace class=self-link></a></h3>
+  <h3 id=multipart/x-mixed-replace><span class=secno>16.2</span> <dfn><code>multipart/x-mixed-replace</code></dfn><a href=#multipart/x-mixed-replace class=self-link></a></h3>
 
   <p>This registration is for community review and will be submitted to the IESG for review,
   approval, and registration with IANA.</p>
@@ -310,7 +294,7 @@
   used by that body part.</p>
 
 
-  <h3 id=application/xhtml+xml>16.3 <dfn><code>application/xhtml+xml</code></dfn><a href=#application/xhtml+xml class=self-link></a></h3>
+  <h3 id=application/xhtml+xml><span class=secno>16.3</span> <dfn><code>application/xhtml+xml</code></dfn><a href=#application/xhtml+xml class=self-link></a></h3>
 
   <p>This registration is for community review and will be submitted to the IESG for review,
   approval, and registration with IANA.</p>
@@ -333,7 +317,7 @@
   <a id=application/xhtml+xml:xml-mime-type href=https://mimesniff.spec.whatwg.org/#xml-mime-type data-x-internal=xml-mime-type>XML MIME type</a>. <a href=references.html#refsRFC7303>[RFC7303]</a></p>
 
 
-  <h3 id=text/cache-manifest>16.4 <dfn><code>text/cache-manifest</code></dfn><a href=#text/cache-manifest class=self-link></a></h3>
+  <h3 id=text/cache-manifest><span class=secno>16.4</span> <dfn><code>text/cache-manifest</code></dfn><a href=#text/cache-manifest class=self-link></a></h3>
 
   <p>This registration is for community review and will be submitted
   to the IESG for review, approval, and registration with IANA.</p>
@@ -375,7 +359,7 @@
   <code id=text/cache-manifest:text/cache-manifest><a href=#text/cache-manifest>text/cache-manifest</a></code> resources.</p>
 
 
-  <h3 id=text/ping>16.5 <dfn><code>text/ping</code></dfn><a href=#text/ping class=self-link></a></h3>
+  <h3 id=text/ping><span class=secno>16.5</span> <dfn><code>text/ping</code></dfn><a href=#text/ping class=self-link></a></h3>
 
   <p>This registration is for community review and will be submitted to the IESG for review,
   approval, and registration with IANA.</p>
@@ -392,7 +376,7 @@
      </dl>
    <dt>Encoding considerations:<dd>Not applicable.<dt>Security considerations:<dd>
     <p>If used exclusively in the fashion described in the context of
-    <a id=text/ping:hyperlink-auditing href=semantics.html#hyperlink-auditing>hyperlink auditing</a>, this type introduces no new
+    <a id=text/ping:hyperlink-auditing href=links.html#hyperlink-auditing>hyperlink auditing</a>, this type introduces no new
     security concerns.</p>
    <dt>Interoperability considerations:<dd>
     Rules applicable to this type are defined in this specification.
@@ -404,13 +388,13 @@
     <dl><dt>Magic number(s):<dd><code id=text/ping:text/ping><a href=#text/ping>text/ping</a></code> resources always consist of the four
      bytes 0x50 0x49 0x4E 0x47 (`<code>PING</code>`).<dt>File extension(s):<dd>No specific file extension is recommended for this type.<dt>Macintosh file type code(s):<dd>No specific Macintosh file type codes are recommended for this type.</dl>
    <dt>Person &amp; email address to contact for further information:<dd>Ian Hickson &lt;ian@hixie.ch><dt>Intended usage:<dd>Common<dt>Restrictions on usage:<dd>Only intended for use with HTTP POST requests generated as part
-   of a Web browser's processing of the <code id=text/ping:ping><a href=semantics.html#ping>ping</a></code> attribute.<dt>Author:<dd>Ian Hickson &lt;ian@hixie.ch><dt>Change controller:<dd>W3C</dl>
+   of a Web browser's processing of the <code id=text/ping:ping><a href=links.html#ping>ping</a></code> attribute.<dt>Author:<dd>Ian Hickson &lt;ian@hixie.ch><dt>Change controller:<dd>W3C</dl>
 
   <p><a href=https://url.spec.whatwg.org/#concept-url-fragment id=text/ping:concept-url-fragment data-x-internal=concept-url-fragment>Fragments</a> have no meaning with
   <code id=text/ping:text/ping-2><a href=#text/ping>text/ping</a></code> resources.</p>
 
 
-  <h3 id=application/microdata+json>16.6 <dfn><code>application/microdata+json</code></dfn><a href=#application/microdata+json class=self-link></a></h3>
+  <h3 id=application/microdata+json><span class=secno>16.6</span> <dfn><code>application/microdata+json</code></dfn><a href=#application/microdata+json class=self-link></a></h3>
 
   <p>This registration is for community review and will be submitted to the IESG for review,
   approval, and registration with IANA.</p>
@@ -441,7 +425,7 @@
   <a href=references.html#refsJSON>[JSON]</a></p>
 
 
-  <h3 id=text/event-stream>16.7 <dfn><code>text/event-stream</code></dfn><a href=#text/event-stream class=self-link></a></h3>
+  <h3 id=text/event-stream><span class=secno>16.7</span> <dfn><code>text/event-stream</code></dfn><a href=#text/event-stream class=self-link></a></h3>
 
   <p>This registration is for community review and will be submitted to the IESG for review,
   approval, and registration with IANA.</p>
@@ -486,7 +470,7 @@
   <code id=text/event-stream:text/event-stream><a href=#text/event-stream>text/event-stream</a></code> resources.</p>
 
 
-  <h3 id=ping-from>16.8 `<dfn><code>Ping-From</code></dfn>`<a href=#ping-from class=self-link></a></h3>
+  <h3 id=ping-from><span class=secno>16.8</span> `<dfn><code>Ping-From</code></dfn>`<a href=#ping-from class=self-link></a></h3>
 
   <p>This section describes a header for registration in the Permanent Message Header Field
   Registry. <a href=references.html#refsRFC3864>[RFC3864]</a></p>
@@ -496,7 +480,7 @@
    <dt>Related information:<dd>None.</dl>
 
 
-  <h3 id=ping-to>16.9 `<dfn><code>Ping-To</code></dfn>`<a href=#ping-to class=self-link></a></h3>
+  <h3 id=ping-to><span class=secno>16.9</span> `<dfn><code>Ping-To</code></dfn>`<a href=#ping-to class=self-link></a></h3>
 
   <p>This section describes a header for registration in the Permanent Message Header Field
   Registry. <a href=references.html#refsRFC3864>[RFC3864]</a></p>
@@ -506,7 +490,17 @@
    <dt>Related information:<dd>None.</dl>
 
 
-  <h3 id=last-event-id>16.10 `<dfn><code>Last-Event-ID</code></dfn>`<a href=#last-event-id class=self-link></a></h3>
+  <h3 id=refresh><span class=secno>16.10</span> `<dfn><code>Refresh</code></dfn>`<a href=#refresh class=self-link></a></h3>
+
+  <p>This section describes a header for registration in the Permanent Message Header Field
+  Registry. <a href=references.html#refsRFC3864>[RFC3864]</a></p>
+
+  <dl><dt>Header field name:<dd>Refresh<dt>Applicable protocol:<dd>http<dt>Status:<dd>standard<dt>Author/Change controller:<dd>WHATWG<dt>Specification document(s):<dd>
+    This document is the relevant specification.
+   <dt>Related information:<dd>None.</dl>
+
+
+  <h3 id=last-event-id><span class=secno>16.11</span> `<dfn><code>Last-Event-ID</code></dfn>`<a href=#last-event-id class=self-link></a></h3>
 
   <p>This section describes a header for registration in the Permanent Message Header Field
   Registry. <a href=references.html#refsRFC3864>[RFC3864]</a></p>
@@ -516,7 +510,7 @@
    <dt>Related information:<dd>None.</dl>
 
 
-  <h3 id=web+-scheme-prefix>16.11 <dfn><code>web+</code> scheme prefix</dfn><a href=#web+-scheme-prefix class=self-link></a></h3><div class=status><input onclick=toggleStatus(this) value=⋰ type=button><p class=bugs><strong>Spec bugs:</strong> <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=18496" title="Registries (IANA): Change the IANA sections to refer to the new registration system and not IANA">18496</a>, <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=18671" title="Find a solution to the problem of the IANA scheme registry being so incomplete (especially given web+)">18671</a></div>
+  <h3 id=web+-scheme-prefix><span class=secno>16.12</span> <dfn><code>web+</code> scheme prefix</dfn><a href=#web+-scheme-prefix class=self-link></a></h3><div class=status><input onclick=toggleStatus(this) value=⋰ type=button><p class=bugs><strong>Spec bugs:</strong> <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=18496" title="Registries (IANA): Change the IANA sections to refer to the new registration system and not IANA">18496</a>, <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=18671" title="Find a solution to the problem of the IANA scheme registry being so incomplete (especially given web+)">18671</a></div>
 
   <p>This section describes a convention for use with the IANA URI scheme registry. It does not
   itself register a specific scheme. <a href=references.html#refsRFC7595>[RFC7595]</a></p>
@@ -534,7 +528,7 @@
 
    <dt>Contact:<dd>Ian Hickson &lt;ian@hixie.ch><dt>Change controller:<dd>Ian Hickson &lt;ian@hixie.ch><dt>References:<dd>
     <cite>Custom scheme and content handlers</cite>, HTML Living Standard:
-    <a href=webappapis.html#custom-handlers>https://html.spec.whatwg.org/#custom-handlers</a>
+    <a href=system-state.html#custom-handlers>https://html.spec.whatwg.org/#custom-handlers</a>
    </dl>
 
 

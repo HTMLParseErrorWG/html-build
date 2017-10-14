@@ -1,17 +1,8 @@
-<!DOCTYPE html><html class=split lang=en-US-x-hixie><script src=/link-fixup.js defer=""></script><meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><title>HTML Standard</title><meta content=#3c790a name=theme-color><link rel=stylesheet href=https://resources.whatwg.org/standard.css><script defer="" src=https://resources.whatwg.org/dfn.js></script><script>
+<!DOCTYPE html><html class=split lang=en-US-x-hixie><script src=/link-fixup.js defer=""></script><meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><title>HTML Standard</title><meta content=#3c790a name=theme-color><link rel=stylesheet href=https://resources.whatwg.org/standard.css><link rel=icon href=https://resources.whatwg.org/logo.svg><script>
    function toggleStatus(div) {
      div.parentNode.classList.toggle('wrapped');
    }
-  </script><link rel=icon href=https://resources.whatwg.org/logo.svg><style>
-   [hidden] { display: none; }
-
-   .bad, .bad *:not(.X\58X) { color: gray; border-color: gray; background: transparent; }
-
-   .fingerprint { position: absolute; right: 0; z-index: 5; }
-   @media (max-width: 767px) {
-     .fingerprint { max-width: 35px; }
-   }
-
+  </script><style>
    .status { min-height: 0.6em; font: 1em sans-serif; width: 9em; padding: 0.3em; position: absolute; z-index: 8; right: 0.3em; background: #EEE; color: black; box-shadow: 0 0 3px #999; overflow: hidden; margin: -2em 0 0 0; border-collapse: initial; border-spacing: initial; }
    .status:hover { z-index: 9; }
    .status:focus-within { z-index: 9; }
@@ -46,11 +37,20 @@
    .status > .support > .opera::before { background-image: url(https://resources.whatwg.org/browser-logos/opera.png); }
    .status > .support > .safari::before { background-image: url(https://resources.whatwg.org/browser-logos/safari.png); }
    .status > .support > .samsung::before { background-image: url(https://resources.whatwg.org/browser-logos/samsung.png); }
-   .status > .caniuse { text-align: right; font-style: italic; }
+   .status > .caniuse { text-align: right; font-style: italic; width: 100%; }
    .status > .caniuse + p { margin-top: 0.5em; border-top: 1px solid silver; }
 
    @media (max-width: 767px) {
      .status { right: -9em; }
+   }
+  </style><style>
+   [hidden] { display: none; }
+
+   .bad, .bad *:not(.X\58X) { color: gray; border-color: gray; background: transparent; }
+
+   .fingerprint { position: absolute; right: 0; z-index: 5; }
+   @media (max-width: 767px) {
+     .fingerprint { max-width: 35px; }
    }
 
    .applies .yes, .yesno .yes { background: yellow; }
@@ -109,24 +109,6 @@
 
    .parse-error-table td > p:first-child { margin-top: 0; }
 
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
    #named-character-references-table {
      white-space: nowrap;
      font-size: 0.6em;
@@ -175,20 +157,22 @@
    #abstractimg .top { word-spacing: 50px; text-anchor: middle; }
    #abstractimg .left, #abstractimg .bottom { word-spacing: 12px; }
    #abstractimg .right { font-size: 25px; }
-  </style>
+  </style><body>
+  
+  <script async="" src=/html-dfn.js></script>
   <script data-file-issue-url=https://github.com/whatwg/html/issues/new src=https://resources.whatwg.org/file-issue.js async=""></script>
   <header id=head class="head with-buttons">
-   <p><a href=https://whatwg.org/ class=logo><img alt=WHATWG src=https://resources.whatwg.org/logo.svg width=100 height=100></a></p>
-   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>31 May 2017</span></h2></hgroup>
+   <a href=https://whatwg.org/ class=logo><img alt=WHATWG src=https://resources.whatwg.org/logo.svg width=100 height=100></a>
+   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>14 October 2017</span></h2></hgroup>
    
+   
+
    
   </header>
 
   
 
   
-
-  
   
 
   
@@ -196,15 +180,15 @@
 
   
 
-  <nav><a href=scripting.html>← 4.12 Scripting</a> — <a href=index.html>Table of Contents</a> — <a href=interaction.html>6 User interaction →</a></nav><ol class=toc><li id=toc-microdata><a href=microdata.html#microdata>5 Microdata</a><ol><li><a href=microdata.html#introduction-7>5.1 Introduction</a><ol><li><a href=microdata.html#overview>5.1.1 Overview</a><li><a href=microdata.html#the-basic-syntax>5.1.2 The basic syntax</a><li><a href=microdata.html#typed-items>5.1.3 Typed items</a><li><a href=microdata.html#global-identifiers-for-items>5.1.4 Global identifiers for items</a><li><a href=microdata.html#selecting-names-when-defining-vocabularies>5.1.5 Selecting names when defining vocabularies</a></ol><li><a href=microdata.html#encoding-microdata>5.2 Encoding microdata</a><ol><li><a href=microdata.html#the-microdata-model>5.2.1 The microdata model</a><li><a href=microdata.html#items>5.2.2 Items</a><li><a href=microdata.html#names:-the-itemprop-attribute>5.2.3 Names: the <code>itemprop</code> attribute</a><li><a href=microdata.html#values>5.2.4 Values</a><li><a href=microdata.html#associating-names-with-items>5.2.5 Associating names with items</a><li><a href=microdata.html#microdata-and-other-namespaces>5.2.6 Microdata and other namespaces</a></ol><li><a href=microdata.html#mdvocabs>5.3 Sample microdata vocabularies</a><ol><li><a href=microdata.html#vcard>5.3.1 vCard</a><ol><li><a href=microdata.html#conversion-to-vcard>5.3.1.1 Conversion to vCard</a><li><a href=microdata.html#examples-2>5.3.1.2 Examples</a></ol><li><a href=microdata.html#vevent>5.3.2 vEvent</a><ol><li><a href=microdata.html#conversion-to-icalendar>5.3.2.1 Conversion to iCalendar</a><li><a href=microdata.html#examples-3>5.3.2.2 Examples</a></ol><li><a href=microdata.html#licensing-works>5.3.3 Licensing works</a><ol><li><a href=microdata.html#examples-4>5.3.3.1 Examples</a></ol></ol><li><a href=microdata.html#converting-html-to-other-formats>5.4 Converting HTML to other formats</a><ol><li><a href=microdata.html#json>5.4.1 JSON</a></ol></ol></ol><h2 id=microdata>5 <dfn>Microdata</dfn><a href=#microdata class=self-link></a></h2>
+  <nav><a href=semantics-other.html>← 4.14 Common idioms without dedicated elements</a> — <a href=index.html>Table of Contents</a> — <a href=interaction.html>6 User interaction →</a></nav><ol class=toc><li id=toc-microdata><a href=microdata.html#microdata><span class=secno>5</span> Microdata</a><ol><li><a href=microdata.html#introduction-7><span class=secno>5.1</span> Introduction</a><ol><li><a href=microdata.html#overview><span class=secno>5.1.1</span> Overview</a><li><a href=microdata.html#the-basic-syntax><span class=secno>5.1.2</span> The basic syntax</a><li><a href=microdata.html#typed-items><span class=secno>5.1.3</span> Typed items</a><li><a href=microdata.html#global-identifiers-for-items><span class=secno>5.1.4</span> Global identifiers for items</a><li><a href=microdata.html#selecting-names-when-defining-vocabularies><span class=secno>5.1.5</span> Selecting names when defining vocabularies</a></ol><li><a href=microdata.html#encoding-microdata><span class=secno>5.2</span> Encoding microdata</a><ol><li><a href=microdata.html#the-microdata-model><span class=secno>5.2.1</span> The microdata model</a><li><a href=microdata.html#items><span class=secno>5.2.2</span> Items</a><li><a href=microdata.html#names:-the-itemprop-attribute><span class=secno>5.2.3</span> Names: the <code>itemprop</code> attribute</a><li><a href=microdata.html#values><span class=secno>5.2.4</span> Values</a><li><a href=microdata.html#associating-names-with-items><span class=secno>5.2.5</span> Associating names with items</a><li><a href=microdata.html#microdata-and-other-namespaces><span class=secno>5.2.6</span> Microdata and other namespaces</a></ol><li><a href=microdata.html#mdvocabs><span class=secno>5.3</span> Sample microdata vocabularies</a><ol><li><a href=microdata.html#vcard><span class=secno>5.3.1</span> vCard</a><ol><li><a href=microdata.html#conversion-to-vcard><span class=secno>5.3.1.1</span> Conversion to vCard</a><li><a href=microdata.html#examples-2><span class=secno>5.3.1.2</span> Examples</a></ol><li><a href=microdata.html#vevent><span class=secno>5.3.2</span> vEvent</a><ol><li><a href=microdata.html#conversion-to-icalendar><span class=secno>5.3.2.1</span> Conversion to iCalendar</a><li><a href=microdata.html#examples-3><span class=secno>5.3.2.2</span> Examples</a></ol><li><a href=microdata.html#licensing-works><span class=secno>5.3.3</span> Licensing works</a><ol><li><a href=microdata.html#examples-4><span class=secno>5.3.3.1</span> Examples</a></ol></ol><li><a href=microdata.html#converting-html-to-other-formats><span class=secno>5.4</span> Converting HTML to other formats</a><ol><li><a href=microdata.html#json><span class=secno>5.4.1</span> JSON</a></ol></ol></ol><h2 id=microdata><span class=secno>5</span> <dfn>Microdata</dfn><a href=#microdata class=self-link></a></h2>
 
 
 
 
 
-  <h3 id=introduction-7>5.1 Introduction<a href=#introduction-7 class=self-link></a></h3>
+  <h3 id=introduction-7><span class=secno>5.1</span> Introduction<a href=#introduction-7 class=self-link></a></h3>
 
-  <h4 id=overview>5.1.1 Overview<a href=#overview class=self-link></a></h4>
+  <h4 id=overview><span class=secno>5.1.1</span> Overview<a href=#overview class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -218,7 +202,7 @@
   content.</p>
 
 
-  <h4 id=the-basic-syntax>5.1.2 The basic syntax<a href=#the-basic-syntax class=self-link></a></h4>
+  <h4 id=the-basic-syntax><span class=secno>5.1.2</span> The basic syntax<a href=#the-basic-syntax class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -280,8 +264,8 @@
 
   </div>
 
-  <p>When a string value is a <a id=the-basic-syntax:url href=https://url.spec.whatwg.org/#concept-url data-x-internal=url>URL</a>, it is expressed using the <code id=the-basic-syntax:the-a-element><a href=semantics.html#the-a-element>a</a></code> element and
-  its <code id=the-basic-syntax:attr-hyperlink-href><a href=semantics.html#attr-hyperlink-href>href</a></code> attribute, the <code id=the-basic-syntax:the-img-element><a href=embedded-content.html#the-img-element>img</a></code> element and its
+  <p>When a string value is a <a id=the-basic-syntax:url href=https://url.spec.whatwg.org/#concept-url data-x-internal=url>URL</a>, it is expressed using the <code id=the-basic-syntax:the-a-element><a href=text-level-semantics.html#the-a-element>a</a></code> element and
+  its <code id=the-basic-syntax:attr-hyperlink-href><a href=links.html#attr-hyperlink-href>href</a></code> attribute, the <code id=the-basic-syntax:the-img-element><a href=embedded-content.html#the-img-element>img</a></code> element and its
   <code id=the-basic-syntax:attr-img-src><a href=embedded-content.html#attr-img-src>src</a></code> attribute, or other elements that link to or embed external
   resources.</p>
 
@@ -296,7 +280,7 @@
   </div>
 
   <p>When a string value is in some machine-readable format unsuitable for human consumption, it is
-  expressed using the <code id=the-basic-syntax:attr-data-value><a href=semantics.html#attr-data-value>value</a></code> attribute of the <code id=the-basic-syntax:the-data-element><a href=semantics.html#the-data-element>data</a></code>
+  expressed using the <code id=the-basic-syntax:attr-data-value><a href=text-level-semantics.html#attr-data-value>value</a></code> attribute of the <code id=the-basic-syntax:the-data-element><a href=text-level-semantics.html#the-data-element>data</a></code>
   element, with the human-readable version given in the element's contents.</p>
 
   <div class=example>
@@ -310,11 +294,11 @@
 
   </div>
 
-  <p>For numeric data, the <code id=the-basic-syntax:the-meter-element><a href=forms.html#the-meter-element>meter</a></code> element and its <code id=the-basic-syntax:attr-meter-value><a href=forms.html#attr-meter-value>value</a></code> attribute can be used instead.</p>
+  <p>For numeric data, the <code id=the-basic-syntax:the-meter-element><a href=form-elements.html#the-meter-element>meter</a></code> element and its <code id=the-basic-syntax:attr-meter-value><a href=form-elements.html#attr-meter-value>value</a></code> attribute can be used instead.</p>
 
   <div class=example>
 
-   <p>Here a rating is given using a <code id=the-basic-syntax:the-meter-element-2><a href=forms.html#the-meter-element>meter</a></code> element.</p>
+   <p>Here a rating is given using a <code id=the-basic-syntax:the-meter-element-2><a href=form-elements.html#the-meter-element>meter</a></code> element.</p>
 
    <pre>&lt;div itemscope itemtype="http://schema.org/Product">
  &lt;span itemprop="name">Panasonic White 60L Refrigerator&lt;/span>
@@ -328,7 +312,7 @@
 
   </div>
 
-  <p>Similarly, for date- and time-related data, the <code id=the-basic-syntax:the-time-element><a href=semantics.html#the-time-element>time</a></code> element and its <code id=the-basic-syntax:attr-time-datetime><a href=semantics.html#attr-time-datetime>datetime</a></code> attribute can be used instead.</p>
+  <p>Similarly, for date- and time-related data, the <code id=the-basic-syntax:the-time-element><a href=text-level-semantics.html#the-time-element>time</a></code> element and its <code id=the-basic-syntax:attr-time-datetime><a href=text-level-semantics.html#attr-time-datetime>datetime</a></code> attribute can be used instead.</p>
 
   <div class=example>
 
@@ -445,7 +429,7 @@
   </div>
 
 
-  <h4 id=typed-items>5.1.3 Typed items<a href=#typed-items class=self-link></a></h4>
+  <h4 id=typed-items><span class=secno>5.1.3</span> Typed items<a href=#typed-items class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -486,7 +470,7 @@
   An item cannot be given two types if they do not use the same vocabulary, however.</p>
 
 
-  <h4 id=global-identifiers-for-items>5.1.4 Global identifiers for items<a href=#global-identifiers-for-items class=self-link></a></h4>
+  <h4 id=global-identifiers-for-items><span class=secno>5.1.4</span> Global identifiers for items<a href=#global-identifiers-for-items class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -523,7 +507,7 @@
 
 
 
-  <h4 id=selecting-names-when-defining-vocabularies>5.1.5 Selecting names when defining vocabularies<a href=#selecting-names-when-defining-vocabularies class=self-link></a></h4>
+  <h4 id=selecting-names-when-defining-vocabularies><span class=secno>5.1.5</span> Selecting names when defining vocabularies<a href=#selecting-names-when-defining-vocabularies class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -589,10 +573,10 @@
 
 
 
-  <h3 id=encoding-microdata>5.2 Encoding microdata<a href=#encoding-microdata class=self-link></a></h3>
+  <h3 id=encoding-microdata><span class=secno>5.2</span> Encoding microdata<a href=#encoding-microdata class=self-link></a></h3>
 
 
-  <h4 id=the-microdata-model>5.2.1 The microdata model<a href=#the-microdata-model class=self-link></a></h4>
+  <h4 id=the-microdata-model><span class=secno>5.2.1</span> The microdata model<a href=#the-microdata-model class=self-link></a></h4>
 
   <p>The microdata model consists of groups of name-value pairs known as <a href=#concept-item id=the-microdata-model:concept-item>items</a>.</p>
 
@@ -605,9 +589,9 @@
 
 
 
-  <h4 id=items>5.2.2 Items<a href=#items class=self-link></a></h4>
+  <h4 id=items><span class=secno>5.2.2</span> Items<a href=#items class=self-link></a></h4>
 
-  <p>Every <a href=infrastructure.html#html-elements id=items:html-elements>HTML element</a> may have an <dfn id=attr-itemscope><code>itemscope</code></dfn> attribute specified. The <code id=items:attr-itemscope><a href=#attr-itemscope>itemscope</a></code> attribute is a <a id=items:boolean-attribute href=infrastructure.html#boolean-attribute>boolean attribute</a>.</p>
+  <p>Every <a href=infrastructure.html#html-elements id=items:html-elements>HTML element</a> may have an <dfn id=attr-itemscope><code>itemscope</code></dfn> attribute specified. The <code id=items:attr-itemscope><a href=#attr-itemscope>itemscope</a></code> attribute is a <a id=items:boolean-attribute href=common-microsyntaxes.html#boolean-attribute>boolean attribute</a>.</p>
 
   <p>An element with the <code id=items:attr-itemscope-2><a href=#attr-itemscope>itemscope</a></code> attribute specified creates a
   new <dfn id=concept-item>item</dfn>, a group of name-value pairs.</p>
@@ -618,7 +602,7 @@
   types</a> of the <a href=#concept-item id=items:concept-item>item</a>.</p>
 
   <p>The <code id=items:attr-itemtype><a href=#attr-itemtype>itemtype</a></code> attribute, if specified, must have a value that
-  is an <a id=items:unordered-set-of-unique-space-separated-tokens href=infrastructure.html#unordered-set-of-unique-space-separated-tokens>unordered set of unique space-separated tokens</a> that are
+  is an <a id=items:unordered-set-of-unique-space-separated-tokens href=common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens>unordered set of unique space-separated tokens</a> that are
   <a id=items:case-sensitive href=infrastructure.html#case-sensitive>case-sensitive</a>, each of which is a <a id=items:valid-url-string href=https://url.spec.whatwg.org/#valid-url-string data-x-internal=valid-url-string>valid URL string</a> that is an
   <a id=items:absolute-url href=https://url.spec.whatwg.org/#syntax-url-absolute data-x-internal=absolute-url>absolute URL</a>, and all of which are defined to use the same vocabulary. The
   attribute's value must have at least one token.</p>
@@ -662,10 +646,10 @@
   the <a href=#concept-item id=items:concept-item-8>item</a>, so that it can be related to other <a href=#concept-item id=items:concept-item-9>items</a> on pages elsewhere on the Web.</p>
 
   <p>The <code id=items:attr-itemid><a href=#attr-itemid>itemid</a></code> attribute, if specified, must have a value that is
-  a <a id=items:valid-url-potentially-surrounded-by-spaces href=infrastructure.html#valid-url-potentially-surrounded-by-spaces>valid URL potentially surrounded by spaces</a>.</p>
+  a <a id=items:valid-url-potentially-surrounded-by-spaces href=urls-and-fetching.html#valid-url-potentially-surrounded-by-spaces>valid URL potentially surrounded by spaces</a>.</p>
 
   <p>The <dfn id=global-identifier>global identifier</dfn> of an <a href=#concept-item id=items:concept-item-10>item</a> is the value of
-  its element's <code id=items:attr-itemid-2><a href=#attr-itemid>itemid</a></code> attribute, if it has one, <a href=infrastructure.html#parse-a-url id=items:parse-a-url>parsed</a> relative to the <a id=items:node-document href=https://dom.spec.whatwg.org/#concept-node-document data-x-internal=node-document>node document</a> of the element on
+  its element's <code id=items:attr-itemid-2><a href=#attr-itemid>itemid</a></code> attribute, if it has one, <a href=urls-and-fetching.html#parse-a-url id=items:parse-a-url>parsed</a> relative to the <a id=items:node-document href=https://dom.spec.whatwg.org/#concept-node-document data-x-internal=node-document>node document</a> of the element on
   which the attribute is specified. If the <code id=items:attr-itemid-3><a href=#attr-itemid>itemid</a></code> attribute is
   missing or if resolving it fails, it is said to have no <a href=#global-identifier id=items:global-identifier>global identifier</a>.</p>
 
@@ -686,7 +670,7 @@
   elements to crawl to find the name-value pairs of the <a href=#concept-item id=items:concept-item-11>item</a>.</p>
 
   <p>The <code id=items:attr-itemref><a href=#attr-itemref>itemref</a></code> attribute, if specified, must have a value that
-  is an <a id=items:unordered-set-of-unique-space-separated-tokens-2 href=infrastructure.html#unordered-set-of-unique-space-separated-tokens>unordered set of unique space-separated tokens</a> that are
+  is an <a id=items:unordered-set-of-unique-space-separated-tokens-2 href=common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens>unordered set of unique space-separated tokens</a> that are
   <a id=items:case-sensitive-2 href=infrastructure.html#case-sensitive>case-sensitive</a>, consisting of <a href=https://dom.spec.whatwg.org/#concept-id id=items:concept-id data-x-internal=concept-id>IDs</a> of elements in the
   same <a id=items:tree href=https://dom.spec.whatwg.org/#concept-tree data-x-internal=tree>tree</a>.</p>
 
@@ -762,12 +746,12 @@
   </div>
 
 
-  <h4 id=names:-the-itemprop-attribute>5.2.3 Names: the <dfn><code>itemprop</code></dfn> attribute<a href=#names:-the-itemprop-attribute class=self-link></a></h4>
+  <h4 id=names:-the-itemprop-attribute><span class=secno>5.2.3</span> Names: the <dfn><code>itemprop</code></dfn> attribute<a href=#names:-the-itemprop-attribute class=self-link></a></h4>
 
   <p>Every <a href=infrastructure.html#html-elements id=names:-the-itemprop-attribute:html-elements>HTML element</a> may have an <code id=names:-the-itemprop-attribute:names:-the-itemprop-attribute><a href=#names:-the-itemprop-attribute>itemprop</a></code> attribute specified, if doing so <a href=#the-properties-of-an-item id=names:-the-itemprop-attribute:the-properties-of-an-item>adds one or more properties</a> to one or more <a href=#concept-item id=names:-the-itemprop-attribute:concept-item>items</a> (as defined below).</p>
 
   <p>The <code id=names:-the-itemprop-attribute:names:-the-itemprop-attribute-2><a href=#names:-the-itemprop-attribute>itemprop</a></code> attribute, if specified, must have a value that
-  is an <a id=names:-the-itemprop-attribute:unordered-set-of-unique-space-separated-tokens href=infrastructure.html#unordered-set-of-unique-space-separated-tokens>unordered set of unique space-separated tokens</a> that are
+  is an <a id=names:-the-itemprop-attribute:unordered-set-of-unique-space-separated-tokens href=common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens>unordered set of unique space-separated tokens</a> that are
   <a id=names:-the-itemprop-attribute:case-sensitive href=infrastructure.html#case-sensitive>case-sensitive</a>, representing the names of the name-value pairs that it adds. The
   attribute's value must have at least one token.</p>
 
@@ -846,7 +830,7 @@
 
 
 
-  <h4 id=values>5.2.4 Values<a href=#values class=self-link></a></h4>
+  <h4 id=values><span class=secno>5.2.4</span> Values<a href=#values class=self-link></a></h4>
 
   <p>The <dfn id=concept-property-value>property value</dfn> of a name-value pair added by an
   element with an <code id=values:names:-the-itemprop-attribute><a href=#names:-the-itemprop-attribute>itemprop</a></code> attribute is as given for the first
@@ -861,41 +845,41 @@
     <p>The value is the value of the element's <code id=values:attr-meta-content><a href=semantics.html#attr-meta-content>content</a></code>
     attribute, if any, or the empty string if there is no such attribute.</p>
 
-   <dt>If the element is an <code id=values:the-audio-element><a href=embedded-content.html#the-audio-element>audio</a></code>, <code id=values:the-embed-element><a href=embedded-content.html#the-embed-element>embed</a></code>, <code id=values:the-iframe-element><a href=embedded-content.html#the-iframe-element>iframe</a></code>,
-   <code id=values:the-img-element><a href=embedded-content.html#the-img-element>img</a></code>, <code id=values:the-source-element><a href=embedded-content.html#the-source-element>source</a></code>, <code id=values:the-track-element><a href=embedded-content.html#the-track-element>track</a></code>, or <code id=values:the-video-element><a href=embedded-content.html#the-video-element>video</a></code> element<dd>
+   <dt>If the element is an <code id=values:the-audio-element><a href=media.html#the-audio-element>audio</a></code>, <code id=values:the-embed-element><a href=iframe-embed-object.html#the-embed-element>embed</a></code>, <code id=values:the-iframe-element><a href=iframe-embed-object.html#the-iframe-element>iframe</a></code>,
+   <code id=values:the-img-element><a href=embedded-content.html#the-img-element>img</a></code>, <code id=values:the-source-element><a href=embedded-content.html#the-source-element>source</a></code>, <code id=values:the-track-element><a href=media.html#the-track-element>track</a></code>, or <code id=values:the-video-element><a href=media.html#the-video-element>video</a></code> element<dd>
 
-    <p>The value is the <a id=values:resulting-url-string href=infrastructure.html#resulting-url-string>resulting URL string</a> that results from <a href=infrastructure.html#parse-a-url id=values:parse-a-url>parsing</a> the value of the element's <code>src</code> attribute relative to
+    <p>The value is the <a id=values:resulting-url-string href=urls-and-fetching.html#resulting-url-string>resulting URL string</a> that results from <a href=urls-and-fetching.html#parse-a-url id=values:parse-a-url>parsing</a> the value of the element's <code>src</code> attribute relative to
     the <a id=values:node-document href=https://dom.spec.whatwg.org/#concept-node-document data-x-internal=node-document>node document</a> of the element at the time the attribute is set, or the empty
-    string if there is no such attribute or if <a href=infrastructure.html#parse-a-url id=values:parse-a-url-2>parsing</a> it results
+    string if there is no such attribute or if <a href=urls-and-fetching.html#parse-a-url id=values:parse-a-url-2>parsing</a> it results
     in an error.</p>
 
-   <dt>If the element is an <code id=values:the-a-element><a href=semantics.html#the-a-element>a</a></code>, <code id=values:the-area-element><a href=embedded-content.html#the-area-element>area</a></code>, or <code id=values:the-link-element><a href=semantics.html#the-link-element>link</a></code> element<dd>
+   <dt>If the element is an <code id=values:the-a-element><a href=text-level-semantics.html#the-a-element>a</a></code>, <code id=values:the-area-element><a href=image-maps.html#the-area-element>area</a></code>, or <code id=values:the-link-element><a href=semantics.html#the-link-element>link</a></code> element<dd>
 
-    <p>The value is the <a id=values:resulting-url-string-2 href=infrastructure.html#resulting-url-string>resulting URL string</a> that results from <a href=infrastructure.html#parse-a-url id=values:parse-a-url-3>parsing</a> the value of the element's <code>href</code> attribute relative to
+    <p>The value is the <a id=values:resulting-url-string-2 href=urls-and-fetching.html#resulting-url-string>resulting URL string</a> that results from <a href=urls-and-fetching.html#parse-a-url id=values:parse-a-url-3>parsing</a> the value of the element's <code>href</code> attribute relative to
     the <a id=values:node-document-2 href=https://dom.spec.whatwg.org/#concept-node-document data-x-internal=node-document>node document</a> of the element at the time the attribute is set, or the empty
-    string if there is no such attribute or if <a href=infrastructure.html#parse-a-url id=values:parse-a-url-4>parsing</a> it results
+    string if there is no such attribute or if <a href=urls-and-fetching.html#parse-a-url id=values:parse-a-url-4>parsing</a> it results
     in an error.</p>
 
-   <dt>If the element is an <code id=values:the-object-element><a href=embedded-content.html#the-object-element>object</a></code> element<dd>
+   <dt>If the element is an <code id=values:the-object-element><a href=iframe-embed-object.html#the-object-element>object</a></code> element<dd>
 
-    <p>The value is the <a id=values:resulting-url-string-3 href=infrastructure.html#resulting-url-string>resulting URL string</a> that results from <a href=infrastructure.html#parse-a-url id=values:parse-a-url-5>parsing</a> the value of the element's <code>data</code> attribute relative to
+    <p>The value is the <a id=values:resulting-url-string-3 href=urls-and-fetching.html#resulting-url-string>resulting URL string</a> that results from <a href=urls-and-fetching.html#parse-a-url id=values:parse-a-url-5>parsing</a> the value of the element's <code>data</code> attribute relative to
     the <a id=values:node-document-3 href=https://dom.spec.whatwg.org/#concept-node-document data-x-internal=node-document>node document</a> of the element at the time the attribute is set, or the empty
-    string if there is no such attribute or if <a href=infrastructure.html#parse-a-url id=values:parse-a-url-6>parsing</a> it results
+    string if there is no such attribute or if <a href=urls-and-fetching.html#parse-a-url id=values:parse-a-url-6>parsing</a> it results
     in an error.</p>
 
-   <dt>If the element is a <code id=values:the-data-element><a href=semantics.html#the-data-element>data</a></code> element<dd>
+   <dt>If the element is a <code id=values:the-data-element><a href=text-level-semantics.html#the-data-element>data</a></code> element<dd>
 
-    <p>The value is the value of the element's <code id=values:attr-data-value><a href=semantics.html#attr-data-value>value</a></code> attribute,
+    <p>The value is the value of the element's <code id=values:attr-data-value><a href=text-level-semantics.html#attr-data-value>value</a></code> attribute,
     if it has one, or the empty string otherwise.</p>
 
-   <dt>If the element is a <code id=values:the-meter-element><a href=forms.html#the-meter-element>meter</a></code> element<dd>
+   <dt>If the element is a <code id=values:the-meter-element><a href=form-elements.html#the-meter-element>meter</a></code> element<dd>
 
-    <p>The value is the value of the element's <code id=values:attr-meter-value><a href=forms.html#attr-meter-value>value</a></code> attribute,
+    <p>The value is the value of the element's <code id=values:attr-meter-value><a href=form-elements.html#attr-meter-value>value</a></code> attribute,
     if it has one, or the empty string otherwise.</p>
 
-   <dt>If the element is a <code id=values:the-time-element><a href=semantics.html#the-time-element>time</a></code> element<dd>
+   <dt>If the element is a <code id=values:the-time-element><a href=text-level-semantics.html#the-time-element>time</a></code> element<dd>
 
-    <p>The value is the element's <a id=values:datetime-value href=semantics.html#datetime-value>datetime value</a>.</p>
+    <p>The value is the element's <a id=values:datetime-value href=text-level-semantics.html#datetime-value>datetime value</a>.</p>
 
    <dt>Otherwise<dd>
 
@@ -903,9 +887,9 @@
 
    </dl>
 
-  <p>The <dfn id=url-property-elements>URL property elements</dfn> are the <code id=values:the-a-element-2><a href=semantics.html#the-a-element>a</a></code>, <code id=values:the-area-element-2><a href=embedded-content.html#the-area-element>area</a></code>,
-  <code id=values:the-audio-element-2><a href=embedded-content.html#the-audio-element>audio</a></code>, <code id=values:the-embed-element-2><a href=embedded-content.html#the-embed-element>embed</a></code>, <code id=values:the-iframe-element-2><a href=embedded-content.html#the-iframe-element>iframe</a></code>, <code id=values:the-img-element-2><a href=embedded-content.html#the-img-element>img</a></code>, <code id=values:the-link-element-2><a href=semantics.html#the-link-element>link</a></code>,
-  <code id=values:the-object-element-2><a href=embedded-content.html#the-object-element>object</a></code>, <code id=values:the-source-element-2><a href=embedded-content.html#the-source-element>source</a></code>, <code id=values:the-track-element-2><a href=embedded-content.html#the-track-element>track</a></code>, and <code id=values:the-video-element-2><a href=embedded-content.html#the-video-element>video</a></code> elements.</p>
+  <p>The <dfn id=url-property-elements>URL property elements</dfn> are the <code id=values:the-a-element-2><a href=text-level-semantics.html#the-a-element>a</a></code>, <code id=values:the-area-element-2><a href=image-maps.html#the-area-element>area</a></code>,
+  <code id=values:the-audio-element-2><a href=media.html#the-audio-element>audio</a></code>, <code id=values:the-embed-element-2><a href=iframe-embed-object.html#the-embed-element>embed</a></code>, <code id=values:the-iframe-element-2><a href=iframe-embed-object.html#the-iframe-element>iframe</a></code>, <code id=values:the-img-element-2><a href=embedded-content.html#the-img-element>img</a></code>, <code id=values:the-link-element-2><a href=semantics.html#the-link-element>link</a></code>,
+  <code id=values:the-object-element-2><a href=iframe-embed-object.html#the-object-element>object</a></code>, <code id=values:the-source-element-2><a href=embedded-content.html#the-source-element>source</a></code>, <code id=values:the-track-element-2><a href=media.html#the-track-element>track</a></code>, and <code id=values:the-video-element-2><a href=media.html#the-video-element>video</a></code> elements.</p>
 
   <p>If a property's <a href=#concept-property-value id=values:concept-property-value>value</a>, as defined by the property's
   definition, is an <a id=values:absolute-url href=https://url.spec.whatwg.org/#syntax-url-absolute data-x-internal=absolute-url>absolute URL</a>, the property must be specified using a <a href=#url-property-elements id=values:url-property-elements>URL property element</a>.</p>
@@ -916,16 +900,16 @@
 
   <p class=example>For example, a book about the first moon landing  could be
   called "mission:moon". A "title" property from a vocabulary that defines a title as being a string
-  would not expect the title to be given in an <code id=values:the-a-element-3><a href=semantics.html#the-a-element>a</a></code> element, even though it looks like a
+  would not expect the title to be given in an <code id=values:the-a-element-3><a href=text-level-semantics.html#the-a-element>a</a></code> element, even though it looks like a
   <a id=values:url href=https://url.spec.whatwg.org/#concept-url data-x-internal=url>URL</a>. On the other hand, if there was a (rather narrowly scoped!) vocabulary for
   "books whose titles look like URLs" which had a "title" property defined to take a URL, then the
-  property <em>would</em> expect the title to be given in an <code id=values:the-a-element-4><a href=semantics.html#the-a-element>a</a></code> element (or one of the
+  property <em>would</em> expect the title to be given in an <code id=values:the-a-element-4><a href=text-level-semantics.html#the-a-element>a</a></code> element (or one of the
   other <a href=#url-property-elements id=values:url-property-elements-2>URL property elements</a>), because of the requirement above.</p>
 
 
   
 
-  <h4 id=associating-names-with-items>5.2.5 Associating names with items<a href=#associating-names-with-items class=self-link></a></h4>
+  <h4 id=associating-names-with-items><span class=secno>5.2.5</span> Associating names with items<a href=#associating-names-with-items class=self-link></a></h4>
 
   <p>To find <dfn id=the-properties-of-an-item>the properties of an item</dfn> defined by the element <var>root</var>,
   the user agent must run the following steps. These steps are also used to flag <a href=#microdata-error id=associating-names-with-items:microdata-error>microdata errors</a>.</p>
@@ -1018,7 +1002,7 @@
    
 
 
-  <h4 id=microdata-and-other-namespaces>5.2.6 Microdata and other namespaces<a href=#microdata-and-other-namespaces class=self-link></a></h4>
+  <h4 id=microdata-and-other-namespaces><span class=secno>5.2.6</span> Microdata and other namespaces<a href=#microdata-and-other-namespaces class=self-link></a></h4>
 
   <p>Currently, the <code id=microdata-and-other-namespaces:attr-itemscope><a href=#attr-itemscope>itemscope</a></code>, <code id=microdata-and-other-namespaces:names:-the-itemprop-attribute><a href=#names:-the-itemprop-attribute>itemprop</a></code>, and other microdata attributes are only defined for
   <a id=microdata-and-other-namespaces:html-elements href=infrastructure.html#html-elements>HTML elements</a>. This means that attributes with the literal names "<code>itemscope</code>", "<code>itemprop</code>", etc, do not cause microdata
@@ -1035,13 +1019,13 @@
   </div>
 
 
-  <h3 id=mdvocabs>5.3 Sample microdata vocabularies<a href=#mdvocabs class=self-link></a></h3>
+  <h3 id=mdvocabs><span class=secno>5.3</span> Sample microdata vocabularies<a href=#mdvocabs class=self-link></a></h3>
 
   <p>The vocabularies in this section are primarily intended to demonstrate how a vocabulary is
   specified, though they are also usable in their own right.</p>
 
 
-  <h4 id=vcard>5.3.1 vCard<a href=#vcard class=self-link></a></h4>
+  <h4 id=vcard><span class=secno>5.3.1</span> vCard<a href=#vcard class=self-link></a></h4>
 
   <p>An item with the <a href=#item-types id=vcard:item-types>item type</a> <dfn id=md-vcard><code>http://microformats.org/profile/hcard</code></dfn> represents a person's or
   organization's contact information.</p>
@@ -1154,7 +1138,7 @@
 
     <p>Gives the birth date of the person or organization.</p>
 
-    <p>The <a href=#concept-property-value id=vcard:concept-property-value-16>value</a> must be a <a id=vcard:valid-date-string href=infrastructure.html#valid-date-string>valid date
+    <p>The <a href=#concept-property-value id=vcard:concept-property-value-16>value</a> must be a <a id=vcard:valid-date-string href=common-microsyntaxes.html#valid-date-string>valid date
     string</a>.</p>
 
     <p>A single property with the name <code id=vcard:md-vcard-bday><a href=#md-vcard-bday>bday</a></code> may be present within
@@ -1164,7 +1148,7 @@
 
     <p>Gives the birth date of the person or organization.</p>
 
-    <p>The <a href=#concept-property-value id=vcard:concept-property-value-17>value</a> must be a <a id=vcard:valid-date-string-2 href=infrastructure.html#valid-date-string>valid date
+    <p>The <a href=#concept-property-value id=vcard:concept-property-value-17>value</a> must be a <a id=vcard:valid-date-string-2 href=common-microsyntaxes.html#valid-date-string>valid date
     string</a>.</p>
 
     <p>A single property with the name <code id=vcard:md-vcard-anniversary><a href=#md-vcard-anniversary>anniversary</a></code> may be
@@ -1370,8 +1354,8 @@
     <p>The <a href=#concept-property-value id=vcard:concept-property-value-48>value</a> must be text and must match the
     following syntax:</p>
 
-    <ol><li>Either a U+002B PLUS SIGN character (+) or a U+002D HYPHEN-MINUS character (-).<li>A <a id=vcard:valid-non-negative-integer href=infrastructure.html#valid-non-negative-integer>valid non-negative integer</a> that is exactly two digits long and that
-     represents a number in the range 00..23.<li>A U+003A COLON character (:).<li>A <a id=vcard:valid-non-negative-integer-2 href=infrastructure.html#valid-non-negative-integer>valid non-negative integer</a> that is exactly two digits long and that
+    <ol><li>Either a U+002B PLUS SIGN character (+) or a U+002D HYPHEN-MINUS character (-).<li>A <a id=vcard:valid-non-negative-integer href=common-microsyntaxes.html#valid-non-negative-integer>valid non-negative integer</a> that is exactly two digits long and that
+     represents a number in the range 00..23.<li>A U+003A COLON character (:).<li>A <a id=vcard:valid-non-negative-integer-2 href=common-microsyntaxes.html#valid-non-negative-integer>valid non-negative integer</a> that is exactly two digits long and that
      represents a number in the range 00..59.</ol>
 
     <p>Any number of properties with the name <code id=vcard:md-vcard-tz><a href=#md-vcard-tz>tz</a></code> may be present
@@ -1534,7 +1518,7 @@
 
     <p>Gives the revision date and time of the contact information.</p>
 
-    <p>The <a href=#concept-property-value id=vcard:concept-property-value-67>value</a> must be text that is a <a id=vcard:valid-global-date-and-time-string href=infrastructure.html#valid-global-date-and-time-string>valid
+    <p>The <a href=#concept-property-value id=vcard:concept-property-value-67>value</a> must be text that is a <a id=vcard:valid-global-date-and-time-string href=common-microsyntaxes.html#valid-global-date-and-time-string>valid
     global date and time string</a>.</p>
 
     
@@ -1628,7 +1612,7 @@
    </dl>
 
 
-  <h5 id=conversion-to-vcard>5.3.1.1 Conversion to vCard<a href=#conversion-to-vcard class=self-link></a></h5>
+  <h5 id=conversion-to-vcard><span class=secno>5.3.1.1</span> Conversion to vCard<a href=#conversion-to-vcard class=self-link></a></h5>
 
   <p>Given a list of nodes <var>nodes</var> in a <code id=conversion-to-vcard:document><a href=dom.html#document>Document</a></code>, a user agent must
   run the following algorithm to <dfn id=extracting-a-vcard>extract any vCard data represented
@@ -1760,8 +1744,8 @@
         <ol><li><p>Let <var>value</var> be the property's <a href=#concept-property-value id=conversion-to-vcard:concept-property-value-20>value</a>.<li><p>If <var>element</var> is one of the <a href=#url-property-elements id=conversion-to-vcard:url-property-elements-2>URL property elements</a>, add
          a parameter with the name "<code>VALUE</code>" and the value "<code>URI</code>" to <var>parameters</var>.<li><p>Otherwise, if <var>name</var> is <code id=conversion-to-vcard:md-vcard-bday><a href=#md-vcard-bday>bday</a></code> or
          <code id=conversion-to-vcard:md-vcard-anniversary><a href=#md-vcard-anniversary>anniversary</a></code> and the <var>value</var> is
-         a <a id=conversion-to-vcard:valid-date-string href=infrastructure.html#valid-date-string>valid date string</a>, add a parameter with the name "<code>VALUE</code>" and the value "<code>DATE</code>" to <var>parameters</var>.<li><p>Otherwise, if <var>name</var> is <code id=conversion-to-vcard:md-vcard-rev><a href=#md-vcard-rev>rev</a></code> and
-         the <var>value</var> is a <a id=conversion-to-vcard:valid-global-date-and-time-string href=infrastructure.html#valid-global-date-and-time-string>valid global date and time string</a>, add a
+         a <a id=conversion-to-vcard:valid-date-string href=common-microsyntaxes.html#valid-date-string>valid date string</a>, add a parameter with the name "<code>VALUE</code>" and the value "<code>DATE</code>" to <var>parameters</var>.<li><p>Otherwise, if <var>name</var> is <code id=conversion-to-vcard:md-vcard-rev><a href=#md-vcard-rev>rev</a></code> and
+         the <var>value</var> is a <a id=conversion-to-vcard:valid-global-date-and-time-string href=common-microsyntaxes.html#valid-global-date-and-time-string>valid global date and time string</a>, add a
          parameter with the name "<code>VALUE</code>" and the value "<code>DATE-TIME</code>" to <var>parameters</var>.<li><p>Prefix every U+005C REVERSE SOLIDUS character (\) in <var>value</var> with
          another U+005C REVERSE SOLIDUS character (\).<li><p>Prefix every U+002C COMMA character (,) in <var>value</var> with a U+005C
          REVERSE SOLIDUS character (\).<li><p>Unless <var>name</var> is <code id=conversion-to-vcard:md-vcard-geo><a href=#md-vcard-geo>geo</a></code>, prefix
@@ -1845,7 +1829,7 @@
 
 
 
-  <h5 id=examples-2>5.3.1.2 Examples<a href=#examples-2 class=self-link></a></h5>
+  <h5 id=examples-2><span class=secno>5.3.1.2</span> Examples<a href=#examples-2 class=self-link></a></h5>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -1905,7 +1889,7 @@
 
   <div class=example>
 
-   <p>This example shows a site's contact details (using the <code id=examples-2:the-address-element><a href=semantics.html#the-address-element>address</a></code> element)
+   <p>This example shows a site's contact details (using the <code id=examples-2:the-address-element><a href=sections.html#the-address-element>address</a></code> element)
    containing an address with two street components:</p>
 
    <pre>&lt;address itemscope itemtype="http://microformats.org/profile/hcard">
@@ -1946,7 +1930,7 @@ END:VCARD</pre>
   </div>
 
 
-  <h4 id=vevent>5.3.2 vEvent<a href=#vevent class=self-link></a></h4>
+  <h4 id=vevent><span class=secno>5.3.2</span> vEvent<a href=#vevent class=self-link></a></h4>
 
   <p>An item with the <a href=#item-types id=vevent:item-types>item type</a> <dfn id=md-vevent><code>http://microformats.org/profile/hcalendar#vevent</code></dfn> represents
   an event.</p>
@@ -2084,11 +2068,11 @@ END:VCARD</pre>
 
     <p>If the property with the name <code id=vevent:md-vevent-dtend><a href=#md-vevent-dtend>dtend</a></code> is present within an
     <a href=#concept-item id=vevent:concept-item-11>item</a> with the type <code id=vevent:md-vevent-11><a href=#md-vevent>http://microformats.org/profile/hcalendar#vevent</a></code> that has a property
-    with the name <code id=vevent:md-vevent-dtstart><a href=#md-vevent-dtstart>dtstart</a></code> whose value is a <a id=vevent:valid-date-string href=infrastructure.html#valid-date-string>valid date
+    with the name <code id=vevent:md-vevent-dtstart><a href=#md-vevent-dtstart>dtstart</a></code> whose value is a <a id=vevent:valid-date-string href=common-microsyntaxes.html#valid-date-string>valid date
     string</a>, then the <a href=#concept-property-value id=vevent:concept-property-value-12>value</a> of the property with
-    the name <code id=vevent:md-vevent-dtend-2><a href=#md-vevent-dtend>dtend</a></code> must be text that is a <a id=vevent:valid-date-string-2 href=infrastructure.html#valid-date-string>valid date
+    the name <code id=vevent:md-vevent-dtend-2><a href=#md-vevent-dtend>dtend</a></code> must be text that is a <a id=vevent:valid-date-string-2 href=common-microsyntaxes.html#valid-date-string>valid date
     string</a> also. Otherwise, the <a href=#concept-property-value id=vevent:concept-property-value-13>value</a> of the
-    property must be text that is a <a id=vevent:valid-global-date-and-time-string href=infrastructure.html#valid-global-date-and-time-string>valid global date and time string</a>.</p>
+    property must be text that is a <a id=vevent:valid-global-date-and-time-string href=common-microsyntaxes.html#valid-global-date-and-time-string>valid global date and time string</a>.</p>
 
     <p>In either case, the <a href=#concept-property-value id=vevent:concept-property-value-14>value</a> be later in time than
     the value of the <code id=vevent:md-vevent-dtstart-2><a href=#md-vevent-dtstart>dtstart</a></code> property of the same <a href=#concept-item id=vevent:concept-item-12>item</a>.</p>
@@ -2107,7 +2091,7 @@ END:VCARD</pre>
     <p>Gives the date and time at which the event starts.</p>
 
     <p>The <a href=#concept-property-value id=vevent:concept-property-value-16>value</a> must be text that is either a
-    <a id=vevent:valid-date-string-3 href=infrastructure.html#valid-date-string>valid date string</a> or a <a id=vevent:valid-global-date-and-time-string-2 href=infrastructure.html#valid-global-date-and-time-string>valid global date and time string</a>.</p>
+    <a id=vevent:valid-date-string-3 href=common-microsyntaxes.html#valid-date-string>valid date string</a> or a <a id=vevent:valid-global-date-and-time-string-2 href=common-microsyntaxes.html#valid-global-date-and-time-string>valid global date and time string</a>.</p>
 
     <p>Exactly one property with the name <code id=vevent:md-vevent-dtstart-3><a href=#md-vevent-dtstart>dtstart</a></code> must be
     present within each <a href=#concept-item id=vevent:concept-item-14>item</a> with the type <code id=vevent:md-vevent-14><a href=#md-vevent>http://microformats.org/profile/hcalendar#vevent</a></code>.</p>
@@ -2172,7 +2156,7 @@ END:VCARD</pre>
     <p>Gives a date and time at which the event does not occur despite the recurrence rules.</p>
 
     <p>The <a href=#concept-property-value id=vevent:concept-property-value-22>value</a> must be text that is either a
-    <a id=vevent:valid-date-string-4 href=infrastructure.html#valid-date-string>valid date string</a> or a <a id=vevent:valid-global-date-and-time-string-3 href=infrastructure.html#valid-global-date-and-time-string>valid global date and time string</a>.</p>
+    <a id=vevent:valid-date-string-4 href=common-microsyntaxes.html#valid-date-string>valid date string</a> or a <a id=vevent:valid-global-date-and-time-string-3 href=common-microsyntaxes.html#valid-global-date-and-time-string>valid global date and time string</a>.</p>
 
     <p>Any number of properties with the name <code id=vevent:md-vevent-exdate><a href=#md-vevent-exdate>exdate</a></code> may be
     present within each <a href=#concept-item id=vevent:concept-item-20>item</a> with the type <code id=vevent:md-vevent-21><a href=#md-vevent>http://microformats.org/profile/hcalendar#vevent</a></code>.</p>
@@ -2184,9 +2168,9 @@ END:VCARD</pre>
     <p>The <a href=#concept-property-value id=vevent:concept-property-value-23>value</a> must be text that is one of the
     following:
 
-    <ul><li>A <a id=vevent:valid-date-string-5 href=infrastructure.html#valid-date-string>valid date string</a>.<li>A <a id=vevent:valid-global-date-and-time-string-4 href=infrastructure.html#valid-global-date-and-time-string>valid global date and time string</a>.<li>A <a id=vevent:valid-global-date-and-time-string-5 href=infrastructure.html#valid-global-date-and-time-string>valid global date and time string</a> followed by a U+002F SOLIDUS character (/)
-     followed by a second <a id=vevent:valid-global-date-and-time-string-6 href=infrastructure.html#valid-global-date-and-time-string>valid global date and time string</a> representing a later
-     time.<li>A <a id=vevent:valid-global-date-and-time-string-7 href=infrastructure.html#valid-global-date-and-time-string>valid global date and time string</a> followed by a U+002F SOLIDUS character (/)
+    <ul><li>A <a id=vevent:valid-date-string-5 href=common-microsyntaxes.html#valid-date-string>valid date string</a>.<li>A <a id=vevent:valid-global-date-and-time-string-4 href=common-microsyntaxes.html#valid-global-date-and-time-string>valid global date and time string</a>.<li>A <a id=vevent:valid-global-date-and-time-string-5 href=common-microsyntaxes.html#valid-global-date-and-time-string>valid global date and time string</a> followed by a U+002F SOLIDUS character (/)
+     followed by a second <a id=vevent:valid-global-date-and-time-string-6 href=common-microsyntaxes.html#valid-global-date-and-time-string>valid global date and time string</a> representing a later
+     time.<li>A <a id=vevent:valid-global-date-and-time-string-7 href=common-microsyntaxes.html#valid-global-date-and-time-string>valid global date and time string</a> followed by a U+002F SOLIDUS character (/)
      followed by a <a href=#valid-vevent-duration-string id=vevent:valid-vevent-duration-string-2>valid vevent duration string</a>.</ul>
 
     <p>Any number of properties with the name <code id=vevent:md-vevent-rdate><a href=#md-vevent-rdate>rdate</a></code> may be
@@ -2207,7 +2191,7 @@ END:VCARD</pre>
     <p>Gives the date and time at which the event information was first created in a calendaring
     system.</p>
 
-    <p>The <a href=#concept-property-value id=vevent:concept-property-value-25>value</a> must be text that is a <a id=vevent:valid-global-date-and-time-string-8 href=infrastructure.html#valid-global-date-and-time-string>valid
+    <p>The <a href=#concept-property-value id=vevent:concept-property-value-25>value</a> must be text that is a <a id=vevent:valid-global-date-and-time-string-8 href=common-microsyntaxes.html#valid-global-date-and-time-string>valid
     global date and time string</a>.</p>
 
     <p>A single property with the name <code id=vevent:md-vevent-created><a href=#md-vevent-created>created</a></code> may be present
@@ -2218,7 +2202,7 @@ END:VCARD</pre>
     <p>Gives the date and time at which the event information was last modified in a calendaring
     system.</p>
 
-    <p>The <a href=#concept-property-value id=vevent:concept-property-value-26>value</a> must be text that is a <a id=vevent:valid-global-date-and-time-string-9 href=infrastructure.html#valid-global-date-and-time-string>valid
+    <p>The <a href=#concept-property-value id=vevent:concept-property-value-26>value</a> must be text that is a <a id=vevent:valid-global-date-and-time-string-9 href=common-microsyntaxes.html#valid-global-date-and-time-string>valid
     global date and time string</a>.</p>
 
     <p>A single property with the name <code id=vevent:md-vevent-last-modified><a href=#md-vevent-last-modified>last-modified</a></code>
@@ -2228,7 +2212,7 @@ END:VCARD</pre>
 
     <p>Gives a revision number for the event information.</p>
 
-    <p>The <a href=#concept-property-value id=vevent:concept-property-value-27>value</a> must be text that is a <a id=vevent:valid-non-negative-integer href=infrastructure.html#valid-non-negative-integer>valid
+    <p>The <a href=#concept-property-value id=vevent:concept-property-value-27>value</a> must be text that is a <a id=vevent:valid-non-negative-integer href=common-microsyntaxes.html#valid-non-negative-integer>valid
     non-negative integer</a>.</p>
 
     <p>A single property with the name <code id=vevent:md-vevent-sequence><a href=#md-vevent-sequence>sequence</a></code> may be
@@ -2240,17 +2224,17 @@ END:VCARD</pre>
 
   <ol><li>A U+0050 LATIN CAPITAL LETTER P character (P).<li>One of the following:
 
-    <ul><li> A <a id=vevent:valid-non-negative-integer-2 href=infrastructure.html#valid-non-negative-integer>valid non-negative integer</a> followed by a U+0057 LATIN CAPITAL LETTER W
+    <ul><li> A <a id=vevent:valid-non-negative-integer-2 href=common-microsyntaxes.html#valid-non-negative-integer>valid non-negative integer</a> followed by a U+0057 LATIN CAPITAL LETTER W
      character (W). The integer represents a duration of that number of weeks. <li> At least one, and possible both in this order, of the following:
 
-      <ol><li> A <a id=vevent:valid-non-negative-integer-3 href=infrastructure.html#valid-non-negative-integer>valid non-negative integer</a> followed by a U+0044 LATIN CAPITAL LETTER D
+      <ol><li> A <a id=vevent:valid-non-negative-integer-3 href=common-microsyntaxes.html#valid-non-negative-integer>valid non-negative integer</a> followed by a U+0044 LATIN CAPITAL LETTER D
        character (D). The integer represents a duration of that number of days. <li> A U+0054 LATIN CAPITAL LETTER T character (T) followed by any one of the following, or
        the first and second of the following in that order, or the second and third of the following
        in that order, or all three of the following in this order:
 
-        <ol><li> A <a id=vevent:valid-non-negative-integer-4 href=infrastructure.html#valid-non-negative-integer>valid non-negative integer</a> followed by a U+0048 LATIN CAPITAL LETTER H
-         character (H). The integer represents a duration of that number of hours. <li> A <a id=vevent:valid-non-negative-integer-5 href=infrastructure.html#valid-non-negative-integer>valid non-negative integer</a> followed by a U+004D LATIN CAPITAL LETTER M
-         character (M). The integer represents a duration of that number of minutes. <li> A <a id=vevent:valid-non-negative-integer-6 href=infrastructure.html#valid-non-negative-integer>valid non-negative integer</a> followed by a U+0053 LATIN CAPITAL LETTER S
+        <ol><li> A <a id=vevent:valid-non-negative-integer-4 href=common-microsyntaxes.html#valid-non-negative-integer>valid non-negative integer</a> followed by a U+0048 LATIN CAPITAL LETTER H
+         character (H). The integer represents a duration of that number of hours. <li> A <a id=vevent:valid-non-negative-integer-5 href=common-microsyntaxes.html#valid-non-negative-integer>valid non-negative integer</a> followed by a U+004D LATIN CAPITAL LETTER M
+         character (M). The integer represents a duration of that number of minutes. <li> A <a id=vevent:valid-non-negative-integer-6 href=common-microsyntaxes.html#valid-non-negative-integer>valid non-negative integer</a> followed by a U+0053 LATIN CAPITAL LETTER S
          character (S). The integer represents a duration of that number of seconds. </ol>
 
       </ol>
@@ -2260,7 +2244,7 @@ END:VCARD</pre>
    </ol>
 
 
-  <h5 id=conversion-to-icalendar>5.3.2.1 Conversion to iCalendar<a href=#conversion-to-icalendar class=self-link></a></h5>
+  <h5 id=conversion-to-icalendar><span class=secno>5.3.2.1</span> Conversion to iCalendar<a href=#conversion-to-icalendar class=self-link></a></h5>
 
   <p>Given a list of nodes <var>nodes</var> in a <code id=conversion-to-icalendar:document><a href=dom.html#document>Document</a></code>, a user agent must
   run the following algorithm to <dfn id=extracting-vevent-data>extract any vEvent data
@@ -2292,13 +2276,13 @@ END:VCARD</pre>
         <p>Let <var>value</var> be the result of stripping all U+002D HYPHEN-MINUS (-) and
         U+003A COLON (:) characters from the property's <a href=#concept-property-value id=conversion-to-icalendar:concept-property-value-2>value</a>.</p>
 
-        <p>If the property's <a href=#concept-property-value id=conversion-to-icalendar:concept-property-value-3>value</a> is a <a id=conversion-to-icalendar:valid-date-string href=infrastructure.html#valid-date-string>valid date
+        <p>If the property's <a href=#concept-property-value id=conversion-to-icalendar:concept-property-value-3>value</a> is a <a id=conversion-to-icalendar:valid-date-string href=common-microsyntaxes.html#valid-date-string>valid date
         string</a> then <a href=#add-an-icalendar-line id=conversion-to-icalendar:add-an-icalendar-line-6>add an iCalendar line</a> with the type <var>name</var>
         and the value <var>value</var> to <var>output</var>, with the annotation
         "<code>VALUE=DATE</code>".</p>
 
         <p>Otherwise, if the property's <a href=#concept-property-value id=conversion-to-icalendar:concept-property-value-4>value</a> is a
-        <a id=conversion-to-icalendar:valid-global-date-and-time-string href=infrastructure.html#valid-global-date-and-time-string>valid global date and time string</a> then <a href=#add-an-icalendar-line id=conversion-to-icalendar:add-an-icalendar-line-7>add an iCalendar line</a> with
+        <a id=conversion-to-icalendar:valid-global-date-and-time-string href=common-microsyntaxes.html#valid-global-date-and-time-string>valid global date and time string</a> then <a href=#add-an-icalendar-line id=conversion-to-icalendar:add-an-icalendar-line-7>add an iCalendar line</a> with
         the type <var>name</var> and the value <var>value</var> to <var>output</var>, with the annotation "<code>VALUE=DATE-TIME</code>".</p>
 
         <p>Otherwise skip the property.</p>
@@ -2348,7 +2332,7 @@ END:VCARD</pre>
 
 
 
-  <h5 id=examples-3>5.3.2.2 Examples<a href=#examples-3 class=self-link></a></h5>
+  <h5 id=examples-3><span class=secno>5.3.2.2</span> Examples<a href=#examples-3 class=self-link></a></h5>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -2395,7 +2379,7 @@ END:VCARD</pre>
   </div>
 
 
-  <h4 id=licensing-works>5.3.3 Licensing works<a href=#licensing-works class=self-link></a></h4>
+  <h4 id=licensing-works><span class=secno>5.3.3</span> Licensing works<a href=#licensing-works class=self-link></a></h4>
 
   <p>An item with the <a href=#item-types id=licensing-works:item-types>item type</a> <dfn id=md-work><code>http://n.whatwg.org/work</code></dfn> represents a work (e.g. an article, an
   image, a video, a song, etc). This type is primarily intended to allow authors to include
@@ -2445,7 +2429,7 @@ END:VCARD</pre>
 
 
 
-  <h5 id=examples-4>5.3.3.1 Examples<a href=#examples-4 class=self-link></a></h5>
+  <h5 id=examples-4><span class=secno>5.3.3.1</span> Examples<a href=#examples-4 class=self-link></a></h5>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -2473,9 +2457,9 @@ END:VCARD</pre>
 
   
 
-  <h3 id=converting-html-to-other-formats>5.4 Converting HTML to other formats<a href=#converting-html-to-other-formats class=self-link></a></h3>
+  <h3 id=converting-html-to-other-formats><span class=secno>5.4</span> Converting HTML to other formats<a href=#converting-html-to-other-formats class=self-link></a></h3>
 
-  <h4 id=json>5.4.1 JSON<a href=#json class=self-link></a></h4>
+  <h4 id=json><span class=secno>5.4.1</span> JSON<a href=#json class=self-link></a></h4>
 
   <p>Given a list of nodes <var>nodes</var> in a <code id=json:document><a href=dom.html#document>Document</a></code>, a user agent must
   run the following algorithm to <dfn id=extracting-json>extract the microdata from those nodes
@@ -2620,4 +2604,4 @@ END:VCARD</pre>
 
 
 
-  <nav><a href=scripting.html>← 4.12 Scripting</a> — <a href=index.html>Table of Contents</a> — <a href=interaction.html>6 User interaction →</a></nav>
+  <nav><a href=semantics-other.html>← 4.14 Common idioms without dedicated elements</a> — <a href=index.html>Table of Contents</a> — <a href=interaction.html>6 User interaction →</a></nav>

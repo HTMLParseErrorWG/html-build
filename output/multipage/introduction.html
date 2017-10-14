@@ -1,17 +1,8 @@
-<!DOCTYPE html><html class=split lang=en-US-x-hixie><script src=/link-fixup.js defer=""></script><meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><title>HTML Standard</title><meta content=#3c790a name=theme-color><link rel=stylesheet href=https://resources.whatwg.org/standard.css><script defer="" src=https://resources.whatwg.org/dfn.js></script><script>
+<!DOCTYPE html><html class=split lang=en-US-x-hixie><script src=/link-fixup.js defer=""></script><meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><title>HTML Standard</title><meta content=#3c790a name=theme-color><link rel=stylesheet href=https://resources.whatwg.org/standard.css><link rel=icon href=https://resources.whatwg.org/logo.svg><script>
    function toggleStatus(div) {
      div.parentNode.classList.toggle('wrapped');
    }
-  </script><link rel=icon href=https://resources.whatwg.org/logo.svg><style>
-   [hidden] { display: none; }
-
-   .bad, .bad *:not(.X\58X) { color: gray; border-color: gray; background: transparent; }
-
-   .fingerprint { position: absolute; right: 0; z-index: 5; }
-   @media (max-width: 767px) {
-     .fingerprint { max-width: 35px; }
-   }
-
+  </script><style>
    .status { min-height: 0.6em; font: 1em sans-serif; width: 9em; padding: 0.3em; position: absolute; z-index: 8; right: 0.3em; background: #EEE; color: black; box-shadow: 0 0 3px #999; overflow: hidden; margin: -2em 0 0 0; border-collapse: initial; border-spacing: initial; }
    .status:hover { z-index: 9; }
    .status:focus-within { z-index: 9; }
@@ -46,11 +37,20 @@
    .status > .support > .opera::before { background-image: url(https://resources.whatwg.org/browser-logos/opera.png); }
    .status > .support > .safari::before { background-image: url(https://resources.whatwg.org/browser-logos/safari.png); }
    .status > .support > .samsung::before { background-image: url(https://resources.whatwg.org/browser-logos/samsung.png); }
-   .status > .caniuse { text-align: right; font-style: italic; }
+   .status > .caniuse { text-align: right; font-style: italic; width: 100%; }
    .status > .caniuse + p { margin-top: 0.5em; border-top: 1px solid silver; }
 
    @media (max-width: 767px) {
      .status { right: -9em; }
+   }
+  </style><style>
+   [hidden] { display: none; }
+
+   .bad, .bad *:not(.X\58X) { color: gray; border-color: gray; background: transparent; }
+
+   .fingerprint { position: absolute; right: 0; z-index: 5; }
+   @media (max-width: 767px) {
+     .fingerprint { max-width: 35px; }
    }
 
    .applies .yes, .yesno .yes { background: yellow; }
@@ -109,24 +109,6 @@
 
    .parse-error-table td > p:first-child { margin-top: 0; }
 
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
    #named-character-references-table {
      white-space: nowrap;
      font-size: 0.6em;
@@ -175,20 +157,22 @@
    #abstractimg .top { word-spacing: 50px; text-anchor: middle; }
    #abstractimg .left, #abstractimg .bottom { word-spacing: 12px; }
    #abstractimg .right { font-size: 25px; }
-  </style>
+  </style><body>
+  
+  <script async="" src=/html-dfn.js></script>
   <script data-file-issue-url=https://github.com/whatwg/html/issues/new src=https://resources.whatwg.org/file-issue.js async=""></script>
   <header id=head class="head with-buttons">
-   <p><a href=https://whatwg.org/ class=logo><img alt=WHATWG src=https://resources.whatwg.org/logo.svg width=100 height=100></a></p>
-   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>31 May 2017</span></h2></hgroup>
+   <a href=https://whatwg.org/ class=logo><img alt=WHATWG src=https://resources.whatwg.org/logo.svg width=100 height=100></a>
+   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>14 October 2017</span></h2></hgroup>
    
+   
+
    
   </header>
 
   
 
   
-
-  
   
 
   
@@ -196,11 +180,11 @@
 
   
 
-  <nav><a href=index.html>Table of Contents</a> — <a href=infrastructure.html>2 Common infrastructure →</a></nav><ol class=toc><li id=toc-introduction><a href=introduction.html#introduction>1 Introduction</a><ol><li><a href=introduction.html#abstract>1.1 Where does this specification fit?</a><li><a href=introduction.html#is-this-html5?>1.2 Is this HTML5?</a><li><a href=introduction.html#background>1.3 Background</a><li><a href=introduction.html#audience>1.4 Audience</a><li><a href=introduction.html#scope>1.5 Scope</a><li><a href=introduction.html#history-2>1.6 History</a><li><a href=introduction.html#design-notes>1.7 Design notes</a><ol><li><a href=introduction.html#serialisability-of-script-execution>1.7.1 Serializability of script execution</a><li><a href=introduction.html#compliance-with-other-specifications>1.7.2 Compliance with other specifications</a><li><a href=introduction.html#extensibility>1.7.3 Extensibility</a></ol><li><a href=introduction.html#html-vs-xhtml>1.8 HTML vs XML syntax</a><li><a href=introduction.html#structure-of-this-specification>1.9 Structure of this specification</a><ol><li><a href=introduction.html#how-to-read-this-specification>1.9.1 How to read this specification</a><li><a href=introduction.html#typographic-conventions>1.9.2 Typographic conventions</a></ol><li><a href=introduction.html#fingerprint>1.10 Privacy concerns</a><ol><li><a href=introduction.html#fingerprint-postMessage>1.10.1 Cross-site communication</a></ol><li><a href=introduction.html#a-quick-introduction-to-html>1.11 A quick introduction to HTML</a><ol><li><a href=introduction.html#writing-secure-applications-with-html>1.11.1 Writing secure applications with HTML</a><li><a href=introduction.html#common-pitfalls-to-avoid-when-using-the-scripting-apis>1.11.2 Common pitfalls to avoid when using the scripting APIs</a><li><a href=introduction.html#how-to-catch-mistakes-when-writing-html:-validators-and-conformance-checkers>1.11.3 How to catch mistakes when writing HTML: validators and conformance checkers</a></ol><li><a href=introduction.html#conformance-requirements-for-authors>1.12 Conformance requirements for authors</a><ol><li><a href=introduction.html#presentational-markup>1.12.1 Presentational markup</a><li><a href=introduction.html#syntax-errors>1.12.2 Syntax errors</a><li><a href=introduction.html#restrictions-on-content-models-and-on-attribute-values>1.12.3 Restrictions on content models and on attribute values</a></ol><li><a href=introduction.html#suggested-reading>1.13 Suggested reading</a></ol></ol><h2 id=introduction>1 Introduction<a href=#introduction class=self-link></a></h2><div class=status><input onclick=toggleStatus(this) value=⋰ type=button><p class=bugs><strong>Spec bugs:</strong> <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=23036" title="Either drop all mention of mutation events, or specify them in full detail">23036</a></div>
+  <nav><a href=index.html>Table of Contents</a> — <a href=infrastructure.html>2 Common infrastructure →</a></nav><ol class=toc><li id=toc-introduction><a href=introduction.html#introduction><span class=secno>1</span> Introduction</a><ol><li><a href=introduction.html#abstract><span class=secno>1.1</span> Where does this specification fit?</a><li><a href=introduction.html#is-this-html5?><span class=secno>1.2</span> Is this HTML5?</a><li><a href=introduction.html#background><span class=secno>1.3</span> Background</a><li><a href=introduction.html#audience><span class=secno>1.4</span> Audience</a><li><a href=introduction.html#scope><span class=secno>1.5</span> Scope</a><li><a href=introduction.html#history-2><span class=secno>1.6</span> History</a><li><a href=introduction.html#design-notes><span class=secno>1.7</span> Design notes</a><ol><li><a href=introduction.html#serialisability-of-script-execution><span class=secno>1.7.1</span> Serializability of script execution</a><li><a href=introduction.html#compliance-with-other-specifications><span class=secno>1.7.2</span> Compliance with other specifications</a><li><a href=introduction.html#extensibility><span class=secno>1.7.3</span> Extensibility</a></ol><li><a href=introduction.html#html-vs-xhtml><span class=secno>1.8</span> HTML vs XML syntax</a><li><a href=introduction.html#structure-of-this-specification><span class=secno>1.9</span> Structure of this specification</a><ol><li><a href=introduction.html#how-to-read-this-specification><span class=secno>1.9.1</span> How to read this specification</a><li><a href=introduction.html#typographic-conventions><span class=secno>1.9.2</span> Typographic conventions</a></ol><li><a href=introduction.html#fingerprint><span class=secno>1.10</span> Privacy concerns</a><ol><li><a href=introduction.html#fingerprint-postMessage><span class=secno>1.10.1</span> Cross-site communication</a></ol><li><a href=introduction.html#a-quick-introduction-to-html><span class=secno>1.11</span> A quick introduction to HTML</a><ol><li><a href=introduction.html#writing-secure-applications-with-html><span class=secno>1.11.1</span> Writing secure applications with HTML</a><li><a href=introduction.html#common-pitfalls-to-avoid-when-using-the-scripting-apis><span class=secno>1.11.2</span> Common pitfalls to avoid when using the scripting APIs</a><li><a href=introduction.html#how-to-catch-mistakes-when-writing-html:-validators-and-conformance-checkers><span class=secno>1.11.3</span> How to catch mistakes when writing HTML: validators and conformance checkers</a></ol><li><a href=introduction.html#conformance-requirements-for-authors><span class=secno>1.12</span> Conformance requirements for authors</a><ol><li><a href=introduction.html#presentational-markup><span class=secno>1.12.1</span> Presentational markup</a><li><a href=introduction.html#syntax-errors><span class=secno>1.12.2</span> Syntax errors</a><li><a href=introduction.html#restrictions-on-content-models-and-on-attribute-values><span class=secno>1.12.3</span> Restrictions on content models and on attribute values</a></ol><li><a href=introduction.html#suggested-reading><span class=secno>1.13</span> Suggested reading</a></ol></ol><h2 id=introduction><span class=secno>1</span> Introduction<a href=#introduction class=self-link></a></h2><div class=status><input onclick=toggleStatus(this) value=⋰ type=button><p class=bugs><strong>Spec bugs:</strong> <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=23036" title="Either drop all mention of mutation events, or specify them in full detail">23036</a></div>
 
   
 
-  <h3 id=abstract>1.1 Where does this specification fit?<a href=#abstract class=self-link></a></h3>
+  <h3 id=abstract><span class=secno>1.1</span> Where does this specification fit?<a href=#abstract class=self-link></a></h3>
 
   <p>This specification defines a big part of the Web platform, in lots of detail. Its place in the
   Web platform specification stack relative to other specifications can be best summed up as
@@ -223,7 +207,7 @@
   
 
 
-  <h3 id=is-this-html5?>1.2 Is this HTML5?<a href=#is-this-html5? class=self-link></a></h3>
+  <h3 id=is-this-html5?><span class=secno>1.2</span> Is this HTML5?<a href=#is-this-html5? class=self-link></a></h3>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -231,14 +215,14 @@
 
   <p>In more length: the term "HTML5" is widely used as a buzzword to refer to modern Web
   technologies, many of which (though by no means all) are developed at the WHATWG. This document is
-  one such; others are available from <a href=https://whatwg.org/specs/>the WHATWG
+  one such; others are available from <a href=https://spec.whatwg.org/>the WHATWG
   specification index</a>.</p>
 
   <p class=note>Although we have asked them to stop doing so, the W3C also republishes some parts
   of this specification as separate documents.</p>
 
 
-  <h3 id=background>1.3 Background<a href=#background class=self-link></a></h3>
+  <h3 id=background><span class=secno>1.3</span> Background<a href=#background class=self-link></a></h3>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -248,7 +232,7 @@
   documents and even applications.</p>
 
 
-  <h3 id=audience>1.4 Audience<a href=#audience class=self-link></a></h3>
+  <h3 id=audience><span class=secno>1.4</span> Audience<a href=#audience class=self-link></a></h3>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -269,7 +253,7 @@
   essential.</p>
 
 
-  <h3 id=scope>1.5 Scope<a href=#scope class=self-link></a></h3>
+  <h3 id=scope><span class=secno>1.5</span> Scope<a href=#scope class=self-link></a></h3>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -293,7 +277,7 @@
   editing software, etc.</p>
 
 
-  <h3 id=history-2>1.6 History<a href=#history-2 class=self-link></a></h3>
+  <h3 id=history-2><span class=secno>1.6</span> History<a href=#history-2 class=self-link></a></h3>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -371,7 +355,7 @@
 
 
 
-  <h3 id=design-notes>1.7 Design notes<a href=#design-notes class=self-link></a></h3>
+  <h3 id=design-notes><span class=secno>1.7</span> Design notes<a href=#design-notes class=self-link></a></h3>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -393,7 +377,7 @@
 
   
 
-  <h4 id=serialisability-of-script-execution>1.7.1 Serializability of script execution<a href=#serialisability-of-script-execution class=self-link></a></h4>
+  <h4 id=serialisability-of-script-execution><span class=secno>1.7.1</span> Serializability of script execution<a href=#serialisability-of-script-execution class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -413,7 +397,7 @@
 
 
 
-  <h4 id=compliance-with-other-specifications>1.7.2 Compliance with other specifications<a href=#compliance-with-other-specifications class=self-link></a></h4>
+  <h4 id=compliance-with-other-specifications><span class=secno>1.7.2</span> Compliance with other specifications<a href=#compliance-with-other-specifications class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -425,7 +409,7 @@
 
 
 
-  <h4 id=extensibility>1.7.3 Extensibility<a href=#extensibility class=self-link></a></h4>
+  <h4 id=extensibility><span class=secno>1.7.3</span> Extensibility<a href=#extensibility class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -439,11 +423,11 @@
    to process using the <code id=extensibility:attr-data-*><a href=dom.html#attr-data-*>data-*=""</a></code> attributes. These are guaranteed
    to never be touched by browsers, and allow scripts to include data on HTML elements that scripts
    can then look for and process.<li><p>Authors can use the <code id=extensibility:the-meta-element><a href=semantics.html#the-meta-element>&lt;meta name="" content=""></a></code> mechanism to
-   include page-wide metadata.<li><p>Authors can use the <code id=extensibility:attr-hyperlink-rel><a href=semantics.html#attr-hyperlink-rel>rel=""</a></code> mechanism to annotate
-   links with specific meanings by registering <a href=semantics.html#concept-rel-extensions id=extensibility:concept-rel-extensions>extensions to
+   include page-wide metadata.<li><p>Authors can use the <code id=extensibility:attr-hyperlink-rel><a href=links.html#attr-hyperlink-rel>rel=""</a></code> mechanism to annotate
+   links with specific meanings by registering <a href=links.html#concept-rel-extensions id=extensibility:concept-rel-extensions>extensions to
    the predefined set of link types</a>. This is also used by microformats.<li><p>Authors can embed raw data using the <code id=extensibility:the-script-element><a href=scripting.html#the-script-element>&lt;script type=""></a></code>
    mechanism with a custom type, for further handling by inline or server-side scripts.<li><p>Authors can create <a href=infrastructure.html#plugin id=extensibility:plugin>plugins</a> and invoke them using the
-   <code id=extensibility:the-embed-element><a href=embedded-content.html#the-embed-element>embed</a></code> element. This is how Flash works.<li><p>Authors can extend APIs using the JavaScript prototyping mechanism. This is widely used by
+   <code id=extensibility:the-embed-element><a href=iframe-embed-object.html#the-embed-element>embed</a></code> element. This is how Flash works.<li><p>Authors can extend APIs using the JavaScript prototyping mechanism. This is widely used by
    script libraries, for instance.<li><p>Authors can use the microdata feature (the <code id=extensibility:attr-itemscope><a href=microdata.html#attr-itemscope>itemscope=""</a></code> and <code id=extensibility:names:-the-itemprop-attribute><a href=microdata.html#names:-the-itemprop-attribute>itemprop=""</a></code>
    attributes) to embed nested name-value pairs of data to be shared with other applications and
    sites.</ul>
@@ -451,7 +435,7 @@
 
 
 
-  <h3 id=html-vs-xhtml>1.8 HTML vs XML syntax<a href=#html-vs-xhtml class=self-link></a></h3>
+  <h3 id=html-vs-xhtml><span class=secno>1.8</span> HTML vs XML syntax<a href=#html-vs-xhtml class=self-link></a></h3>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -486,7 +470,7 @@
   DOM, not in the HTML and XML syntaxes.</p>
 
 
-  <h3 id=structure-of-this-specification>1.9 Structure of this specification<a href=#structure-of-this-specification class=self-link></a></h3>
+  <h3 id=structure-of-this-specification><span class=secno>1.9</span> Structure of this specification<a href=#structure-of-this-specification class=self-link></a></h3>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -509,7 +493,7 @@
    caching of Web applications.<dt><a href=webappapis.html#webappapis>Web application APIs</a><dd>This section introduces basic features for scripting of applications in HTML.<dt><a href=workers.html#workers>Web workers</a><dd>This section defines an API for background threads in JavaScript.<dt><a href=comms.html#comms>The communication APIs</a><dd>This section describes some mechanisms that applications written in HTML can use to
    communicate with other applications from different domains running on the same client. It also
    introduces a server-push event stream mechanism known as Server Sent Events or
-   <code id=structure-of-this-specification:eventsource><a href=comms.html#eventsource>EventSource</a></code>, and a two-way full-duplex socket protocol for scripts known as Web
+   <code id=structure-of-this-specification:eventsource><a href=server-sent-events.html#eventsource>EventSource</a></code>, and a two-way full-duplex socket protocol for scripts known as Web
    Sockets.
 
    <dt><a href=webstorage.html#webstorage>Web storage</a><dd>This section defines a client-side storage mechanism based on name-value pairs.<dt><a href=syntax.html#syntax>The HTML syntax</a><dt><a href=xhtml.html#xhtml>The XML syntax</a><dd>All of these features would be for naught if they couldn't be represented in a serialized
@@ -520,7 +504,7 @@
 
   
 
-  <h4 id=how-to-read-this-specification>1.9.1 How to read this specification<a href=#how-to-read-this-specification class=self-link></a></h4>
+  <h4 id=how-to-read-this-specification><span class=secno>1.9.1</span> How to read this specification<a href=#how-to-read-this-specification class=self-link></a></h4>
 
   <p>This specification should be read like all other specifications. First, it should be read
   cover-to-cover, multiple times. Then, it should be read backwards at least once. Then it should be
@@ -535,10 +519,10 @@
 
   <div class=example>
 
-   <p>For example, "the <code>foo</code> attribute's value must be a <a id=how-to-read-this-specification:valid-integer href=infrastructure.html#valid-integer>valid
+   <p>For example, "the <code>foo</code> attribute's value must be a <a id=how-to-read-this-specification:valid-integer href=common-microsyntaxes.html#valid-integer>valid
    integer</a>" is a requirement on producers, as it lays out the allowed values; in contrast,
    the requirement "the <code>foo</code> attribute's value must be parsed using the
-   <a id=how-to-read-this-specification:rules-for-parsing-integers href=infrastructure.html#rules-for-parsing-integers>rules for parsing integers</a>" is a requirement on consumers, as it describes how to
+   <a id=how-to-read-this-specification:rules-for-parsing-integers href=common-microsyntaxes.html#rules-for-parsing-integers>rules for parsing integers</a>" is a requirement on consumers, as it describes how to
    process the content.</p>
 
   </div>
@@ -548,7 +532,7 @@
   <div class=example>
 
    <p>Continuing the above example, a requirement stating that a particular attribute's value is
-   constrained to being a <a id=how-to-read-this-specification:valid-integer-2 href=infrastructure.html#valid-integer>valid integer</a> emphatically does <em>not</em> imply anything
+   constrained to being a <a id=how-to-read-this-specification:valid-integer-2 href=common-microsyntaxes.html#valid-integer>valid integer</a> emphatically does <em>not</em> imply anything
    about the requirements on consumers. It might be that the consumers are in fact required to treat
    the attribute as an opaque string, completely unaffected by whether the value conforms to the
    requirements or not. It might be (as in the previous example) that the consumers are required to
@@ -561,7 +545,7 @@
 
 
 
-  <h4 id=typographic-conventions>1.9.2 Typographic conventions<a href=#typographic-conventions class=self-link></a></h4>
+  <h4 id=typographic-conventions><span class=secno>1.9.2</span> Typographic conventions<a href=#typographic-conventions class=self-link></a></h4>
 
   <p>This is a definition, requirement, or explanation.</p>
 
@@ -573,7 +557,8 @@
 
   <p class=warning>This is a warning.</p>
 
-  <pre class="idl extract">interface <dfn>Example</dfn> {
+  <pre class="idl extract">[Exposed=Window]
+interface <dfn>Example</dfn> {
   // this is an IDL definition
 };</pre>
 
@@ -614,7 +599,7 @@
 
 
 
-  <h3 id=fingerprint>1.10 Privacy concerns<a href=#fingerprint class=self-link></a></h3>
+  <h3 id=fingerprint><span class=secno>1.10</span> Privacy concerns<a href=#fingerprint class=self-link></a></h3>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -676,13 +661,13 @@
    object. <a href=references.html#refsMQ>[MQ]</a> <a href=references.html#refsCSSOMVIEW>[CSSOMVIEW]</a><li>The user's time zone.</ul>
 
 
-  <h4 id=fingerprint-postMessage>1.10.1 Cross-site communication<a href=#fingerprint-postMessage class=self-link></a></h4>
+  <h4 id=fingerprint-postMessage><span class=secno>1.10.1</span> Cross-site communication<a href=#fingerprint-postMessage class=self-link></a></h4>
 
-  <p>The <code id=fingerprint-postMessage:dom-window-postmessage><a href=comms.html#dom-window-postmessage>postMessage()</a></code> API provides a mechanism by
+  <p>The <code id=fingerprint-postMessage:dom-window-postmessage><a href=web-messaging.html#dom-window-postmessage>postMessage()</a></code> API provides a mechanism by
   which two sites can communicate directly. At first glance, this might appear to open a new way by
   which the problems described above can occur. However, in practice, multiple mechanisms exist by
   which two sites can communicate that predate this API: a site embedding another can send data via
-  an <code id=fingerprint-postMessage:the-iframe-element><a href=embedded-content.html#the-iframe-element>iframe</a></code> element's dimensions; a site can use a cross-site image request with a
+  an <code id=fingerprint-postMessage:the-iframe-element><a href=iframe-embed-object.html#the-iframe-element>iframe</a></code> element's dimensions; a site can use a cross-site image request with a
   unique identifier known to the server to initiate a server-side data exchange; or indeed the
   fingerprinting techniques described above can be used by two sites to uniquely identify a visitor
   such that information can then be exchanged on the server side.</p>
@@ -693,7 +678,7 @@
 
 
 
-  <h3 id=a-quick-introduction-to-html>1.11 A quick introduction to HTML<a href=#a-quick-introduction-to-html class=self-link></a></h3>
+  <h3 id=a-quick-introduction-to-html><span class=secno>1.11</span> A quick introduction to HTML<a href=#a-quick-introduction-to-html class=self-link></a></h3>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -726,7 +711,7 @@
   the ways in which the elements can be nested.</p>
 
   <p>Elements can have attributes, which control how the elements work. In the example below, there
-  is a <a id=a-quick-introduction-to-html:hyperlink href=semantics.html#hyperlink>hyperlink</a>, formed using the <code id=a-quick-introduction-to-html:the-a-element><a href=semantics.html#the-a-element>a</a></code> element and its <code id=a-quick-introduction-to-html:attr-hyperlink-href><a href=semantics.html#attr-hyperlink-href>href</a></code> attribute:</p>
+  is a <a id=a-quick-introduction-to-html:hyperlink href=links.html#hyperlink>hyperlink</a>, formed using the <code id=a-quick-introduction-to-html:the-a-element><a href=text-level-semantics.html#the-a-element>a</a></code> element and its <code id=a-quick-introduction-to-html:attr-hyperlink-href><a href=links.html#attr-hyperlink-href>href</a></code> attribute:</p>
 
   <pre>&lt;a href="demo.html">simple&lt;/a></pre>
 
@@ -756,46 +741,46 @@
   <p>The <a href=#intro-early-example>markup snippet at the top of this section</a> would be
   turned into the following DOM tree:</p>
 
-  <ul class=domTree><li class=t10>DOCTYPE: <code>html</code><li class=t1><code id=a-quick-introduction-to-html:the-html-element><a href=semantics.html#the-html-element>html</a></code> <span class=t2><code id=a-quick-introduction-to-html:attr-lang class="attribute name"><a href=dom.html#attr-lang>lang</a></code>="<code class="attribute value">en</code>"</span><ul><li class=t1><code id=a-quick-introduction-to-html:the-head-element><a href=semantics.html#the-head-element>head</a></code><ul><li class=t3><code id=a-quick-introduction-to-html:text-2><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣␣</span><li class=t1><code id=a-quick-introduction-to-html:the-title-element><a href=semantics.html#the-title-element>title</a></code><ul><li class=t3><code id=a-quick-introduction-to-html:text-3><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>Sample page</span></ul><li class=t3><code id=a-quick-introduction-to-html:text-4><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣</span></ul><li class=t3><code id=a-quick-introduction-to-html:text-5><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣</span><li class=t1><code id=a-quick-introduction-to-html:the-body-element><a href=semantics.html#the-body-element>body</a></code><ul><li class=t3><code id=a-quick-introduction-to-html:text-6><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣␣</span><li class=t1><code id=a-quick-introduction-to-html:the-h1,-h2,-h3,-h4,-h5,-and-h6-elements><a href=semantics.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements>h1</a></code><ul><li class=t3><code id=a-quick-introduction-to-html:text-7><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>Sample page</span></ul><li class=t3><code id=a-quick-introduction-to-html:text-8><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣␣</span><li class=t1><code id=a-quick-introduction-to-html:the-p-element><a href=semantics.html#the-p-element>p</a></code><ul><li class=t3><code id=a-quick-introduction-to-html:text-9><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>This is a </span><li class=t1><code id=a-quick-introduction-to-html:the-a-element-2><a href=semantics.html#the-a-element>a</a></code> <span class=t2><code id=a-quick-introduction-to-html:attr-hyperlink-href-2 class="attribute name"><a href=semantics.html#attr-hyperlink-href>href</a></code>="<code class="attribute value">demo.html</code>"</span><ul><li class=t3><code id=a-quick-introduction-to-html:text-10><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>simple</span></ul><li class=t3><code id=a-quick-introduction-to-html:text-11><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span> sample.</span></ul><li class=t3><code id=a-quick-introduction-to-html:text-12><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣␣</span><li class=t8><code id=a-quick-introduction-to-html:comment-2-2><a data-x-internal=comment-2 href=https://dom.spec.whatwg.org/#interface-comment>#comment</a></code>: <span> this is a comment </span><li class=t3><code id=a-quick-introduction-to-html:text-13><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣⏎</span></ul></ul></ul>
+  <ul class=domTree><li class=t10>DOCTYPE: <code>html</code><li class=t1><code id=a-quick-introduction-to-html:the-html-element><a href=semantics.html#the-html-element>html</a></code> <span class=t2><code id=a-quick-introduction-to-html:attr-lang class="attribute name"><a href=dom.html#attr-lang>lang</a></code>="<code class="attribute value">en</code>"</span><ul><li class=t1><code id=a-quick-introduction-to-html:the-head-element><a href=semantics.html#the-head-element>head</a></code><ul><li class=t3><code id=a-quick-introduction-to-html:text-2><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣␣</span><li class=t1><code id=a-quick-introduction-to-html:the-title-element><a href=semantics.html#the-title-element>title</a></code><ul><li class=t3><code id=a-quick-introduction-to-html:text-3><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>Sample page</span></ul><li class=t3><code id=a-quick-introduction-to-html:text-4><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣</span></ul><li class=t3><code id=a-quick-introduction-to-html:text-5><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣</span><li class=t1><code id=a-quick-introduction-to-html:the-body-element><a href=sections.html#the-body-element>body</a></code><ul><li class=t3><code id=a-quick-introduction-to-html:text-6><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣␣</span><li class=t1><code id=a-quick-introduction-to-html:the-h1,-h2,-h3,-h4,-h5,-and-h6-elements><a href=sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements>h1</a></code><ul><li class=t3><code id=a-quick-introduction-to-html:text-7><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>Sample page</span></ul><li class=t3><code id=a-quick-introduction-to-html:text-8><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣␣</span><li class=t1><code id=a-quick-introduction-to-html:the-p-element><a href=grouping-content.html#the-p-element>p</a></code><ul><li class=t3><code id=a-quick-introduction-to-html:text-9><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>This is a </span><li class=t1><code id=a-quick-introduction-to-html:the-a-element-2><a href=text-level-semantics.html#the-a-element>a</a></code> <span class=t2><code id=a-quick-introduction-to-html:attr-hyperlink-href-2 class="attribute name"><a href=links.html#attr-hyperlink-href>href</a></code>="<code class="attribute value">demo.html</code>"</span><ul><li class=t3><code id=a-quick-introduction-to-html:text-10><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>simple</span></ul><li class=t3><code id=a-quick-introduction-to-html:text-11><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span> sample.</span></ul><li class=t3><code id=a-quick-introduction-to-html:text-12><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣␣</span><li class=t8><code id=a-quick-introduction-to-html:comment-2-2><a data-x-internal=comment-2 href=https://dom.spec.whatwg.org/#interface-comment>#comment</a></code>: <span> this is a comment </span><li class=t3><code id=a-quick-introduction-to-html:text-13><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>⏎␣⏎</span></ul></ul></ul>
 
   <p>The <a id=a-quick-introduction-to-html:document-element href=https://dom.spec.whatwg.org/#document-element data-x-internal=document-element>document element</a> of this tree is the <code id=a-quick-introduction-to-html:the-html-element-2><a href=semantics.html#the-html-element>html</a></code> element, which is the
   element always found in that position in HTML documents. It contains two elements,
-  <code id=a-quick-introduction-to-html:the-head-element-2><a href=semantics.html#the-head-element>head</a></code> and <code id=a-quick-introduction-to-html:the-body-element-2><a href=semantics.html#the-body-element>body</a></code>, as well as a <code id=a-quick-introduction-to-html:text-14><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>Text</a></code> node between them.</p>
+  <code id=a-quick-introduction-to-html:the-head-element-2><a href=semantics.html#the-head-element>head</a></code> and <code id=a-quick-introduction-to-html:the-body-element-2><a href=sections.html#the-body-element>body</a></code>, as well as a <code id=a-quick-introduction-to-html:text-14><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>Text</a></code> node between them.</p>
 
   <p>There are many more <code id=a-quick-introduction-to-html:text-15><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>Text</a></code> nodes in the DOM tree than one would initially expect,
   because the source contains a number of spaces (represented here by "␣") and line breaks
   ("⏎") that all end up as <code id=a-quick-introduction-to-html:text-16><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>Text</a></code> nodes in the DOM. However, for historical
   reasons not all of the spaces and line breaks in the original markup appear in the DOM. In
   particular, all the whitespace before <code id=a-quick-introduction-to-html:the-head-element-3><a href=semantics.html#the-head-element>head</a></code> start tag ends up being dropped silently,
-  and all the whitespace after the <code id=a-quick-introduction-to-html:the-body-element-3><a href=semantics.html#the-body-element>body</a></code> end tag ends up placed at the end of the
-  <code id=a-quick-introduction-to-html:the-body-element-4><a href=semantics.html#the-body-element>body</a></code>.</p>
+  and all the whitespace after the <code id=a-quick-introduction-to-html:the-body-element-3><a href=sections.html#the-body-element>body</a></code> end tag ends up placed at the end of the
+  <code id=a-quick-introduction-to-html:the-body-element-4><a href=sections.html#the-body-element>body</a></code>.</p>
 
   <p>The <code id=a-quick-introduction-to-html:the-head-element-4><a href=semantics.html#the-head-element>head</a></code> element contains a <code id=a-quick-introduction-to-html:the-title-element-2><a href=semantics.html#the-title-element>title</a></code> element, which itself contains a
-  <code id=a-quick-introduction-to-html:text-17><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>Text</a></code> node with the text "Sample page". Similarly, the <code id=a-quick-introduction-to-html:the-body-element-5><a href=semantics.html#the-body-element>body</a></code> element
-  contains an <code id=a-quick-introduction-to-html:the-h1,-h2,-h3,-h4,-h5,-and-h6-elements-2><a href=semantics.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements>h1</a></code> element, a <code id=a-quick-introduction-to-html:the-p-element-2><a href=semantics.html#the-p-element>p</a></code> element, and a comment.</p>
+  <code id=a-quick-introduction-to-html:text-17><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>Text</a></code> node with the text "Sample page". Similarly, the <code id=a-quick-introduction-to-html:the-body-element-5><a href=sections.html#the-body-element>body</a></code> element
+  contains an <code id=a-quick-introduction-to-html:the-h1,-h2,-h3,-h4,-h5,-and-h6-elements-2><a href=sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements>h1</a></code> element, a <code id=a-quick-introduction-to-html:the-p-element-2><a href=grouping-content.html#the-p-element>p</a></code> element, and a comment.</p>
 
   <hr>
 
   <p>This DOM tree can be manipulated from scripts in the page. Scripts (typically in JavaScript)
   are small programs that can be embedded using the <code id=a-quick-introduction-to-html:the-script-element><a href=scripting.html#the-script-element>script</a></code> element or using <a id=a-quick-introduction-to-html:event-handler-content-attributes href=webappapis.html#event-handler-content-attributes>event
   handler content attributes</a>. For example, here is a form with a script that sets the value
-  of the form's <code id=a-quick-introduction-to-html:the-output-element><a href=forms.html#the-output-element>output</a></code> element to say "Hello World":</p>
+  of the form's <code id=a-quick-introduction-to-html:the-output-element><a href=form-elements.html#the-output-element>output</a></code> element to say "Hello World":</p>
 
   <pre>&lt;<a id=a-quick-introduction-to-html:the-form-element href=forms.html#the-form-element>form</a> <a href=forms.html#attr-form-name id=a-quick-introduction-to-html:attr-form-name>name</a>="main">
- Result: &lt;<a id=a-quick-introduction-to-html:the-output-element-2 href=forms.html#the-output-element>output</a> <a href=forms.html#attr-fe-name id=a-quick-introduction-to-html:attr-fe-name>name</a>="result">&lt;/output>
+ Result: &lt;<a id=a-quick-introduction-to-html:the-output-element-2 href=form-elements.html#the-output-element>output</a> <a href=form-control-infrastructure.html#attr-fe-name id=a-quick-introduction-to-html:attr-fe-name>name</a>="result">&lt;/output>
  &lt;<a id=a-quick-introduction-to-html:the-script-element-2 href=scripting.html#the-script-element>script</a>>
-  <a href=dom.html#document id=a-quick-introduction-to-html:document>document</a>.<a href=dom.html#dom-document-forms id=a-quick-introduction-to-html:dom-document-forms>forms</a>.main.<a href=forms.html#dom-form-elements id=a-quick-introduction-to-html:dom-form-elements>elements</a>.result.<a href=forms.html#dom-output-value id=a-quick-introduction-to-html:dom-output-value>value</a> = 'Hello World';
+  <a href=dom.html#document id=a-quick-introduction-to-html:document>document</a>.<a href=dom.html#dom-document-forms id=a-quick-introduction-to-html:dom-document-forms>forms</a>.main.<a href=forms.html#dom-form-elements id=a-quick-introduction-to-html:dom-form-elements>elements</a>.result.<a href=form-elements.html#dom-output-value id=a-quick-introduction-to-html:dom-output-value>value</a> = 'Hello World';
  &lt;/script>
 &lt;/form></pre>
 
   <p>Each element in the DOM tree is represented by an object, and these objects have APIs so that
-  they can be manipulated. For instance, a link (e.g. the <code id=a-quick-introduction-to-html:the-a-element-3><a href=semantics.html#the-a-element>a</a></code> element in the tree above)
-  can have its "<code id=a-quick-introduction-to-html:attr-hyperlink-href-3><a href=semantics.html#attr-hyperlink-href>href</a></code>" attribute changed in several
+  they can be manipulated. For instance, a link (e.g. the <code id=a-quick-introduction-to-html:the-a-element-3><a href=text-level-semantics.html#the-a-element>a</a></code> element in the tree above)
+  can have its "<code id=a-quick-introduction-to-html:attr-hyperlink-href-3><a href=links.html#attr-hyperlink-href>href</a></code>" attribute changed in several
   ways:</p>
 
   <pre>var a = <a href=dom.html#document id=a-quick-introduction-to-html:document-2>document</a>.<a href=dom.html#dom-document-links id=a-quick-introduction-to-html:dom-document-links>links</a>[0]; // obtain the first link in the document
-a.<a href=semantics.html#dom-hyperlink-href id=a-quick-introduction-to-html:dom-hyperlink-href>href</a> = 'sample.html'; // change the destination URL of the link
-a.<a href=semantics.html#dom-hyperlink-protocol id=a-quick-introduction-to-html:dom-hyperlink-protocol>protocol</a> = 'https'; // change just the scheme part of the URL
+a.<a href=links.html#dom-hyperlink-href id=a-quick-introduction-to-html:dom-hyperlink-href>href</a> = 'sample.html'; // change the destination URL of the link
+a.<a href=links.html#dom-hyperlink-protocol id=a-quick-introduction-to-html:dom-hyperlink-protocol>protocol</a> = 'https'; // change just the scheme part of the URL
 a.setAttribute('href', 'https://example.com/'); // change the content attribute directly</pre>
 
   <p>Since DOM trees are used as the way to represent HTML documents when they are processed and
@@ -833,7 +818,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
 
 
 
-  <h4 id=writing-secure-applications-with-html>1.11.1 Writing secure applications with HTML<a href=#writing-secure-applications-with-html class=self-link></a></h4>
+  <h4 id=writing-secure-applications-with-html><span class=secno>1.11.1</span> Writing secure applications with HTML<a href=#writing-secure-applications-with-html class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -897,7 +882,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
      instance, use the <code id=writing-secure-applications-with-html:handler-onload><a href=webappapis.html#handler-onload>onload</a></code> attribute to run arbitrary
      script.<li>When allowing URLs to be provided (e.g. for links), the scheme of each URL also needs to be
      explicitly safelisted, as there are many schemes that can be abused. The most prominent
-     example is "<code id=writing-secure-applications-with-html:javascript-protocol><a href=browsers.html#javascript-protocol>javascript:</a></code>", but user agents can
+     example is "<code id=writing-secure-applications-with-html:javascript-protocol><a href=browsing-the-web.html#javascript-protocol>javascript:</a></code>", but user agents can
      implement (and indeed, have historically implemented) others.<li>Allowing a <code id=writing-secure-applications-with-html:the-base-element><a href=semantics.html#the-base-element>base</a></code> element to be inserted means any <code id=writing-secure-applications-with-html:the-script-element><a href=scripting.html#the-script-element>script</a></code> elements
      in the page with relative links can be hijacked, and similarly that any form submissions can
      get redirected to a hostile site.</ul>
@@ -921,20 +906,20 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
     activating the interface.</p>
 
     <p>One way that a user could be so tricked is if a hostile site places the victim site in a
-    small <code id=writing-secure-applications-with-html:the-iframe-element><a href=embedded-content.html#the-iframe-element>iframe</a></code> and then convinces the user to click, for instance by having the user
+    small <code id=writing-secure-applications-with-html:the-iframe-element><a href=iframe-embed-object.html#the-iframe-element>iframe</a></code> and then convinces the user to click, for instance by having the user
     play a reaction game. Once the user is playing the game, the hostile site can quickly position
     the iframe under the mouse cursor just as the user is about to click, thus tricking the user
     into clicking the victim site's interface.</p>
 
     <p>To avoid this, sites that do not expect to be used in frames are encouraged to only enable
-    their interface if they detect that they are not in a frame (e.g. by comparing the <code id=writing-secure-applications-with-html:dom-window><a href=browsers.html#dom-window>window</a></code> object to the value of the <code id=writing-secure-applications-with-html:dom-top><a href=browsers.html#dom-top>top</a></code>
+    their interface if they detect that they are not in a frame (e.g. by comparing the <code id=writing-secure-applications-with-html:dom-window><a href=window-object.html#dom-window>window</a></code> object to the value of the <code id=writing-secure-applications-with-html:dom-top><a href=browsers.html#dom-top>top</a></code>
     attribute).</p>
 
    </dl>
 
 
 
-  <h4 id=common-pitfalls-to-avoid-when-using-the-scripting-apis>1.11.2 Common pitfalls to avoid when using the scripting APIs<a href=#common-pitfalls-to-avoid-when-using-the-scripting-apis class=self-link></a></h4>
+  <h4 id=common-pitfalls-to-avoid-when-using-the-scripting-apis><span class=secno>1.11.2</span> Common pitfalls to avoid when using the scripting APIs<a href=#common-pitfalls-to-avoid-when-using-the-scripting-apis class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -990,7 +975,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
 
 
 
-  <h4 id=how-to-catch-mistakes-when-writing-html:-validators-and-conformance-checkers>1.11.3 How to catch mistakes when writing HTML: validators and conformance checkers<a href=#how-to-catch-mistakes-when-writing-html:-validators-and-conformance-checkers class=self-link></a></h4>
+  <h4 id=how-to-catch-mistakes-when-writing-html:-validators-and-conformance-checkers><span class=secno>1.11.3</span> How to catch mistakes when writing HTML: validators and conformance checkers<a href=#how-to-catch-mistakes-when-writing-html:-validators-and-conformance-checkers class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -999,7 +984,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
 
 
 
-  <h3 id=conformance-requirements-for-authors>1.12 Conformance requirements for authors<a href=#conformance-requirements-for-authors class=self-link></a></h3>
+  <h3 id=conformance-requirements-for-authors><span class=secno>1.12</span> Conformance requirements for authors<a href=#conformance-requirements-for-authors class=self-link></a></h3>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -1014,7 +999,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
   with errors.</p>
 
 
-  <h4 id=presentational-markup>1.12.1 Presentational markup<a href=#presentational-markup class=self-link></a></h4>
+  <h4 id=presentational-markup><span class=secno>1.12.1</span> Presentational markup<a href=#presentational-markup class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -1058,11 +1043,11 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
   when the styles apply to multiple pages.</p>
 
   <p>It is also worth noting that some elements that were previously presentational have been
-  redefined in this specification to be media-independent: <code id=presentational-markup:the-b-element><a href=semantics.html#the-b-element>b</a></code>, <code id=presentational-markup:the-i-element><a href=semantics.html#the-i-element>i</a></code>,
-  <code id=presentational-markup:the-hr-element><a href=semantics.html#the-hr-element>hr</a></code>, <code id=presentational-markup:the-s-element><a href=semantics.html#the-s-element>s</a></code>, <code id=presentational-markup:the-small-element><a href=semantics.html#the-small-element>small</a></code>, and <code id=presentational-markup:the-u-element><a href=semantics.html#the-u-element>u</a></code>.</p>
+  redefined in this specification to be media-independent: <code id=presentational-markup:the-b-element><a href=text-level-semantics.html#the-b-element>b</a></code>, <code id=presentational-markup:the-i-element><a href=text-level-semantics.html#the-i-element>i</a></code>,
+  <code id=presentational-markup:the-hr-element><a href=grouping-content.html#the-hr-element>hr</a></code>, <code id=presentational-markup:the-s-element><a href=text-level-semantics.html#the-s-element>s</a></code>, <code id=presentational-markup:the-small-element><a href=text-level-semantics.html#the-small-element>small</a></code>, and <code id=presentational-markup:the-u-element><a href=text-level-semantics.html#the-u-element>u</a></code>.</p>
 
 
-  <h4 id=syntax-errors>1.12.2 Syntax errors<a href=#syntax-errors class=self-link></a></h4>
+  <h4 id=syntax-errors><span class=secno>1.12.2</span> Syntax errors<a href=#syntax-errors class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -1075,7 +1060,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
 
     <div class=example>
 
-     <p>For example, the following markup fragment results in a DOM with an <code id=syntax-errors:the-hr-element><a href=semantics.html#the-hr-element>hr</a></code> element
+     <p>For example, the following markup fragment results in a DOM with an <code id=syntax-errors:the-hr-element><a href=grouping-content.html#the-hr-element>hr</a></code> element
      that is an <em>earlier</em> sibling of the corresponding <code id=syntax-errors:the-table-element><a href=tables.html#the-table-element>table</a></code> element:</p>
 
      <pre class=bad>&lt;table>&lt;hr>...</pre>
@@ -1086,7 +1071,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
 
     <p>To allow user agents to be used in controlled environments without having to implement the
     more bizarre and convoluted error handling rules, user agents are permitted to fail whenever
-    encountering a <a id=syntax-errors:parse-errors href=syntax.html#parse-errors>parse error</a>.</p>
+    encountering a <a id=syntax-errors:parse-errors href=parsing.html#parse-errors>parse error</a>.</p>
 
    <dt>Errors where the error-handling behavior is not compatible with streaming user agents<dd>
 
@@ -1112,7 +1097,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
     <div class=example>
 
      <p>For example, the following markup results in poor performance, since all the unclosed
-     <code id=syntax-errors:the-i-element><a href=semantics.html#the-i-element>i</a></code> elements have to be reconstructed in each paragraph, resulting in progressively
+     <code id=syntax-errors:the-i-element><a href=text-level-semantics.html#the-i-element>i</a></code> elements have to be reconstructed in each paragraph, resulting in progressively
      more elements in each paragraph:</p>
 
      <pre class=bad>&lt;p>&lt;i>She dreamt.
@@ -1122,7 +1107,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
 
      <p>The resulting DOM for this fragment would be:</p>
 
-     <ul class=domTree><li class=t1><code id=syntax-errors:the-p-element><a href=semantics.html#the-p-element>p</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-2><a href=semantics.html#the-i-element>i</a></code><ul><li class=t3><code id=syntax-errors:text><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>She dreamt.</span></ul></ul><li class=t1><code id=syntax-errors:the-p-element-2><a href=semantics.html#the-p-element>p</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-3><a href=semantics.html#the-i-element>i</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-4><a href=semantics.html#the-i-element>i</a></code><ul><li class=t3><code id=syntax-errors:text-2><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>She dreamt that she ate breakfast.</span></ul></ul></ul><li class=t1><code id=syntax-errors:the-p-element-3><a href=semantics.html#the-p-element>p</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-5><a href=semantics.html#the-i-element>i</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-6><a href=semantics.html#the-i-element>i</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-7><a href=semantics.html#the-i-element>i</a></code><ul><li class=t3><code id=syntax-errors:text-3><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>Then lunch.</span></ul></ul></ul></ul><li class=t1><code id=syntax-errors:the-p-element-4><a href=semantics.html#the-p-element>p</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-8><a href=semantics.html#the-i-element>i</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-9><a href=semantics.html#the-i-element>i</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-10><a href=semantics.html#the-i-element>i</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-11><a href=semantics.html#the-i-element>i</a></code><ul><li class=t3><code id=syntax-errors:text-4><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>And finally dinner.</span></ul></ul></ul></ul></ul></ul>
+     <ul class=domTree><li class=t1><code id=syntax-errors:the-p-element><a href=grouping-content.html#the-p-element>p</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-2><a href=text-level-semantics.html#the-i-element>i</a></code><ul><li class=t3><code id=syntax-errors:text><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>She dreamt.</span></ul></ul><li class=t1><code id=syntax-errors:the-p-element-2><a href=grouping-content.html#the-p-element>p</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-3><a href=text-level-semantics.html#the-i-element>i</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-4><a href=text-level-semantics.html#the-i-element>i</a></code><ul><li class=t3><code id=syntax-errors:text-2><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>She dreamt that she ate breakfast.</span></ul></ul></ul><li class=t1><code id=syntax-errors:the-p-element-3><a href=grouping-content.html#the-p-element>p</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-5><a href=text-level-semantics.html#the-i-element>i</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-6><a href=text-level-semantics.html#the-i-element>i</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-7><a href=text-level-semantics.html#the-i-element>i</a></code><ul><li class=t3><code id=syntax-errors:text-3><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>Then lunch.</span></ul></ul></ul></ul><li class=t1><code id=syntax-errors:the-p-element-4><a href=grouping-content.html#the-p-element>p</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-8><a href=text-level-semantics.html#the-i-element>i</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-9><a href=text-level-semantics.html#the-i-element>i</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-10><a href=text-level-semantics.html#the-i-element>i</a></code><ul><li class=t1><code id=syntax-errors:the-i-element-11><a href=text-level-semantics.html#the-i-element>i</a></code><ul><li class=t3><code id=syntax-errors:text-4><a data-x-internal=text href=https://dom.spec.whatwg.org/#interface-text>#text</a></code>: <span>And finally dinner.</span></ul></ul></ul></ul></ul></ul>
 
     </div>
 
@@ -1201,7 +1186,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
     <div class=example>
 
      <p>For example, it is unclear whether the author intended the following to be an
-     <code id=syntax-errors:the-h1,-h2,-h3,-h4,-h5,-and-h6-elements><a href=semantics.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements>h1</a></code> heading or an <code id=syntax-errors:the-h1,-h2,-h3,-h4,-h5,-and-h6-elements-2><a href=semantics.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements>h2</a></code> heading:</p>
+     <code id=syntax-errors:the-h1,-h2,-h3,-h4,-h5,-and-h6-elements><a href=sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements>h1</a></code> heading or an <code id=syntax-errors:the-h1,-h2,-h3,-h4,-h5,-and-h6-elements-2><a href=sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements>h2</a></code> heading:</p>
 
      <pre class=bad>&lt;h1>Contact details&lt;/h2></pre>
 
@@ -1244,7 +1229,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
 
 
 
-  <h4 id=restrictions-on-content-models-and-on-attribute-values>1.12.3 Restrictions on content models and on attribute values<a href=#restrictions-on-content-models-and-on-attribute-values class=self-link></a></h4>
+  <h4 id=restrictions-on-content-models-and-on-attribute-values><span class=secno>1.12.3</span> Restrictions on content models and on attribute values<a href=#restrictions-on-content-models-and-on-attribute-values class=self-link></a></h4>
 
   <p><i>This section is non-normative.</i></p>
 
@@ -1256,8 +1241,8 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
     <p>To avoid misuse of elements with defined meanings, content models are defined that restrict
     how elements can be nested when such nestings would be of dubious value.</p>
 
-    <p class=example>For example, this specification disallows nesting a <code id=restrictions-on-content-models-and-on-attribute-values:the-section-element><a href=semantics.html#the-section-element>section</a></code>
-    element inside a <code id=restrictions-on-content-models-and-on-attribute-values:the-kbd-element><a href=semantics.html#the-kbd-element>kbd</a></code> element, since it is highly unlikely for an author to indicate
+    <p class=example>For example, this specification disallows nesting a <code id=restrictions-on-content-models-and-on-attribute-values:the-section-element><a href=sections.html#the-section-element>section</a></code>
+    element inside a <code id=restrictions-on-content-models-and-on-attribute-values:the-kbd-element><a href=text-level-semantics.html#the-kbd-element>kbd</a></code> element, since it is highly unlikely for an author to indicate
     that an entire section should be keyed in.</p>
 
    <dt>Errors that involve a conflict in expressed semantics<dd>
@@ -1276,9 +1261,9 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
     </div>
 
     <p class=example>Another example is the restrictions on the content models of the
-    <code id=restrictions-on-content-models-and-on-attribute-values:the-ul-element><a href=semantics.html#the-ul-element>ul</a></code> element, which only allows <code id=restrictions-on-content-models-and-on-attribute-values:the-li-element><a href=semantics.html#the-li-element>li</a></code> element children. Lists by definition
-    consist just of zero or more list items, so if a <code id=restrictions-on-content-models-and-on-attribute-values:the-ul-element-2><a href=semantics.html#the-ul-element>ul</a></code> element contains something
-    other than an <code id=restrictions-on-content-models-and-on-attribute-values:the-li-element-2><a href=semantics.html#the-li-element>li</a></code> element, it's not clear what was meant.</p>
+    <code id=restrictions-on-content-models-and-on-attribute-values:the-ul-element><a href=grouping-content.html#the-ul-element>ul</a></code> element, which only allows <code id=restrictions-on-content-models-and-on-attribute-values:the-li-element><a href=grouping-content.html#the-li-element>li</a></code> element children. Lists by definition
+    consist just of zero or more list items, so if a <code id=restrictions-on-content-models-and-on-attribute-values:the-ul-element-2><a href=grouping-content.html#the-ul-element>ul</a></code> element contains something
+    other than an <code id=restrictions-on-content-models-and-on-attribute-values:the-li-element-2><a href=grouping-content.html#the-li-element>li</a></code> element, it's not clear what was meant.</p>
 
    <dt>Cases where the default styles are likely to lead to confusion<dd>
 
@@ -1286,15 +1271,15 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
     lead to confusion. Where these have equivalent alternatives without this problem, the confusing
     combinations are disallowed.</p>
 
-    <p class=example>For example, <code id=restrictions-on-content-models-and-on-attribute-values:the-div-element><a href=semantics.html#the-div-element>div</a></code> elements are rendered as <a href=https://drafts.csswg.org/css2/visuren.html#x9 id=restrictions-on-content-models-and-on-attribute-values:block-box data-x-internal=block-box>block boxes</a>, and <code id=restrictions-on-content-models-and-on-attribute-values:the-span-element><a href=semantics.html#the-span-element>span</a></code> elements as <a href=https://drafts.csswg.org/css2/visuren.html#inline-box id=restrictions-on-content-models-and-on-attribute-values:inline-box data-x-internal=inline-box>inline boxes</a>. Putting a <a id=restrictions-on-content-models-and-on-attribute-values:block-box-2 href=https://drafts.csswg.org/css2/visuren.html#x9 data-x-internal=block-box>block box</a> in an
-    <a id=restrictions-on-content-models-and-on-attribute-values:inline-box-2 href=https://drafts.csswg.org/css2/visuren.html#inline-box data-x-internal=inline-box>inline box</a> is unnecessarily confusing; since either nesting just <code id=restrictions-on-content-models-and-on-attribute-values:the-div-element-2><a href=semantics.html#the-div-element>div</a></code>
-    elements, or nesting just <code id=restrictions-on-content-models-and-on-attribute-values:the-span-element-2><a href=semantics.html#the-span-element>span</a></code> elements, or nesting <code id=restrictions-on-content-models-and-on-attribute-values:the-span-element-3><a href=semantics.html#the-span-element>span</a></code> elements
-    inside <code id=restrictions-on-content-models-and-on-attribute-values:the-div-element-3><a href=semantics.html#the-div-element>div</a></code> elements all serve the same purpose as nesting a <code id=restrictions-on-content-models-and-on-attribute-values:the-div-element-4><a href=semantics.html#the-div-element>div</a></code>
-    element in a <code id=restrictions-on-content-models-and-on-attribute-values:the-span-element-4><a href=semantics.html#the-span-element>span</a></code> element, but only the latter involves a <a id=restrictions-on-content-models-and-on-attribute-values:block-box-3 href=https://drafts.csswg.org/css2/visuren.html#x9 data-x-internal=block-box>block box</a> in
+    <p class=example>For example, <code id=restrictions-on-content-models-and-on-attribute-values:the-div-element><a href=grouping-content.html#the-div-element>div</a></code> elements are rendered as <a href=https://drafts.csswg.org/css2/visuren.html#x9 id=restrictions-on-content-models-and-on-attribute-values:block-box data-x-internal=block-box>block boxes</a>, and <code id=restrictions-on-content-models-and-on-attribute-values:the-span-element><a href=text-level-semantics.html#the-span-element>span</a></code> elements as <a href=https://drafts.csswg.org/css2/visuren.html#inline-box id=restrictions-on-content-models-and-on-attribute-values:inline-box data-x-internal=inline-box>inline boxes</a>. Putting a <a id=restrictions-on-content-models-and-on-attribute-values:block-box-2 href=https://drafts.csswg.org/css2/visuren.html#x9 data-x-internal=block-box>block box</a> in an
+    <a id=restrictions-on-content-models-and-on-attribute-values:inline-box-2 href=https://drafts.csswg.org/css2/visuren.html#inline-box data-x-internal=inline-box>inline box</a> is unnecessarily confusing; since either nesting just <code id=restrictions-on-content-models-and-on-attribute-values:the-div-element-2><a href=grouping-content.html#the-div-element>div</a></code>
+    elements, or nesting just <code id=restrictions-on-content-models-and-on-attribute-values:the-span-element-2><a href=text-level-semantics.html#the-span-element>span</a></code> elements, or nesting <code id=restrictions-on-content-models-and-on-attribute-values:the-span-element-3><a href=text-level-semantics.html#the-span-element>span</a></code> elements
+    inside <code id=restrictions-on-content-models-and-on-attribute-values:the-div-element-3><a href=grouping-content.html#the-div-element>div</a></code> elements all serve the same purpose as nesting a <code id=restrictions-on-content-models-and-on-attribute-values:the-div-element-4><a href=grouping-content.html#the-div-element>div</a></code>
+    element in a <code id=restrictions-on-content-models-and-on-attribute-values:the-span-element-4><a href=text-level-semantics.html#the-span-element>span</a></code> element, but only the latter involves a <a id=restrictions-on-content-models-and-on-attribute-values:block-box-3 href=https://drafts.csswg.org/css2/visuren.html#x9 data-x-internal=block-box>block box</a> in
     an <a id=restrictions-on-content-models-and-on-attribute-values:inline-box-3 href=https://drafts.csswg.org/css2/visuren.html#inline-box data-x-internal=inline-box>inline box</a>, the latter combination is disallowed.</p>
 
     <p class=example>Another example would be the way <a id=restrictions-on-content-models-and-on-attribute-values:interactive-content-2 href=dom.html#interactive-content-2>interactive content</a> cannot be
-    nested. For example, a <code id=restrictions-on-content-models-and-on-attribute-values:the-button-element><a href=forms.html#the-button-element>button</a></code> element cannot contain a <code id=restrictions-on-content-models-and-on-attribute-values:the-textarea-element><a href=forms.html#the-textarea-element>textarea</a></code>
+    nested. For example, a <code id=restrictions-on-content-models-and-on-attribute-values:the-button-element><a href=form-elements.html#the-button-element>button</a></code> element cannot contain a <code id=restrictions-on-content-models-and-on-attribute-values:the-textarea-element><a href=form-elements.html#the-textarea-element>textarea</a></code>
     element. This is because the default behavior of such nesting interactive elements would be
     highly confusing to users. Instead of nesting these elements, they can be placed side by
     side.</p>
@@ -1304,7 +1289,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
     <p>Sometimes, something is disallowed because allowing it would likely cause author
     confusion.</p>
 
-    <p class=example>For example, setting the <code id=restrictions-on-content-models-and-on-attribute-values:attr-fe-disabled><a href=forms.html#attr-fe-disabled>disabled</a></code>
+    <p class=example>For example, setting the <code id=restrictions-on-content-models-and-on-attribute-values:attr-fe-disabled><a href=form-control-infrastructure.html#attr-fe-disabled>disabled</a></code>
     attribute to the value "<code>false</code>" is disallowed, because despite the
     appearance of meaning that the element is enabled, it in fact means that the element is
     <em>disabled</em> (what matters for implementations is the presence of the attribute, not its
@@ -1314,8 +1299,8 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
 
     <p>Some conformance errors simplify the language that authors need to learn.</p>
 
-    <p class=example>For example, the <code id=restrictions-on-content-models-and-on-attribute-values:the-area-element><a href=embedded-content.html#the-area-element>area</a></code> element's <code id=restrictions-on-content-models-and-on-attribute-values:attr-area-shape><a href=embedded-content.html#attr-area-shape>shape</a></code> attribute, despite accepting both <code id=restrictions-on-content-models-and-on-attribute-values:attr-area-shape-keyword-circ><a href=embedded-content.html#attr-area-shape-keyword-circ>circ</a></code> and <code id=restrictions-on-content-models-and-on-attribute-values:attr-area-shape-keyword-circle><a href=embedded-content.html#attr-area-shape-keyword-circle>circle</a></code> values in practice as synonyms, disallows
-    the use of the <code id=restrictions-on-content-models-and-on-attribute-values:attr-area-shape-keyword-circ-2><a href=embedded-content.html#attr-area-shape-keyword-circ>circ</a></code> value, so as to simplify
+    <p class=example>For example, the <code id=restrictions-on-content-models-and-on-attribute-values:the-area-element><a href=image-maps.html#the-area-element>area</a></code> element's <code id=restrictions-on-content-models-and-on-attribute-values:attr-area-shape><a href=image-maps.html#attr-area-shape>shape</a></code> attribute, despite accepting both <code id=restrictions-on-content-models-and-on-attribute-values:attr-area-shape-keyword-circ><a href=image-maps.html#attr-area-shape-keyword-circ>circ</a></code> and <code id=restrictions-on-content-models-and-on-attribute-values:attr-area-shape-keyword-circle><a href=image-maps.html#attr-area-shape-keyword-circle>circle</a></code> values in practice as synonyms, disallows
+    the use of the <code id=restrictions-on-content-models-and-on-attribute-values:attr-area-shape-keyword-circ-2><a href=image-maps.html#attr-area-shape-keyword-circ>circ</a></code> value, so as to simplify
     tutorials and other learning aids. There would be no benefit to allowing both, but it would
     cause extra confusion when teaching the language.</p>
 
@@ -1329,7 +1314,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
 
      <p>For example, a <code id=restrictions-on-content-models-and-on-attribute-values:the-form-element><a href=forms.html#the-form-element>form</a></code> element isn't allowed inside <a id=restrictions-on-content-models-and-on-attribute-values:phrasing-content-2 href=dom.html#phrasing-content-2>phrasing content</a>,
      because when parsed as HTML, a <code id=restrictions-on-content-models-and-on-attribute-values:the-form-element-2><a href=forms.html#the-form-element>form</a></code> element's start tag will imply a
-     <code id=restrictions-on-content-models-and-on-attribute-values:the-p-element><a href=semantics.html#the-p-element>p</a></code> element's end tag. Thus, the following markup results in two <a href=dom.html#paragraph id=restrictions-on-content-models-and-on-attribute-values:paragraph>paragraphs</a>, not one:</p>
+     <code id=restrictions-on-content-models-and-on-attribute-values:the-p-element><a href=grouping-content.html#the-p-element>p</a></code> element's end tag. Thus, the following markup results in two <a href=dom.html#paragraph id=restrictions-on-content-models-and-on-attribute-values:paragraph>paragraphs</a>, not one:</p>
 
      <pre>&lt;p>Welcome. &lt;form>&lt;label>Name:&lt;/label> &lt;input>&lt;/form></pre>
 
@@ -1382,7 +1367,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
     of the language, some restrictions on the content models of elements and values of attributes
     are intended to allow for future expansion of the HTML vocabulary.</p>
 
-    <p class=example>For example, limiting the values of the <code id=restrictions-on-content-models-and-on-attribute-values:attr-hyperlink-target><a href=semantics.html#attr-hyperlink-target>target</a></code> attribute that start with an U+005F LOW LINE
+    <p class=example>For example, limiting the values of the <code id=restrictions-on-content-models-and-on-attribute-values:attr-hyperlink-target><a href=links.html#attr-hyperlink-target>target</a></code> attribute that start with an U+005F LOW LINE
     character (_) to only specific predefined values allows new predefined values to be introduced
     at a future time without conflicting with author-defined values.</p>
 
@@ -1399,7 +1384,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
 
 
 
-  <h3 id=suggested-reading>1.13 Suggested reading<a href=#suggested-reading class=self-link></a></h3>
+  <h3 id=suggested-reading><span class=secno>1.13</span> Suggested reading<a href=#suggested-reading class=self-link></a></h3>
 
   <p><i>This section is non-normative.</i></p>
 

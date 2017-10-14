@@ -1,0 +1,195 @@
+<!DOCTYPE html><html class=split lang=en-US-x-hixie><script src=/link-fixup.js defer=""></script><meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><title>HTML Standard, Developer's Edition</title><meta content=#3c790a name=theme-color><link rel=icon href=https://resources.whatwg.org/logo.svg><script>
+   function toggleStatus(div) {
+     div.parentNode.classList.toggle('wrapped');
+   }
+  </script><style>
+   .status { min-height: 0.6em; font: 1em sans-serif; width: 9em; padding: 0.3em; position: absolute; z-index: 8; right: 0.3em; background: #EEE; color: black; box-shadow: 0 0 3px #999; overflow: hidden; margin: -2em 0 0 0; border-collapse: initial; border-spacing: initial; }
+   .status:hover { z-index: 9; }
+   .status:focus-within { z-index: 9; }
+   .status.wrapped > :not(input) { display: none; }
+   .status > input { position: absolute; left: 0; top: 0; width: 1em; height: 1em; border: none; background: transparent; padding: 0; margin: 0; }
+   .status > p { font-size: 0.6em; margin: 0; padding: 0; }
+   .status > p + p { padding-top: 0.5em; }
+   .status > p > strong { margin-left: 1.5em; }
+   .status > .support { display: block; }
+   .status > .support > span { padding: 0.2em 0; display: block; display: table; }
+   .status > .support > span.partial { color: #666666; filter: grayscale(50%); }
+   .status > .support > span.no { color: #CCCCCC; filter: grayscale(100%); }
+   .status > .support > span.no::before { opacity: 0.5; }
+   .status > .support > span:first-of-type { padding-top: 0.5em; }
+   .status > .support > span > span { padding: 0 0.5em; display: table-cell; vertical-align: top; }
+   .status > .support > span > span:first-child { width: 100%; }
+   .status > .support > span > span:last-child { width: 100%; white-space: pre; padding: 0; }
+   .status > .support > span::before { content: ' '; display: table-cell; min-width: 1.5em; height: 1.5em; background: no-repeat center center; background-size: contain; text-align: right; font-size: 0.75em; font-weight: bold; }
+   .status > .support > .and_chr::before { background-image: url(https://resources.whatwg.org/browser-logos/chrome.svg); }
+   .status > .support > .and_ff::before { background-image: url(https://resources.whatwg.org/browser-logos/firefox.png); }
+   .status > .support > .and_uc::before { background-image: url(https://resources.whatwg.org/browser-logos/uc.png); } /* UC Browser for Android */
+   .status > .support > .android::before { background-image: url(https://resources.whatwg.org/browser-logos/android.svg); }
+   .status > .support > .bb::before { background-image: url(https://resources.whatwg.org/browser-logos/bb.jpg); } /* Blackberry Browser */
+   .status > .support > .chrome::before { background-image: url(https://resources.whatwg.org/browser-logos/chrome.svg); }
+   .status > .support > .edge::before { background-image: url(https://resources.whatwg.org/browser-logos/edge.svg); }
+   .status > .support > .firefox::before { background-image: url(https://resources.whatwg.org/browser-logos/firefox.png); }
+   .status > .support > .ie::before { background-image: url(https://resources.whatwg.org/browser-logos/ie.png); }
+   .status > .support > .ie_mob::before { background-image: url(https://resources.whatwg.org/browser-logos/ie-mobile.svg); }
+   .status > .support > .ios_saf::before { background-image: url(https://resources.whatwg.org/browser-logos/safari-ios.svg); }
+   .status > .support > .op_mini::before { background-image: url(https://resources.whatwg.org/browser-logos/opera-mini.png); }
+   .status > .support > .op_mob::before { background-image: url(https://resources.whatwg.org/browser-logos/opera.png); }
+   .status > .support > .opera::before { background-image: url(https://resources.whatwg.org/browser-logos/opera.png); }
+   .status > .support > .safari::before { background-image: url(https://resources.whatwg.org/browser-logos/safari.png); }
+   .status > .support > .samsung::before { background-image: url(https://resources.whatwg.org/browser-logos/samsung.png); }
+   .status > .caniuse { text-align: right; font-style: italic; width: 100%; }
+   .status > .caniuse + p { margin-top: 0.5em; border-top: 1px solid silver; }
+
+   @media (max-width: 767px) {
+     .status { right: -9em; }
+   }
+  </style><link rel=stylesheet href=styles.css><body>
+  <script async="" src=search.js></script>
+  
+  
+  <header id=head class="head with-buttons">
+   <a href=https://whatwg.org/ class=logo><img alt=WHATWG src=https://resources.whatwg.org/logo.svg width=100 height=100></a>
+   
+   <hgroup><h1><a rel=home href=/dev/>HTML: The Living Standard</a></h1><h2 id=dev-edition-h2 class="no-num no-toc">Developer's Edition — Last Updated <span class=pubdate>14 October 2017</span></h2></hgroup>
+   
+
+   <div id=search>
+    <input placeholder="Search. Press '/'" autocomplete=off name=query id=query type=search>
+    <ol id=results></ol>
+   </div>
+  </header>
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+  <h2 id=about-dev-edition class="no-num no-toc">About this specification</h2>
+
+  <p>This specification is like no other — it has been processed with <em>you</em>, the humble web
+  developer, in mind.</p>
+
+  <p>The focus of this specification is readability and ease of access. Unlike the <a href=/multipage/>full HTML Standard</a>, this "developer's edition" removes information that
+  only browser vendors need know. It is automatically produced from the full specification by our
+  build tooling, and thus always in sync with the latest developments in HTML.</p>
+
+  <p>To read about its conception, construction, and future, read the <a href=http://web.archive.org/web/20150220020906/http://archive.germanforblack.com:80/articles/html5-for-web-developers>original
+  press release</a>, and the <a href=https://blog.whatwg.org/developers-edition-comeback>blog post
+  about its relaunch</a>.</p>
+
+  <p>Finally, feel free to <a href=https://github.com/whatwg/html/labels/dev%20edition>contribute
+  on GitHub</a> to make this edition better for everyone!</p>
+
+  
+
+  <nav><a href=common-microsyntaxes.html>← 2.3 Common microsyntaxes</a> — <a href=index.html>Table of Contents</a> — <a href=common-dom-interfaces.html>2.5 Common DOM interfaces →</a></nav><ol class=toc><li><ol><li><a href=urls-and-fetching.html#urls><span class=secno>2.4</span> URLs</a><ol><li><a href=urls-and-fetching.html#terminology-2><span class=secno>2.4.1</span> Terminology</a><li><a href=urls-and-fetching.html#cors-settings-attributes><span class=secno>2.4.2</span> CORS settings attributes</a><li><a href=urls-and-fetching.html#referrer-policy-attributes><span class=secno>2.4.3</span> Referrer policy attributes</a></ol></ol></ol><h3 id=urls><span class=secno>2.4</span> URLs<a href=#urls class=self-link></a></h3>
+
+  <h4 id=terminology-2><span class=secno>2.4.1</span> Terminology<a href=#terminology-2 class=self-link></a></h4>
+
+  <p>A string is a <dfn id=valid-non-empty-url>valid non-empty URL</dfn> if it is a <a id=terminology-2:valid-url-string href=https://url.spec.whatwg.org/#valid-url-string data-x-internal=valid-url-string>valid URL string</a> but it is
+  not the empty string.</p>
+
+  <p>A string is a <dfn id=valid-url-potentially-surrounded-by-spaces>valid URL potentially surrounded by spaces</dfn> if, after <a href=https://infra.spec.whatwg.org/#strip-leading-and-trailing-ascii-whitespace id=terminology-2:strip-leading-and-trailing-ascii-whitespace data-x-internal=strip-leading-and-trailing-ascii-whitespace>stripping leading and trailing ASCII
+  whitespace</a> from it, it is a <a id=terminology-2:valid-url-string-2 href=https://url.spec.whatwg.org/#valid-url-string data-x-internal=valid-url-string>valid URL string</a>.</p>
+
+  <p>A string is a <dfn id=valid-non-empty-url-potentially-surrounded-by-spaces>valid non-empty URL potentially surrounded by spaces</dfn> if, after <a href=https://infra.spec.whatwg.org/#strip-leading-and-trailing-ascii-whitespace id=terminology-2:strip-leading-and-trailing-ascii-whitespace-2 data-x-internal=strip-leading-and-trailing-ascii-whitespace>stripping leading and trailing ASCII
+  whitespace</a> from it, it is a <a href=#valid-non-empty-url id=terminology-2:valid-non-empty-url>valid non-empty URL</a>.</p>
+
+  <p>This specification defines the URL <dfn id=about:legacy-compat><code>about:legacy-compat</code></dfn> as a reserved,
+  though unresolvable, <code id=terminology-2:about-protocol><a data-x-internal=about-protocol href=https://tools.ietf.org/html/rfc6694#section-2>about:</a></code> URL, for use in <a href=syntax.html#syntax-doctype id=terminology-2:syntax-doctype>DOCTYPE</a>s in <a id=terminology-2:html-documents href=https://dom.spec.whatwg.org/#html-document data-x-internal=html-documents>HTML documents</a> when needed for
+  compatibility with XML tools. <a href=references.html#refsABOUT>[ABOUT]</a></p>
+
+  <p>This specification defines the URL <dfn id=about:html-kind><code>about:html-kind</code></dfn> as a reserved,
+  though unresolvable, <code id=terminology-2:about-protocol-2><a data-x-internal=about-protocol href=https://tools.ietf.org/html/rfc6694#section-2>about:</a></code> URL, that is used as an
+  identifier for kinds of media tracks. <a href=references.html#refsABOUT>[ABOUT]</a></p>
+
+  <p>This specification defines the URL <dfn id=about:srcdoc><code>about:srcdoc</code></dfn> as a reserved, though
+  unresolvable, <code id=terminology-2:about-protocol-3><a data-x-internal=about-protocol href=https://tools.ietf.org/html/rfc6694#section-2>about:</a></code> URL, that is used as the <a href=https://dom.spec.whatwg.org/#concept-document-url id="terminology-2:the-document's-address" data-x-internal="the-document's-address">URL</a> of <a href=iframe-embed-object.html#an-iframe-srcdoc-document id=terminology-2:an-iframe-srcdoc-document><code>iframe</code> <code>srcdoc</code> documents</a>.
+  <a href=references.html#refsABOUT>[ABOUT]</a></p>
+
+  <p>The <dfn id=fallback-base-url>fallback base URL</dfn> of a <code>Document</code> object <var>document</var> is the
+  <a id=terminology-2:url-record href=https://url.spec.whatwg.org/#concept-url data-x-internal=url-record>URL record</a> obtained by running these steps:</p>
+
+  <ol><li><p>If <var>document</var> is <a id=terminology-2:an-iframe-srcdoc-document-2 href=iframe-embed-object.html#an-iframe-srcdoc-document>an <code>iframe</code> <code>srcdoc</code> document</a>, then return the <a href=#document-base-url id=terminology-2:document-base-url>document base
+   URL</a> of <var>document</var>'s <a href=browsers.html#concept-document-bc id=terminology-2:concept-document-bc>browsing context</a>'s
+   <a id=terminology-2:browsing-context-container href=browsers.html#browsing-context-container>browsing context container</a>'s <a id=terminology-2:node-document href=https://dom.spec.whatwg.org/#concept-node-document data-x-internal=node-document>node document</a>.<li>
+
+    
+
+    
+
+    <p>If <var>document</var>'s <a href=https://dom.spec.whatwg.org/#concept-document-url id="terminology-2:the-document's-address-2" data-x-internal="the-document's-address">URL</a> is
+    <code id=terminology-2:about:blank><a href=infrastructure.html#about:blank>about:blank</a></code>, and <var>document</var>'s <a href=browsers.html#concept-document-bc id=terminology-2:concept-document-bc-2>browsing
+    context</a> has a <a id=terminology-2:creator-browsing-context href=browsers.html#creator-browsing-context>creator browsing context</a>, then return the <a id=terminology-2:creator-base-url href=browsers.html#creator-base-url>creator base
+    URL</a>.</p>
+
+   <li><p>Return <var>document</var>'s <a href=https://dom.spec.whatwg.org/#concept-document-url id="terminology-2:the-document's-address-3" data-x-internal="the-document's-address">URL</a>.</ol>
+
+  <p>The <dfn id=document-base-url data-export="">document base URL</dfn> of a <code>Document</code> object is the
+  <a id=terminology-2:absolute-url href=https://url.spec.whatwg.org/#syntax-url-absolute data-x-internal=absolute-url>absolute URL</a> obtained by running these steps:</p>
+
+  <ol><li><p>If there is no <code id=terminology-2:the-base-element><a href=semantics.html#the-base-element>base</a></code> element that has an <code id=terminology-2:attr-base-href><a href=semantics.html#attr-base-href>href</a></code> attribute in the <code>Document</code>, then the
+   <a href=#document-base-url id=terminology-2:document-base-url-2>document base URL</a> is the <code>Document</code>'s <a href=#fallback-base-url id=terminology-2:fallback-base-url>fallback base URL</a>;
+   abort these steps.<li><p>Otherwise, the <a href=#document-base-url id=terminology-2:document-base-url-3>document base URL</a> is the <span>frozen base URL</span> of the
+   first <code id=terminology-2:the-base-element-2><a href=semantics.html#the-base-element>base</a></code> element in the <code>Document</code> that has an <code id=terminology-2:attr-base-href-2><a href=semantics.html#attr-base-href>href</a></code> attribute, in <a id=terminology-2:tree-order href=https://dom.spec.whatwg.org/#concept-tree-order data-x-internal=tree-order>tree order</a>.</ol>
+
+
+  
+
+
+
+  
+
+
+  
+
+
+  <h4 id=cors-settings-attributes><span class=secno>2.4.2</span> CORS settings attributes<a href=#cors-settings-attributes class=self-link></a></h4>
+
+  <p>A <dfn id=cors-settings-attribute>CORS settings attribute</dfn> is an <a id=cors-settings-attributes:enumerated-attribute href=common-microsyntaxes.html#enumerated-attribute>enumerated attribute</a>. The following
+  table lists the keywords and states for the attribute — the keywords in the left column map
+  to the states in the cell in the second column on the same row as the keyword.</p>
+
+  <table><thead><tr><th> Keyword
+     <th> State
+     <th> Brief description
+   <tbody><tr><td><dfn id=attr-crossorigin-anonymous-keyword><code>anonymous</code></dfn>
+     <td><dfn id=attr-crossorigin-anonymous>Anonymous</dfn>
+     <td><a href=https://fetch.spec.whatwg.org/#concept-request id=cors-settings-attributes:concept-request data-x-internal=concept-request>Requests</a> for the element will have their <a href=https://fetch.spec.whatwg.org/#concept-request-mode id=cors-settings-attributes:concept-request-mode data-x-internal=concept-request-mode>mode</a> set to "<code>cors</code>" and their <a href=https://fetch.spec.whatwg.org/#concept-request-credentials-mode id=cors-settings-attributes:concept-request-credentials-mode data-x-internal=concept-request-credentials-mode>credentials mode</a> set to "<code>same-origin</code>".
+    <tr><td><dfn id=attr-crossorigin-use-credentials-keyword><code>use-credentials</code></dfn>
+     <td><dfn id=attr-crossorigin-use-credentials>Use Credentials</dfn>
+     <td><a href=https://fetch.spec.whatwg.org/#concept-request id=cors-settings-attributes:concept-request-2 data-x-internal=concept-request>Requests</a> for the element will have their <a href=https://fetch.spec.whatwg.org/#concept-request-mode id=cors-settings-attributes:concept-request-mode-2 data-x-internal=concept-request-mode>mode</a> set to "<code>cors</code>" and their <a href=https://fetch.spec.whatwg.org/#concept-request-credentials-mode id=cors-settings-attributes:concept-request-credentials-mode-2 data-x-internal=concept-request-credentials-mode>credentials mode</a> set to "<code>include</code>".
+  </table>
+
+  <p>The empty string is also a valid keyword, and maps to the <a href=#attr-crossorigin-anonymous id=cors-settings-attributes:attr-crossorigin-anonymous>Anonymous</a> state. The attribute's <i id=cors-settings-attributes:invalid-value-default><a href=common-microsyntaxes.html#invalid-value-default>invalid value default</a></i> is the <a href=#attr-crossorigin-anonymous id=cors-settings-attributes:attr-crossorigin-anonymous-2>Anonymous</a> state. For the
+  purposes of <a href=common-dom-interfaces.html#reflect id=cors-settings-attributes:reflect>reflection</a>, the canonical case for the <a href=#attr-crossorigin-anonymous id=cors-settings-attributes:attr-crossorigin-anonymous-3>Anonymous</a> state is the <code id=cors-settings-attributes:attr-crossorigin-anonymous-keyword><a href=#attr-crossorigin-anonymous-keyword>anonymous</a></code> keyword. The <i id=cors-settings-attributes:missing-value-default><a href=common-microsyntaxes.html#missing-value-default>missing value default</a></i>, used when the attribute is omitted, is the <dfn id=attr-crossorigin-none>No
+  CORS</dfn> state.</p>
+
+
+  <h4 id=referrer-policy-attributes><span class=secno>2.4.3</span> Referrer policy attributes<a href=#referrer-policy-attributes class=self-link></a></h4>
+
+  <p>A <dfn id=referrer-policy-attribute data-export="">referrer policy attribute</dfn> is an <a id=referrer-policy-attributes:enumerated-attribute href=common-microsyntaxes.html#enumerated-attribute>enumerated attribute</a>.
+  Each <a id=referrer-policy-attributes:referrer-policy href=https://w3c.github.io/webappsec-referrer-policy/#referrer-policy data-x-internal=referrer-policy>referrer policy</a>, including the empty string, is a keyword for this attribute,
+  mapping to a state of the same name.</p>
+
+  <p>The attribute's <i id=referrer-policy-attributes:invalid-value-default><a href=common-microsyntaxes.html#invalid-value-default>invalid value default</a></i> and <i id=referrer-policy-attributes:missing-value-default><a href=common-microsyntaxes.html#missing-value-default>missing value default</a></i> are both the empty string state.</p>
+
+  <p>The impact of these states on the processing model of various <a href=https://fetch.spec.whatwg.org/#concept-fetch id=referrer-policy-attributes:concept-fetch data-x-internal=concept-fetch>fetches</a> is defined in more detail throughout this specification, in
+  the WHATWG Fetch standard, and in <cite>Referrer Policy</cite>. <a href=references.html#refsFETCH>[FETCH]</a> <a href=references.html#refsREFERRERPOLICY>[REFERRERPOLICY]</a></p>
+
+  <div class=note>
+   <p>Several signals can contribute to which processing model is used for a given <a href=https://fetch.spec.whatwg.org/#concept-fetch id=referrer-policy-attributes:concept-fetch-2 data-x-internal=concept-fetch>fetch</a>; a <a href=#referrer-policy-attribute id=referrer-policy-attributes:referrer-policy-attribute>referrer policy attribute</a> is only one of
+   them. In general, the order in which these signals are processed are:</p>
+
+   <ol><li><p>First, the presence of a <code id=referrer-policy-attributes:link-type-noreferrer><a href=links.html#link-type-noreferrer>noreferrer</a></code> link
+    type;<li><p>Then, the value of a <a href=#referrer-policy-attribute id=referrer-policy-attributes:referrer-policy-attribute-2>referrer policy attribute</a>;<li><p>Then, the presence of any <code id=referrer-policy-attributes:the-meta-element><a href=semantics.html#the-meta-element>meta</a></code> element with <code id=referrer-policy-attributes:attr-meta-name><a href=semantics.html#attr-meta-name>name</a></code> attribute set to <code id=referrer-policy-attributes:meta-referrer><a href=semantics.html#meta-referrer>referrer</a></code>.<li><p>Finally, the `<code id=referrer-policy-attributes:http-referrer-policy><a data-x-internal=http-referrer-policy href=https://w3c.github.io/webappsec-referrer-policy/#referrer-policy-header-dfn>Referrer-Policy</a></code>` HTTP
+    header.</ol>
+  </div>
+
+
+  <nav><a href=common-microsyntaxes.html>← 2.3 Common microsyntaxes</a> — <a href=index.html>Table of Contents</a> — <a href=common-dom-interfaces.html>2.5 Common DOM interfaces →</a></nav>

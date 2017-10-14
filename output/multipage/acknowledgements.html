@@ -1,17 +1,8 @@
-<!DOCTYPE html><html class=split lang=en-US-x-hixie><script src=/link-fixup.js defer=""></script><meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><title>HTML Standard</title><meta content=#3c790a name=theme-color><link rel=stylesheet href=https://resources.whatwg.org/standard.css><script defer="" src=https://resources.whatwg.org/dfn.js></script><script>
+<!DOCTYPE html><html class=split lang=en-US-x-hixie><script src=/link-fixup.js defer=""></script><meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><title>HTML Standard</title><meta content=#3c790a name=theme-color><link rel=stylesheet href=https://resources.whatwg.org/standard.css><link rel=icon href=https://resources.whatwg.org/logo.svg><script>
    function toggleStatus(div) {
      div.parentNode.classList.toggle('wrapped');
    }
-  </script><link rel=icon href=https://resources.whatwg.org/logo.svg><style>
-   [hidden] { display: none; }
-
-   .bad, .bad *:not(.X\58X) { color: gray; border-color: gray; background: transparent; }
-
-   .fingerprint { position: absolute; right: 0; z-index: 5; }
-   @media (max-width: 767px) {
-     .fingerprint { max-width: 35px; }
-   }
-
+  </script><style>
    .status { min-height: 0.6em; font: 1em sans-serif; width: 9em; padding: 0.3em; position: absolute; z-index: 8; right: 0.3em; background: #EEE; color: black; box-shadow: 0 0 3px #999; overflow: hidden; margin: -2em 0 0 0; border-collapse: initial; border-spacing: initial; }
    .status:hover { z-index: 9; }
    .status:focus-within { z-index: 9; }
@@ -46,11 +37,20 @@
    .status > .support > .opera::before { background-image: url(https://resources.whatwg.org/browser-logos/opera.png); }
    .status > .support > .safari::before { background-image: url(https://resources.whatwg.org/browser-logos/safari.png); }
    .status > .support > .samsung::before { background-image: url(https://resources.whatwg.org/browser-logos/samsung.png); }
-   .status > .caniuse { text-align: right; font-style: italic; }
+   .status > .caniuse { text-align: right; font-style: italic; width: 100%; }
    .status > .caniuse + p { margin-top: 0.5em; border-top: 1px solid silver; }
 
    @media (max-width: 767px) {
      .status { right: -9em; }
+   }
+  </style><style>
+   [hidden] { display: none; }
+
+   .bad, .bad *:not(.X\58X) { color: gray; border-color: gray; background: transparent; }
+
+   .fingerprint { position: absolute; right: 0; z-index: 5; }
+   @media (max-width: 767px) {
+     .fingerprint { max-width: 35px; }
    }
 
    .applies .yes, .yesno .yes { background: yellow; }
@@ -109,24 +109,6 @@
 
    .parse-error-table td > p:first-child { margin-top: 0; }
 
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
    #named-character-references-table {
      white-space: nowrap;
      font-size: 0.6em;
@@ -175,16 +157,18 @@
    #abstractimg .top { word-spacing: 50px; text-anchor: middle; }
    #abstractimg .left, #abstractimg .bottom { word-spacing: 12px; }
    #abstractimg .right { font-size: 25px; }
-  </style>
+  </style><body>
+  
+  <script async="" src=/html-dfn.js></script>
   <script data-file-issue-url=https://github.com/whatwg/html/issues/new src=https://resources.whatwg.org/file-issue.js async=""></script>
   <header id=head class="head with-buttons">
-   <p><a href=https://whatwg.org/ class=logo><img alt=WHATWG src=https://resources.whatwg.org/logo.svg width=100 height=100></a></p>
-   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>31 May 2017</span></h2></hgroup>
+   <a href=https://whatwg.org/ class=logo><img alt=WHATWG src=https://resources.whatwg.org/logo.svg width=100 height=100></a>
+   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>14 October 2017</span></h2></hgroup>
    
+   
+
    
   </header>
-
-  
 
   
 
@@ -206,6 +190,7 @@
   Aankhen,
   Aaron Boodman,
   Aaron Leventhal,
+  Abhishek Gupta, 
   Adam Barth,
   Adam de Boor,
   Adam Hepton,
@@ -233,12 +218,14 @@
   Alexey Feldgendler,
   Алексей Проскуряков (Alexey Proskuryakov),
   Alexis Deveria,
+  Alfred Agrell, 
   Ali Juma,
   Alice Boxhall,
   Allan Clements,
   Allen Wirfs-Brock,
   Alex Komoroske,
   Alex Russell,
+  Alphan Chen,
   Ami Fischman,
   Amos Jeffries,
   Anders Carlsson,
@@ -418,6 +405,7 @@
   David Fink,
   David Flanagan,
   David Gerard,
+  David Grogan,
   David Håsäther,
   David Hyatt,
   David I. Lehn,
@@ -450,6 +438,7 @@
   Dmitry Titov,
   dolphinling,
   Dominic Cooney,
+  Dominic Farolino,
   Dominique Hazaël-Massieux,
   Don Brutzman,
   Doron Rosenberg,
@@ -494,6 +483,7 @@
   Felix Sanz,
   Felix Sasaki,
   Fernando Altomare Serboncini,
+  Forbes Lindesay,
   Francesco Schwarz,
   Francis Brosnan Blazquez,
   Franck 'Shift' Quélain,
@@ -526,6 +516,7 @@
   Gregory J. Rosmaita,
   Grey,
   Guilherme Johansson Tramontina,
+  guest271314,
   Gytis Jakutonis,
   Håkon Wium Lie,
   Habib Virji,
@@ -539,6 +530,7 @@
   Henrik Lied,
   Henry Mason,
   Henry Story,
+  Hermann Donfack Zeufack,
   Hugh Bellamy,
   Hugh Guiney,
   Hugh Winkler,
@@ -590,12 +582,14 @@
   Jed Hartman,
   Jeff Balogh,
   Jeff Cutsinger,
+  Jeff "=JeffH" Hodges,
   Jeff Schiller,
   Jeff Walden,
   Jeffrey Yasskin,
   Jeffrey Zeldman,
   胡慧鋒 (Jennifer Braithwaite),
   Jellybean Stonerfish,
+  Jennifer Apacible,
   Jens Bannmann,
   Jens Fendler,
   Jens Oliver Meiert,
@@ -642,6 +636,7 @@
   Jonas Sicking,
   Jonathan Cook,
   Jonathan Neal,
+  Jonathan Oddy,
   Jonathan Rees,
   Jonathan Watt,
   Jonathan Worent,
@@ -655,6 +650,7 @@
   Joseph Pecoraro,
   Josh Aas,
   Josh Hart,
+  Josh Juran,
   Josh Levenberg,
   Josh Matthews,
   Joshua Bell,
@@ -663,6 +659,7 @@
   Jules Clément-Ripoche,
   Julian Reschke,
   Julio Lopez,
+  Jun Yang (harttle),
   Jungkee Song,
   Jürgen Jeka,
   Justin Lebar,
@@ -685,6 +682,7 @@
   Keith Yeung,
   Kelly Ford,
   Kelly Norton,
+  Kenji Baheux,
   Kevin Benson,
   Kevin Cole,
   Kevin Gadd,
@@ -727,6 +725,7 @@
   Łukasz Pilorz,
   Luke Kenneth Casson Leighton,
   Maciej Stachowiak,
+  Magne Andersson,
   Magnus Kristiansen,
   Maik Merten,
   Majid Valipour,
@@ -807,6 +806,7 @@
   Mike Dierken,
   Mike Dixon,
   Mike Hearn,
+  Mike Pennisi,
   Mike Schinkel,
   Mike Shaver,
   Mikko Rantalainen,
@@ -814,8 +814,10 @@
   Mohamed Zergaoui,
   Mohammad Al Houssami,
   Momdo Nakamura,
+  Morten Stenshorne,
   Mounir Lamouri,
   Ms2ger,
+  Mukilan Thiyagarajan,
   Nadia Heninger,
   NARUSE Yui,
   Navid Zolghadr,
@@ -854,6 +856,7 @@
   Paul Lewis,
   Paul Norman,
   Per-Erik Brodin,
+  一丝 (percyley), 
   Perry Smith,
   Peter Beverloo,
   Peter Karlsson,
@@ -953,6 +956,7 @@
   Shiino Yuki, 
   贺师俊 (HE Shi-Jun), 
   Shiki Okasaka,
+  Shivani Sharma,
   Shubheksha Jalan,
   Sierk Bornemann,
   Sigbjørn Finne,
@@ -960,6 +964,7 @@
   Silver Ghost, 
   Silvia Pfeiffer,
   Šime Vidas,
+  Simon Fraser,
   Simon Montagu,
   Simon Sapin,
   Simon Spiegel,
@@ -1034,6 +1039,7 @@
   Victor Costan,
   Vipul Snehadeep Chawathe,
   Vitya Muhachev,
+  Vlad Levin,
   Vladimir Katardjiev,
   Vladimir Vukićević,
   Vyacheslav Aristov,
@@ -1082,14 +1088,14 @@
   lists</a>.
 
   <p>Special thanks to Richard Williamson for creating the first implementation of
-  <code id=acknowledgments:the-canvas-element><a href=scripting.html#the-canvas-element>canvas</a></code> in Safari, from which the canvas feature was designed.</p>
+  <code id=acknowledgments:the-canvas-element><a href=canvas.html#the-canvas-element>canvas</a></code> in Safari, from which the canvas feature was designed.</p>
 
   <p>Special thanks also to the Microsoft employees who first implemented the event-based
   drag-and-drop mechanism, <code id=acknowledgments:attr-contenteditable><a href=interaction.html#attr-contenteditable>contenteditable</a></code>, and other
   features first widely deployed by the Windows Internet Explorer browser.</p>
 
   <p>Special thanks and $10,000 to David Hyatt who came up with a broken implementation
-  of the <a href=syntax.html#adoptionAgency>adoption agency algorithm</a> that the editor had to reverse
+  of the <a href=parsing.html#adoptionAgency>adoption agency algorithm</a> that the editor had to reverse
   engineer and fix before using it in the parsing section.</p>
 
   <p>Thanks to the participants of the microdata usability study for allowing us to use their
@@ -1110,7 +1116,7 @@
   Cáceres, Tab Atkins, Theresa O'Connor, and Yoav Weiss for their contributions.</p>
 
   <p>Special thanks to the <a href=https://www.w3.org/WebPlatform/WG/>WPWG</a> for incubating the
-  <a href=scripting.html#custom-elements>custom elements</a> feature. In particular, thanks to David Hyatt and
+  <a href=custom-elements.html#custom-elements>custom elements</a> feature. In particular, thanks to David Hyatt and
   Ian Hickson for their influence through the XBL specifications, Dimitri Glazkov for the first
   draft of the custom elements specification, and to
   Alex Komoroske,
@@ -1147,7 +1153,7 @@
   name can be found in the <a href=https://github.com/whatwg/meta-theme-color><code>whatwg/meta-theme-color</code>
   repository</a>.</p>
 
-  <p itemtype=http://n.whatwg.org/work itemscope="">Part of the revision history of the <a href=scripting.html#custom-elements>custom elements</a> feature can be found in the <a href=https://github.com/w3c/webcomponents><code>w3c/webcomponents</code> repository</a>, which
+  <p itemtype=http://n.whatwg.org/work itemscope="">Part of the revision history of the <a href=custom-elements.html#custom-elements>custom elements</a> feature can be found in the <a href=https://github.com/w3c/webcomponents><code>w3c/webcomponents</code> repository</a>, which
   is available under the <a itemprop=license href=https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document>W3C Permissive
   Document License</a>.</p>
 
@@ -1182,13 +1188,6 @@
   </div>
 
   <div itemtype=http://n.whatwg.org/work itemscope="">
-   <p>The image of two cute kittens in a basket used in the context menu example is based on
-   <a itemprop=work href=https://www.flickr.com/photos/digidreamgrafix/8370087640/>a photo</a>
-   by <a itemprop=https://creativecommons.org/ns#attributionURL href=https://www.flickr.com/photos/digidreamgrafix/>Alex G</a>.
-   (<a itemprop=license href=https://creativecommons.org/licenses/by/2.0/>CC BY 2.0</a>)
-  </div>
-
-  <div itemtype=http://n.whatwg.org/work itemscope="">
    <p>The Blue Robot Player sprite used in the canvas demo is based on
    <a itemprop=work href=https://johncolburn.deviantart.com/art/Blue-Robot-Player-Sprite-323813997>a work</a> by
    <a itemprop=https://creativecommons.org/ns#attributionURL href=https://johncolburn.deviantart.com/>JohnColburn</a>.
@@ -1217,7 +1216,7 @@
   </div>
 
   <div itemtype=http://n.whatwg.org/work itemscope="">
-   <p>The <code>&lt;flag-icon></code> example was inspired by <a itemprop=work href=https://customelements.io/stevenrskelton/flag-icon/>a custom element</a> by <a itemprop=https://creativecommons.org/ns#attributionURL href=http://stevenskelton.ca/>Steven
+   <p>The <code>&lt;flag-icon></code> example was inspired by <a itemprop=work href=https://github.com/stevenrskelton/flag-icon>a custom element</a> by <a itemprop=https://creativecommons.org/ns#attributionURL href=http://stevenskelton.ca/>Steven
    Skelton</a>. (<a itemprop=license href=https://opensource.org/licenses/MIT>MIT</a>)</p>
   </div>
 
